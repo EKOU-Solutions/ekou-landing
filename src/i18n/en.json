@@ -1,0 +1,81 @@
+{
+  "nav": ["Home", "Approach", "Group", "Impact", "Leaders", "Process", "Contact", "Blog"],
+  "hero": {
+    "badge": "Innovation that ships",
+    "title": "We guide your digital evolution",
+    "subtitle": "From idea to launch with consulting, strategy and tailored technology. We embed with your team to design, build and optimize products that deliver measurable value.",
+    "cta": "Book a technical call",
+    "secondary": "See our approach",
+    "floating": [
+      "+40 products shipped",
+      "Strategy + execution",
+      "Modern technology"
+    ]
+  },
+  "idea": {
+    "title": "We connect ideas with execution",
+    "subtitle": "We map your vision, validate with users and build with full transparency.",
+    "items": [
+      {"title": "Product architecture", "desc": "Designing scalable solutions on solid foundations."},
+      {"title": "Launch strategy", "desc": "MVP planning, adoption routes and measurement."},
+      {"title": "Continuous evolution", "desc": "We iterate with data and close collaboration."}
+    ]
+  },
+  "fronts": {
+    "title": "One approach, three fronts",
+    "subtitle": "Aligning strategy, technology and innovation so every move adds to the business.",
+    "items": [
+      {"title": "Consulting & strategy", "desc": "Operating model, optimization and clear roadmaps."},
+      {"title": "Technology delivery", "desc": "Apps, automation, platforms and data."},
+      {"title": "Ongoing evolution", "desc": "We learn, measure and improve every release."}
+    ]
+  },
+  "group": {
+    "title": "EKOU Group",
+    "subtitle": "A brand ecosystem sharing values, processes and an impact-driven mindset.",
+    "cards": [
+      {"label": "Foundation", "name": "EKOU Foundations", "desc": "Technology that inspires and empowers youth."},
+      {"label": "Services", "name": "EKOU Solutions", "desc": "Digital transformation and custom products."},
+      {"label": "PropTech", "name": "EKOU Real Estate", "desc": "Dignified housing and modern real estate experiences."}
+    ]
+  },
+  "impact": {
+    "title": "Real impact",
+    "subtitle": "Stories and products that prove our way of working.",
+    "items": [
+      {"title": "San Juan Intermediarios", "desc": "ERP + mobile app for the supply chain."},
+      {"title": "Kiyo", "desc": "Social platform and scholarship program."},
+      {"title": "Mediclic", "desc": "Automation and digital product for healthcare."},
+      {"title": "Kinderloma", "desc": "School management system for families and teachers."}
+    ]
+  },
+  "partners": {
+    "title": "Partners and leadership",
+    "subtitle": "Interdisciplinary team steering strategy and delivery.",
+    "people": [
+      {"name": "Camilo Orozco", "role": "CEO & Co-founder", "desc": "Strategy, innovation and digital products."},
+      {"name": "Tatiana Rivas", "role": "COO & Co-founder", "desc": "Operations, processes and scaling."},
+      {"name": "Juan Sossa", "role": "CTO & Co-founder", "desc": "Engineering, architecture and tech teams."}
+    ]
+  },
+  "process": {
+    "title": "How we guide you",
+    "subtitle": "Hands-on sessions from diagnosis to launch.",
+    "rows": [
+      {"moment": "Initial diagnosis", "sessions": "1 session", "topics": "Context, goals, metrics"},
+      {"moment": "Strategy", "sessions": "1-2 sessions", "topics": "Roadmap, team, risks"},
+      {"moment": "Design + MVP", "sessions": "2-3 sessions", "topics": "Architecture, flows, validation"},
+      {"moment": "Execution", "sessions": "Ongoing", "topics": "Sprints, QA, data"}
+    ]
+  },
+  "contact": {
+    "title": "Free technical consultation",
+    "subtitle": "Tell us about your challenge and we will coordinate a 30-minute session.",
+    "cta": "Schedule a meeting",
+    "secondary": "Download dossier"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Ideas and learnings on product, business and technology."
+  }
+}

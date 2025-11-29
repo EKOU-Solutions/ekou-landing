@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import es from '../i18n/es.json';
+import en from '../i18n/en.json';
+
+const langParam = Astro.url.searchParams.get('lang') === 'en' ? 'en' : 'es';
+const t = langParam === 'en' ? en : es;
+const navIds = ['hero', 'approach', 'group', 'impact', 'partners', 'process', 'contact', 'blog'];
+const navLabels = t.nav;
+---
+<BaseLayout title={`EKOU | ${t.hero.title}`} description={t.hero.subtitle} lang={langParam}>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#7cdeff,#85f7fe);display:grid;place-items:center;font-weight:800;color:#042136;">E</div>
+        <div>
+          <div style="font-weight:700;">EKOU</div>
+          <small style="color:var(--muted);">Tech + Strategy</small>
+        </div>
+      </div>
+      <div class="menu" id="nav-menu">
+        {navIds.map((id, index) => (
+          <a href={`#${id}`} data-nav-id={id}>{navLabels[index]}</a>
+        ))}
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div class="language-toggle" aria-label="language selector">
+          <span style="color:var(--muted);">Lang</span>
+          <button class={langParam === 'es' ? 'active' : ''} onClick={`window.location.search='?lang=es'`}>ES</button>
+          <button class={langParam === 'en' ? 'active' : ''} onClick={`window.location.search='?lang=en'`}>EN</button>
+        </div>
+        <a class="btn" href="#contact">{t.hero.cta}</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="floating" style="max-width: 620px; gap: 16px; background: rgba(7,12,28,0.75);">
+        <span class="badge">{t.hero.badge}</span>
+        <h1 style="margin:10px 0 8px; font-size: clamp(36px, 6vw, 54px);">{t.hero.title}</h1>
+        <p class="section-subtitle">{t.hero.subtitle}</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn" href="#contact">{t.hero.cta}</a>
+          <a class="pill-cta" href="#approach">{t.hero.secondary} →</a>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          {t.hero.floating.map((item) => <span class="tag">{item}</span>)}
+        </div>
+      </div>
+      <div class="hero-video">
+        <div class="frame">
+          <div>
+            <div style="font-weight:700;">EKOU Pulse</div>
+            <small>Demo / Reel</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="approach">
+    <div class="container">
+      <span class="badge">{t.idea.title}</span>
+      <h2 class="section-title">{t.idea.subtitle}</h2>
+      <div class="grid section-grid-3" style="margin-top:24px;">
+        {t.idea.items.map((item) => (
+          <div class="card">
+            <div class="tag">★</div>
+            <h3 style="margin:12px 0 6px;">{item.title}</h3>
+            <p class="section-subtitle">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <span class="badge">{t.fronts.title}</span>
+      <h2 class="section-title">{t.fronts.subtitle}</h2>
+      <div class="grid section-grid-3" style="margin-top:28px;">
+        {t.fronts.items.map((item) => (
+          <div class="card" style="padding-bottom:32px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:38px;height:38px;border-radius:12px;background:rgba(124,222,255,0.1);display:grid;place-items:center;color:var(--accent);">⚡</div>
+              <h3 style="margin:0;">{item.title}</h3>
+            </div>
+            <p class="section-subtitle" style="margin-top:10px;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="group" style="background:linear-gradient(180deg, rgba(8,14,32,0.8), rgba(5,11,25,0.9));">
+    <div class="container">
+      <div class="floating" style="margin-bottom:26px;">
+        <span class="badge">{t.group.title}</span>
+        <p class="section-subtitle">{t.group.subtitle}</p>
+      </div>
+      <div class="grid section-grid-3">
+        {t.group.cards.map((card) => (
+          <div class="card">
+            <div class="tag">{card.label}</div>
+            <h3 style="margin:12px 0 6px;">{card.name}</h3>
+            <p class="section-subtitle">{card.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="container">
+      <span class="badge">{t.impact.title}</span>
+      <h2 class="section-title">{t.impact.subtitle}</h2>
+      <div class="grid section-grid-3" style="margin-top:22px;">
+        {t.impact.items.map((item) => (
+          <div class="card">
+            <h3 style="margin:0 0 6px;">{item.title}</h3>
+            <p class="section-subtitle">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" style="background:linear-gradient(180deg, rgba(8,14,32,0.75), rgba(4,9,20,0.9));">
+    <div class="container">
+      <span class="badge">{t.partners.title}</span>
+      <h2 class="section-title">{t.partners.subtitle}</h2>
+      <div class="grid profile-grid" style="margin-top:22px;">
+        {t.partners.people.map((person) => (
+          <div class="card">
+            <div style="width:56px;height:56px;border-radius:18px;background:rgba(124,222,255,0.15);display:grid;place-items:center;font-weight:700;color:var(--accent);">
+              {person.name.charAt(0)}
+            </div>
+            <h3 style="margin:12px 0 4px;">{person.name}</h3>
+            <div class="tag" style="margin-bottom:10px;">{person.role}</div>
+            <p class="section-subtitle">{person.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <span class="badge">{t.process.title}</span>
+      <h2 class="section-title">{t.process.subtitle}</h2>
+      <div class="card" style="margin-top:20px;overflow:auto;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{langParam === 'es' ? 'Momento' : 'Stage'}</th>
+              <th>{langParam === 'es' ? 'Sesiones' : 'Sessions'}</th>
+              <th>{langParam === 'es' ? 'Temas' : 'Topics'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {t.process.rows.map((row) => (
+              <tr>
+                <td>{row.moment}</td>
+                <td>{row.sessions}</td>
+                <td>{row.topics}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:linear-gradient(180deg, rgba(5,11,25,0.95), rgba(8,14,32,0.9));">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(320px,1fr));gap:28px;align-items:center;">
+        <div>
+          <span class="badge">{t.contact.title}</span>
+          <h2 class="section-title">{t.contact.subtitle}</h2>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+            <a class="btn" href="mailto:hola@ekou.studio">{t.contact.cta}</a>
+            <a class="pill-cta" href="#">{t.contact.secondary} ↗</a>
+          </div>
+        </div>
+        <div class="floating" style="gap:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong>EKOU</strong>
+            <span class="tag">Tech + Strategy</span>
+          </div>
+          <div style="display:grid;gap:10px;">
+            <span>consultoria@ekou.studio</span>
+            <span>+57 301 213 12 59</span>
+            <span>Medellín / Bogotá</span>
+          </div>
+          <div style="height:48px;background:rgba(124,222,255,0.08);border-radius:12px;border:1px solid rgba(124,222,255,0.18);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <span class="badge">{t.blog.title}</span>
+      <h2 class="section-title">{t.blog.subtitle}</h2>
+      <p class="section-subtitle" style="margin-bottom:20px;">Explora las últimas notas y guías prácticas.</p>
+      <div class="blog-list">
+        <div class="blog-card">
+          <div class="tag">MDX</div>
+          <h3 style="margin:12px 0 6px;">Cómo combinamos consultoría y desarrollo</h3>
+          <p class="section-subtitle">Lectura recomendada con componentes interactivos.</p>
+          <a class="pill-cta" href="/blog/consultoria-producto">Leer artículo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © {new Date().getFullYear()} EKOU — Estrategia, innovación y tecnología.
+  </footer>
+
+  <script>
+    const navOrder = ${JSON.stringify(navIds)};
+    const menu = document.querySelectorAll('#nav-menu a');
+    const sections = navOrder.map((id) => document.getElementById(id));
+
+    function setActive(id) {
+      menu.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+      });
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    sections.forEach((section) => section && observer.observe(section));
+
+    menu.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const el = document.getElementById(targetId);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 60;
+          window.scrollTo({ top, behavior: 'smooth' });
+          setActive(targetId);
+        }
+      });
+    });
+  </script>
+</BaseLayout>

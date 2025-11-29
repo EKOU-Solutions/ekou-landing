@@ -1,0 +1,81 @@
+{
+  "nav": ["Inicio", "Enfoque", "Grupo", "Impacto", "Socios", "Proceso", "Contacto", "Blog"],
+  "hero": {
+    "badge": "Innovación que ejecuta",
+    "title": "Acompañamos tu evolución digital",
+    "subtitle": "Pasamos de la idea a la realidad combinando consultoría, estrategia y tecnología a medida. Nos integramos con tu equipo para diseñar, construir y optimizar productos que generan valor tangible.",
+    "cta": "Agenda una consulta técnica",
+    "secondary": "Conoce nuestro enfoque",
+    "floating": [
+      "+40 productos lanzados",
+      "Estrategia + ejecución",
+      "Tecnología moderna"
+    ]
+  },
+  "idea": {
+    "title": "Conectamos ideas con ejecución",
+    "subtitle": "Mapeamos tu visión, validamos con usuarios y construimos soluciones con transparencia total.",
+    "items": [
+      {"title": "Arquitectura de producto", "desc": "Diseñamos soluciones escalables con bases sólidas."},
+      {"title": "Estrategia de lanzamiento", "desc": "Planificamos MVP, rutas de adopción y medición."},
+      {"title": "Evolución continua", "desc": "Iteramos con datos y acompañamiento cercano."}
+    ]
+  },
+  "fronts": {
+    "title": "Un enfoque, tres frentes",
+    "subtitle": "Alineamos estrategia, tecnología e innovación para que cada movimiento sume a tu negocio.",
+    "items": [
+      {"title": "Consultoría y estrategia", "desc": "Modelo operativo, optimización y roadmaps claros."},
+      {"title": "Ejecución tecnológica", "desc": "Aplicaciones, automatización, plataformas y datos."},
+      {"title": "Evolución continua", "desc": "Aprendemos, medimos y mejoramos cada release."}
+    ]
+  },
+  "group": {
+    "title": "Grupo EKOU",
+    "subtitle": "Ecosistema de marcas que comparte valores, procesos y vocación de impacto.",
+    "cards": [
+      {"label": "Fundación", "name": "EKOU Foundations", "desc": "Tecnología para inspirar y empoderar a jóvenes."},
+      {"label": "Servicios", "name": "EKOU Solutions", "desc": "Transformación digital y productos a medida."},
+      {"label": "PropTech", "name": "EKOU Real Estate", "desc": "Viviendas dignas y experiencias inmobiliarias."}
+    ]
+  },
+  "impact": {
+    "title": "Impacto real",
+    "subtitle": "Historias y productos que prueban nuestra forma de trabajar.",
+    "items": [
+      {"title": "San Juan Intermediarios", "desc": "ERP + App móvil para la cadena de suministros."},
+      {"title": "Kiyo", "desc": "Plataforma social y programa de becas tecnológicas."},
+      {"title": "Mediclic", "desc": "Automatización y producto digital en salud."},
+      {"title": "Kinderloma", "desc": "Sistema de gestión escolar para familias y docentes."}
+    ]
+  },
+  "partners": {
+    "title": "Socios y liderazgo",
+    "subtitle": "Equipo interdisciplinario que dirige la estrategia y la ejecución.",
+    "people": [
+      {"name": "Camilo Orozco", "role": "CEO y Cofundador", "desc": "Estrategia, innovación y productos digitales."},
+      {"name": "Tatiana Rivas", "role": "COO y Cofundadora", "desc": "Operaciones, procesos y escalamiento."},
+      {"name": "Juan Sossa", "role": "CTO y Cofundador", "desc": "Ingeniería, arquitectura y equipos tech."}
+    ]
+  },
+  "process": {
+    "title": "Cómo te acompañamos",
+    "subtitle": "Sesiones prácticas para mover tu proyecto desde el diagnóstico hasta el lanzamiento.",
+    "rows": [
+      {"moment": "Diagnóstico inicial", "sessions": "1 sesión", "topics": "Contexto, objetivos, métricas"},
+      {"moment": "Estrategia", "sessions": "1-2 sesiones", "topics": "Roadmap, equipo, riesgos"},
+      {"moment": "Diseño + MVP", "sessions": "2-3 sesiones", "topics": "Arquitectura, flujos, validación"},
+      {"moment": "Ejecución", "sessions": "Acompañamiento", "topics": "Sprints, QA, datos"}
+    ]
+  },
+  "contact": {
+    "title": "Consulta técnica gratuita",
+    "subtitle": "Cuéntanos sobre tu reto y coordinamos una sesión de 30 minutos.",
+    "cta": "Agendar reunión",
+    "secondary": "Descargar dossier"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Ideas y aprendizajes sobre producto, negocio y tecnología."
+  }
+}

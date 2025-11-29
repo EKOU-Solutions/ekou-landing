@@ -1,0 +1,16 @@
+---
+import '../styles/global.css';
+const { title = 'EKOU', description = 'Estrategia, tecnología e innovación', lang = 'es' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

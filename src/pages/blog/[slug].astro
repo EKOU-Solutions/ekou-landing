@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, getEntryBySlug } from 'astro:content';
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const entry = await getEntryBySlug('blog', post.slug);
+---
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <section class="hero" style="padding:120px 20px 60px;">
+    <div class="container">
+      <div class="tag">{post.data.lang.toUpperCase()}</div>
+      <h1 class="section-title" style="margin:10px 0 6px;">{post.data.title}</h1>
+      <p class="section-subtitle">{post.data.description}</p>
+      <small style="color:var(--muted);">{post.data.date} — {post.data.author}</small>
+    </div>
+  </section>
+  <section>
+    <div class="container card" style="padding:28px;">
+      <entry.Component />
+    </div>
+  </section>
+</BaseLayout>

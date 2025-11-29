@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import '../../styles/global.css';
+
+const posts = await getCollection('blog');
+---
+<BaseLayout title="Blog EKOU" description="Ideas de estrategia y tecnología">
+  <section class="hero" style="padding:120px 20px 80px;">
+    <div class="container">
+      <span class="badge">Blog</span>
+      <h1 class="section-title">Historias, guías y aprendizajes</h1>
+      <p class="section-subtitle">Notas cortas con componentes interactivos usando MDX + React.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container blog-list">
+      {posts.map((post) => (
+        <div class="blog-card">
+          <div class="tag">{post.data.lang.toUpperCase()}</div>
+          <h2 style="margin:12px 0 6px;">{post.data.title}</h2>
+          <p class="section-subtitle">{post.data.description}</p>
+          <a class="pill-cta" href={`/blog/${post.slug}`}>Leer más →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
