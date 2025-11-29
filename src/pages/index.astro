@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ValueCard from '../components/ValueCard.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import AffiliateCard from '../components/AffiliateCard.astro';
+
+const services = [
+  {
+    title: 'Consultoría y Estrategia',
+    description:
+      'Definimos rutas claras para crecer: desde la estrategia y la planeación hasta la optimización continua.',
+    items: [
+      'Definición y validación de estrategia',
+      'Planeación enfocada en conversión',
+      'Optimización de procesos y experiencia',
+      'Innovación aplicada a necesidades reales',
+      'KPIs y tableros para medir avance',
+    ],
+    tag: 'Acompañamiento',
+  },
+  {
+    title: 'Productos Tecnológicos',
+    description:
+      'Construimos soluciones digitales a la medida que automatizan, conectan y habilitan nuevas oportunidades.',
+    items: [
+      'Aplicaciones móviles y plataformas web',
+      'Chatbots y experiencias conversacionales',
+      'Automatización y RPA',
+      'Integraciones y APIs para negocio',
+      'Soluciones rápidas para digitalización',
+    ],
+    tag: 'Tecnología',
+  },
+];
+
+const values = [
+  {
+    title: 'Orientación al usuario',
+    detail: 'Investigamos necesidades reales y diseñamos soluciones que generan impacto directo en la operación.',
+  },
+  {
+    title: 'Transparencia total',
+    detail: 'Visibilidad de avances, decisiones explicadas y entregables con claridad en cada etapa.',
+  },
+  {
+    title: 'Acompañamiento cercano',
+    detail: 'Trabajamos como extensión del equipo, guiando y validando cada paso hacia el objetivo.',
+  },
+  {
+    title: 'Innovación práctica',
+    detail: 'Tecnología aplicada con sentido: prototipos, pilotos y mejoras que se sienten en el negocio.',
+  },
+  {
+    title: 'Enfoque en resultados',
+    detail: 'Medición, iteración y optimización constante para garantizar crecimiento sostenible.',
+  },
+];
+
+const cases = [
+  {
+    name: 'Marketplace gastronómico',
+    industry: 'Pyme · Restaurantes',
+    outcome: '+38% en ticket promedio',
+    metrics: [
+      'Automatización de pedidos y logística con RPA',
+      'Nuevos flujos digitales que redujeron tiempos de atención en 42%',
+      'Panel de métricas en tiempo real para decisiones diarias',
+    ],
+    description: 'Co-creamos la estrategia y la plataforma digital, acompañando al equipo en la adopción y la mejora continua.',
+  },
+  {
+    name: 'Academia online de crecimiento',
+    industry: 'Emprendimiento',
+    outcome: '+62% en conversión a planes pagos',
+    metrics: [
+      'Re-diseño de journeys y onboarding automatizado',
+      'Chatbot para soporte y upsell en WhatsApp',
+      'Experimentos A/B quincenales con métricas claras',
+    ],
+    description: 'Unimos consultoría y desarrollo para lanzar nuevas funcionalidades con foco en retención.',
+  },
+  {
+    name: 'Operador inmobiliario digital',
+    industry: 'Ekou Real State',
+    outcome: 'Proceso comercial 3x más ágil',
+    metrics: [
+      'CRM conectado a portales y firma electrónica',
+      'Automatización de validaciones y documentos',
+      'Reportes de ocupación y prospectos en tiempo real',
+    ],
+    description: 'Optimización integral del proceso comercial con tecnología y capacitación al equipo.',
+  },
+];
+
+const affiliates = [
+  {
+    name: 'Ekou Foundations',
+    focus: 'Fundación',
+    description: 'Empoderamiento juvenil a través de tecnología, formación y proyectos con impacto social.',
+  },
+  {
+    name: 'Ekou Solutions',
+    focus: 'Tecnología',
+    description: 'Soluciones digitales personalizadas para la evolución y eficiencia de empresas.',
+  },
+  {
+    name: 'Ekou Real State',
+    focus: 'Inmobiliario',
+    description: 'Arriendos, vivienda y gestión de finca raíz con enfoque en calidad de vida y transparencia.',
+  },
+];
+---
+<BaseLayout>
+  <header class="navbar">
+    <div class="navbar__logo">
+      <span>🟢</span>
+      <div>
+        <strong>EKOU</strong>
+        <div style="color: var(--muted); font-weight: 600; font-size: 12px;">Estrategia · Tecnología · Acompañamiento</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#valores">Valores</a>
+      <a href="#ecosistema">Ecosistema</a>
+      <a href="#casos">Casos</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <a class="button button--primary" href="#contacto">Agenda una sesión</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <span class="hero__label">Consultoría + Tecnología + Acompañamiento</span>
+        <h1 class="hero__title">Hacemos que tu evolución digital sea medible, práctica y cercana.</h1>
+        <p class="hero__subtitle">
+          EKOU acompaña a empresas, emprendedores e inversionistas combinando estrategia, innovación y productos tecnológicos que
+          realmente mueven el negocio.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#contacto">Agendar diagnóstico</a>
+          <a class="button button--ghost" href="#casos">Ver casos de éxito</a>
+        </div>
+        <div class="hero__signals">
+          <div class="signal">
+            <span></span>
+            <p>Entregables claros + decisiones explicadas en cada etapa.</p>
+          </div>
+          <div class="signal">
+            <span></span>
+            <p>Iteramos contigo: medimos, optimizamos y escalamos juntos.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <SectionHeader
+          title="Un equipo que piensa en negocio"
+          description="Tecnología moderna, visión estratégica y experiencia multidisciplinaria para acompañar decisiones clave."
+        />
+        <div class="kpi-cards">
+          <div class="kpi-card">
+            <strong>+60</strong>
+            <p>Proyectos con enfoque en crecimiento y eficiencia.</p>
+          </div>
+          <div class="kpi-card">
+            <strong>3 ecosistemas</strong>
+            <p>Consultoría, tecnología y operaciones inmobiliarias integradas.</p>
+          </div>
+          <div class="kpi-card">
+            <strong>100% visibilidad</strong>
+            <p>Transparencia total en roadmap, costos y resultados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <SectionHeader
+        eyebrow="Servicios"
+        title="Estrategia que guía, tecnología que ejecuta"
+        description="Nos conectamos con tus metas y construimos soluciones que generan valor inmediato y sostenido."
+      />
+      <div class="cards-grid">
+        {services.map((service) => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="valores">
+      <SectionHeader
+        eyebrow="Valores"
+        title="Cómo trabajamos"
+        description="Nuestros principios garantizan colaboración cercana, visibilidad total y un enfoque práctico en resultados."
+      />
+      <div class="cards-grid">
+        {values.map((value) => (
+          <ValueCard {...value} />
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="enfoque">
+      <div class="split">
+        <div>
+          <SectionHeader
+            eyebrow="Acompañamiento consultivo"
+            title="Tu ruta de evolución, paso a paso"
+            description="Unimos descubrimiento, diseño, construcción y optimización continua para que cada decisión esté respaldada."
+          />
+          <ul class="checklist">
+            <li>Entendemos el negocio y priorizamos quick wins.</li>
+            <li>Diseñamos experiencias centradas en usuario y conversión.</li>
+            <li>Desplegamos productos iterativos con métricas claras.</li>
+            <li>Capacitamos al equipo y dejamos procesos documentados.</li>
+          </ul>
+        </div>
+        <div class="process">
+          <div class="process-step">
+            <h4>1. Descubrimiento</h4>
+            <p>Workshops, entrevistas y mapa de oportunidades con foco en ROI.</p>
+          </div>
+          <div class="process-step">
+            <h4>2. Diseño y validación</h4>
+            <p>Prototipos, pilotos y pruebas rápidas con usuarios reales.</p>
+          </div>
+          <div class="process-step">
+            <h4>3. Construcción</h4>
+            <p>Desarrollo ágil: web, móvil, chatbots, automatización e integraciones.</p>
+          </div>
+          <div class="process-step">
+            <h4>4. Optimización</h4>
+            <p>Métricas, experimentos y mejoras continuas acompañadas por nuestro equipo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <SectionHeader
+        eyebrow="Ventajas"
+        title="Lo que obtienes al trabajar con EKOU"
+        description="Estrategia, ejecución y acompañamiento en un mismo lugar para avanzar con seguridad."
+      />
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Equipo multidisciplinario</h3>
+          <p>Consultores, product managers, diseñadores y developers alineados a tus metas.</p>
+        </div>
+        <div class="card">
+          <h3>Procesos claros</h3>
+          <p>Roadmaps visibles, entregables frecuentes y comunicación abierta.</p>
+        </div>
+        <div class="card">
+          <h3>Velocidad + calidad</h3>
+          <p>Prototipos rápidos, tecnología moderna y estándares de desarrollo probados.</p>
+        </div>
+        <div class="card">
+          <h3>Foco en negocio</h3>
+          <p>Decisiones basadas en métricas, conversiones y optimización de costos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ecosistema">
+      <SectionHeader
+        eyebrow="Ecosistema EKOU"
+        title="Filiales que potencian la visión"
+        description="Empresas bajo una misma filosofía: impacto, transparencia y soluciones reales."
+      />
+      <div class="affiliates">
+        {affiliates.map((affiliate) => (
+          <AffiliateCard {...affiliate} />
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="casos">
+      <SectionHeader
+        eyebrow="Casos de éxito"
+        title="Impacto real con acompañamiento continuo"
+        description="Seleccionamos ejemplos donde estrategia y tecnología se integraron para mover métricas clave."
+      />
+      <div class="case-grid">
+        {cases.map((item) => (
+          <CaseStudyCard {...item} />
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="equipo">
+      <div class="split">
+        <div>
+          <SectionHeader
+            eyebrow="Equipo"
+            title="Personas detrás de EKOU"
+            description="Experiencia en consultoría, estrategia, producto, diseño y tecnología para acompañarte en cada reto."
+          />
+          <div class="badges">
+            <span class="badge">Product & Service Design</span>
+            <span class="badge">Growth & Analítica</span>
+            <span class="badge">Ingeniería & QA</span>
+            <span class="badge">Project Management</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>A tu lado, de principio a fin</h3>
+          <p>
+            Trabajamos como parte de tu equipo: guiamos decisiones, explicamos cada entrega y dejamos capacidades instaladas
+            para que sigas creciendo.
+          </p>
+          <ul class="service-list">
+            <li>Sesiones semanales de seguimiento y priorización.</li>
+            <li>Documentación y manuales listos para tu operación.</li>
+            <li>Capacitación y transferencia de conocimiento.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="split">
+        <div>
+          <SectionHeader
+            eyebrow="Blog educativo"
+            title="Recursos para crecer"
+            description="Guías de innovación, transformación digital y optimización de negocios para empresas y emprendedores."
+          />
+          <p style="color: var(--muted); margin-top: 6px;">
+            Ideal para inversionistas que buscan entender la visión y alcance del ecosistema EKOU.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Artículos destacados</h3>
+          <ul class="service-list">
+            <li>Cómo priorizar automatizaciones con impacto inmediato.</li>
+            <li>Diseño de experiencias omnicanal centradas en usuario.</li>
+            <li>KPIs esenciales para productos digitales en etapa temprana.</li>
+          </ul>
+          <div class="hero__actions" style="margin-top: 14px;">
+            <a class="button button--primary" href="#contacto">Recibir artículos</a>
+            <a class="button button--ghost" href="#contacto">Proponer un tema</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="cta-banner">
+        <h3>¿Listo para acelerar tu evolución digital?</h3>
+        <p style="color: var(--muted);">
+          Conversemos sobre tus retos, definamos prioridades y planifiquemos el primer sprint de trabajo.
+        </p>
+        <div class="hero__actions" style="justify-content: center; margin-top: 12px;">
+          <a class="button button--primary" href="mailto:hola@ekou.com">Agenda una sesión</a>
+          <a class="button button--ghost" href="#servicios">Conocer servicios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>EKOU</strong>
+      <p>Consultoría, tecnología e innovación práctica.</p>
+    </div>
+    <div>
+      <p>Contacto: hola@ekou.com</p>
+      <p>© {new Date().getFullYear()} EKOU. Transparencia y resultados.</p>
+    </div>
+  </footer>
+</BaseLayout>

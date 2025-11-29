@@ -1,0 +1,21 @@
+---
+export interface Props {
+  name: string;
+  industry: string;
+  outcome: string;
+  metrics: string[];
+  description: string;
+}
+
+const { name, industry, outcome, metrics, description } = Astro.props;
+---
+<article class="case-card">
+  <h3>{name}</h3>
+  <p class="meta">{industry} · {outcome}</p>
+  <p>{description}</p>
+  <ul>
+    {metrics.map((metric) => (
+      <li>{metric}</li>
+    ))}
+  </ul>
+</article>

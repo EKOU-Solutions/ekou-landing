@@ -1,0 +1,20 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  items: string[];
+  tag?: string;
+}
+
+const { title, description, items, tag } = Astro.props;
+---
+<article class="card">
+  {tag && <span class="tag">{tag}</span>}
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <ul class="service-list">
+    {items.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+</article>

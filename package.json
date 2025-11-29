@@ -1,0 +1,17 @@
+{
+  "name": "ekou-landing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing page de EKOU construida con Astro.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "devDependencies": {
+    "astro": "^4.14.3"
+  }
+}
