@@ -1,0 +1,18 @@
+---
+import '../styles/global.css';
+
+const { title = 'EKOU | Consultoría y Tecnología', description = 'Consultoría estratégica y desarrollo tecnológico con acompañamiento cercano.' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

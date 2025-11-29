@@ -1,0 +1,28 @@
+---
+const { current = 'es', options = ['es', 'en'] } = Astro.props;
+---
+<div class="language-toggle" data-current={current} tabindex="0" role="button" aria-label="Cambiar idioma">
+  <span>🌐</span>
+  <strong data-lang-label>{current.toUpperCase()}</strong>
+</div>
+<script>
+  const wrapper = document.currentScript.previousElementSibling;
+  const languages = JSON.parse('{"options":'+JSON.stringify(options)+'}').options;
+  const label = wrapper.querySelector('[data-lang-label]');
+  const update = (lang) => {
+    wrapper.dataset.current = lang;
+    label.textContent = lang.toUpperCase();
+    window.dispatchEvent(new CustomEvent('change-lang', { detail: lang }));
+  };
+  wrapper.addEventListener('click', () => {
+    const currentLang = wrapper.dataset.current || languages[0];
+    const nextIndex = (languages.indexOf(currentLang) + 1) % languages.length;
+    update(languages[nextIndex]);
+  });
+  wrapper.addEventListener('keyup', (ev) => {
+    if (ev.key === 'Enter' || ev.key === ' ') {
+      ev.preventDefault();
+      wrapper.click();
+    }
+  });
+</script>

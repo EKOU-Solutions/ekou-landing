@@ -1,0 +1,46 @@
+---
+import Logo from './Logo.astro';
+import LanguageToggle from './LanguageToggle.astro';
+import es from '../i18n/es.json';
+---
+<header class="header">
+  <div class="container">
+    <nav>
+      <a href="#top" aria-label="Inicio"><Logo /></a>
+      <div class="nav-links">
+        <a class="nav-link" href="#what" data-i18n="nav.what">{es.nav.what}</a>
+        <a class="nav-link" href="#group" data-i18n="nav.group">{es.nav.group}</a>
+        <a class="nav-link" href="#process" data-i18n="nav.process">{es.nav.process}</a>
+        <a class="nav-link" href="#team" data-i18n="nav.team">{es.nav.team}</a>
+        <a class="nav-link" href="/blog" data-i18n="nav.blog">{es.nav.blog}</a>
+        <a class="button" href="#consultation" data-i18n="nav.contact">{es.nav.contact}</a>
+        <LanguageToggle current="es" options={["es", "en"]} />
+      </div>
+    </nav>
+  </div>
+</header>
+<script>
+  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+  const sections = navLinks
+    .map((link) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      return target ? { link, target } : null;
+    })
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const match = sections.find((item) => item.target === entry.target);
+        if (!match) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach((l) => l.classList.remove('active'));
+          match.link.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -50% 0px', threshold: 0.2 }
+  );
+
+  sections.forEach(({ target }) => observer.observe(target));
+</script>

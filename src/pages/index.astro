@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import BlogCard from '../components/BlogCard.astro';
+import es from '../i18n/es.json';
+import en from '../i18n/en.json';
+const posts = await Astro.glob('../content/blog/*.{md,mdx}');
+const blogPosts = posts
+  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+  .slice(0, 3);
+---
+<Layout>
+  <div id="top"></div>
+  <Header />
+  <main>
+    <section id="what" class="container hero">
+      <div>
+        <p class="badge" data-i18n="hero.badge">{es.hero.badge}</p>
+        <h1 data-i18n="hero.title">{es.hero.title}</h1>
+        <p data-i18n="hero.subtitle">{es.hero.subtitle}</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+          <a class="button" href="#consultation" data-i18n="hero.cta">{es.hero.cta}</a>
+          <div class="pill">+20 clientes en LATAM</div>
+          <div class="pill">Equipo multidisciplinario</div>
+        </div>
+      </div>
+      <div class="hero-media glow">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80" alt="Equipo EKOU" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="glow" style="padding:60px 0;">
+      <div class="container">
+        <h2 class="section-title" data-i18n="connect.title">{es.connect.title}</h2>
+        <p class="section-subtitle" data-i18n="connect.subtitle">{es.connect.subtitle}</p>
+        <div class="card-grid">
+          {es.connect.items.map((item, index) => (
+            <div class="card" data-i18n-scope={`connect.items.${index}`}>
+              <div class="pill" data-i18n={`connect.items.${index}.title`}>{item.title}</div>
+              <h3 data-i18n={`connect.items.${index}.title`}>{item.title}</h3>
+              <p data-i18n={`connect.items.${index}.text`}>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:60px 0;">
+      <div class="container">
+        <h2 class="section-title" data-i18n="step.title">{es.step.title}</h2>
+        <div class="timeline" style="margin-top:30px;">
+          {es.step.items.map((item, index) => (
+            <div class="timeline-card" data-i18n-scope={`step.items.${index}`}>
+              <div class="pill" data-i18n={`step.items.${index}.title`}>{item.title}</div>
+              <p data-i18n={`step.items.${index}.text`}>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="glow" style="padding:60px 0;">
+      <div class="container">
+        <p class="badge">EKOU</p>
+        <h2 class="section-title" data-i18n="frentes.title">{es.frentes.title}</h2>
+        <p class="section-subtitle" data-i18n="frentes.subtitle">{es.frentes.subtitle}</p>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Estratégico</h3>
+            <p>Hablamos de negocio, definimos objetivos claros y las métricas que importan.</p>
+          </div>
+          <div class="card">
+            <h3>Consultivo</h3>
+            <p>Acompañamos a sponsors y equipos, tomamos decisiones rápidas y medibles.</p>
+          </div>
+          <div class="card">
+            <h3>Técnico</h3>
+            <p>Diseñamos y construimos productos digitales listos para producción.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="group" style="padding:60px 0;">
+      <div class="container">
+        <h2 class="section-title" data-i18n="group.title">{es.group.title}</h2>
+        <p class="section-subtitle" data-i18n="group.subtitle">{es.group.subtitle}</p>
+        <div class="card-grid">
+          {es.group.items.map((item, index) => (
+            <div class="card" data-i18n-scope={`group.items.${index}`}>
+              <h3 data-i18n={`group.items.${index}.title`}>{item.title}</h3>
+              <p data-i18n={`group.items.${index}.text`}>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="glow" style="padding:60px 0;">
+      <div class="container">
+        <div class="grid-2" style="align-items:start;">
+          <div>
+            <p class="badge">Procesos</p>
+            <h2 class="section-title" style="text-align:left;" data-i18n="context.title">{es.context.title}</h2>
+            <p class="section-subtitle" style="text-align:left;" data-i18n="context.subtitle">{es.context.subtitle}</p>
+            <div class="timeline">
+              {es.context.timeline.map((item, index) => (
+                <div class="timeline-card" data-i18n-scope={`context.timeline.${index}`}>
+                  <div class="pill" data-i18n={`context.timeline.${index}.label`}>{item.label}</div>
+                  <p data-i18n={`context.timeline.${index}.text`}>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="card" style="background: linear-gradient(180deg, rgba(5,12,34,0.95), rgba(13,28,52,0.95));">
+            <h3 data-i18n="pacto.title">{es.pacto.title}</h3>
+            <p style="color:var(--muted);" data-i18n="pacto.subtitle">{es.pacto.subtitle}</p>
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+              {es.pacto.areas.map((area, index) => (
+                <div class="card" style="background: rgba(255,255,255,0.03);" data-i18n-scope={`pacto.areas.${index}`}>
+                  <h4 style="margin-top:0;" data-i18n={`pacto.areas.${index}.title`}>{area.title}</h4>
+                  <ul style="padding-left:16px; margin: 10px 0 0; color: var(--muted); line-height: 1.7;">
+                    {area.items.map((item, itemIndex) => (
+                      <li data-i18n={`pacto.areas.${index}.items.${itemIndex}`}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" style="padding:60px 0;">
+      <div class="container">
+        <h2 class="section-title" data-i18n="team.title">{es.team.title}</h2>
+        <p class="section-subtitle" data-i18n="team.subtitle">{es.team.subtitle}</p>
+        <div class="card-grid">
+          {es.team.members.map((member, index) => (
+            <div class="card" data-i18n-scope={`team.members.${index}`}>
+              <div class="pill" data-i18n={`team.members.${index}.role`}>{member.role}</div>
+              <h3 data-i18n={`team.members.${index}.name`}>{member.name}</h3>
+              <p data-i18n={`team.members.${index}.focus`}>{member.focus}</p>
+              <p style="color: var(--muted);" data-i18n={`team.members.${index}.bio`}>{member.bio}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:60px 0;">
+      <div class="container">
+        <h2 class="section-title" data-i18n="acompanamos.title">{es.acompanamos.title}</h2>
+        <p class="section-subtitle" data-i18n="acompanamos.subtitle">{es.acompanamos.subtitle}</p>
+        <div class="card-grid">
+          {es.acompanamos.items.map((item, index) => (
+            <div class="card" data-i18n={`acompanamos.items.${index}`}>
+              <h3>{`0${index + 1}`}</h3>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+        <div style="text-align:center;margin-top:26px;">
+          <a class="button" href="#consultation" data-i18n="acompanamos.cta">{es.acompanamos.cta}</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultation" class="glow" style="padding:60px 0;">
+      <div class="container grid-2">
+        <div>
+          <p class="badge" data-i18n="form.title">{es.form.title}</p>
+          <h2 class="section-title" style="text-align:left;" data-i18n="form.title">{es.form.title}</h2>
+          <p class="section-subtitle" style="text-align:left;" data-i18n="form.subtitle">{es.form.subtitle}</p>
+          <div class="card">
+            <p data-i18n="form.phone">{es.form.phone}</p>
+            <p style="margin:0;color:var(--muted);">+57 301 681 9540</p>
+          </div>
+        </div>
+        <div class="card">
+          <form>
+            <input name="name" type="text" placeholder="Nombre completo" data-i18n="form.namePlaceholder" />
+            <input name="phone" type="tel" placeholder="Número celular" data-i18n="form.phonePlaceholder" />
+            <label style="display:grid; gap:10px; color: var(--muted);">
+              <span data-i18n="form.budget.label">{es.form.budget.label}</span>
+              <select name="budget">
+                <option data-i18n="form.budget.options.0">{es.form.budget.options[0]}</option>
+                <option data-i18n="form.budget.options.1">{es.form.budget.options[1]}</option>
+                <option data-i18n="form.budget.options.2">{es.form.budget.options[2]}</option>
+              </select>
+            </label>
+            <textarea name="challenge" placeholder="Queremos acompañarte en:" data-i18n="form.challengePlaceholder"></textarea>
+            <label style="display:flex;gap:10px;align-items:flex-start; color: var(--muted);">
+              <input type="checkbox" style="width:auto;" />
+              <span data-i18n="form.checkbox">{es.form.checkbox}</span>
+            </label>
+            <button class="button" type="submit" data-i18n="form.submit">{es.form.submit}</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding:40px 0 80px;">
+      <h2 class="section-title" data-i18n="blog.title">{es.blog.title}</h2>
+      <p class="section-subtitle" data-i18n="blog.subtitle">{es.blog.subtitle}</p>
+      <div class="blog-grid">
+        {blogPosts.map((post) => (
+          <BlogCard
+            href={post.url}
+            title={post.frontmatter.title}
+            excerpt={post.frontmatter.excerpt}
+            date={post.frontmatter.date}
+          />
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:22px;">
+        <a class="button" href="/blog" data-i18n="blog.cta">{es.blog.cta}</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container">
+      EKOU | Consultoría, Tecnología y Producto · 2024
+    </div>
+  </footer>
+
+  <script>
+    const translations = JSON.parse('{"es":'+JSON.stringify(es)+',"en":'+JSON.stringify(en)+'}');
+    const applyTranslations = (lang) => {
+      const dictionary = translations[lang] || translations.es;
+      document.documentElement.lang = lang;
+      const lookup = (key, obj) => key.split('.').reduce((acc, part) => (acc ? acc[part] : undefined), obj);
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const value = lookup(el.dataset.i18n, dictionary);
+        if (typeof value === 'undefined') return;
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.tagName === 'OPTION') {
+          el.placeholder = el.placeholder ? value : el.placeholder;
+          if (el.tagName === 'OPTION') {
+            el.textContent = value;
+          }
+        }
+        if (!el.placeholder) {
+          el.textContent = value;
+        }
+      });
+    };
+
+    const saved = localStorage.getItem('lang') || 'es';
+    applyTranslations(saved);
+
+    window.addEventListener('change-lang', (event) => {
+      const lang = event.detail || 'es';
+      localStorage.setItem('lang', lang);
+      applyTranslations(lang);
+    });
+  </script>
+</Layout>

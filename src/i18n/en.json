@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "what": "What we do",
+    "group": "Group",
+    "process": "Process",
+    "team": "Team",
+    "blog": "Blog",
+    "contact": "Consult"
+  },
+  "hero": {
+    "badge": "Digital Strategy",
+    "title": "Projects that scale real business value",
+    "subtitle": "We build digital products, elevate technology, and stay close to the people leading each initiative.",
+    "cta": "Book a call"
+  },
+  "connect": {
+    "title": "We connect ideas with execution",
+    "subtitle": "Practice first—decisions and actions that quickly turn into value for your team, customers, and community.",
+    "items": [
+      {
+        "title": "Strategy and direction",
+        "text": "We think about the next move with sustainable plans and immediate action."
+      },
+      {
+        "title": "Custom technology",
+        "text": "We turn processes and data into digital and automated products."
+      },
+      {
+        "title": "Partnership",
+        "text": "We grow together with clear guidance and transparent workflows."
+      }
+    ]
+  },
+  "step": {
+    "title": "The next step is usually obvious—strategy plus concrete actions is what makes the difference",
+    "items": [
+      {
+        "title": "Context",
+        "text": "We define the playing field, the company reality, and the desired growth."
+      },
+      {
+        "title": "Data",
+        "text": "We find the main sources to drive decisions, reactions, and prioritization." 
+      },
+      {
+        "title": "Will",
+        "text": "We validate that sponsors are fully open to tackle the challenges." 
+      }
+    ]
+  },
+  "frentes": {
+    "title": "One focus, three fronts",
+    "subtitle": "From the business conversation to the shipped product. Three areas, one team, one plan."
+  },
+  "group": {
+    "title": "EKOU Group",
+    "subtitle": "Three aligned organizations to support companies, talent, and communities.",
+    "items": [
+      {
+        "title": "Ekou Solutions",
+        "text": "Technology solutions to digitize and boost companies with software, RPA, apps, and web products."
+      },
+      {
+        "title": "Ekou Foundations",
+        "text": "Training and guidance for young people in digital careers to build projects that serve their communities."
+      },
+      {
+        "title": "Ekou Real Estate",
+        "text": "Real estate guidance with full transparency and dignified housing solutions." 
+      }
+    ]
+  },
+  "context": {
+    "title": "Context, diagnosis, and build",
+    "subtitle": "Everything starts by understanding the problem. From there we design, build, and deploy with total visibility.",
+    "timeline": [
+      {
+        "label": "Diagnosis & Design",
+        "text": "Blind spots, expectations, and a clear work path."
+      },
+      {
+        "label": "Build",
+        "text": "Architecture, components, and functional prototypes."
+      },
+      {
+        "label": "Monitor & analyze",
+        "text": "Ongoing tracking, data, and iterative adjustments."
+      },
+      {
+        "label": "Acceleration",
+        "text": "Optimization to scale while protecting quality."
+      }
+    ]
+  },
+  "pacto": {
+    "title": "Integral pact",
+    "subtitle": "Three fronts moving together with one goal: business and people value.",
+    "areas": [
+      {
+        "title": "Consulting & Strategy",
+        "items": ["Observe", "Define strategy", "Planning", "Guidance"]
+      },
+      {
+        "title": "Technology",
+        "items": ["Web platforms", "Mobile apps", "AI & Chatbots", "RPA & Integrations", "Headless"]
+      },
+      {
+        "title": "Product",
+        "items": ["Research", "UX/UI Design", "Customer Experience", "PWA", "Value journeys"]
+      },
+      {
+        "title": "Operations",
+        "items": ["Specialized consulting", "Impact KPIs", "Data analysis", "Process automation", "Change management"]
+      }
+    ]
+  },
+  "team": {
+    "title": "Partners and Leadership",
+    "subtitle": "A multidisciplinary team with experience in strategy, product, and technology.",
+    "members": [
+      {"name": "Luis Felipe López", "role": "CEO", "focus": "Operations & Strategy", "bio": "8+ years leading operations and growth strategies for digital products."},
+      {"name": "Julián Ossa", "role": "Technology & Product", "focus": "Discovery, design, development", "bio": "10+ years in product, digital transformation, and software architecture."},
+      {"name": "Johan Arbelaez", "role": "Strategy & Product", "focus": "Consultative partnership", "bio": "Strategy that secures continuous success for clients and users."},
+      {"name": "Juan David Grajales", "role": "Technology & Product", "focus": "Technical implementation", "bio": "Architectures, support, and high-performance technical teams."}
+    ]
+  },
+  "acompanamos": {
+    "title": "How we work with you",
+    "subtitle": "We work side by side so every decision turns into measurable action.",
+    "items": [
+      "Product sessions with sponsors and accountable teams",
+      "Practical materials with repos, Figma, and documentation",
+      "Value journeys and metrics to iterate and scale",
+      "Transparent, ongoing support"
+    ],
+    "cta": "Book your first session"
+  },
+  "form": {
+    "title": "Free technical consult",
+    "subtitle": "Initial diagnosis and action map in 30 minutes to understand your challenge and define priorities.",
+    "phone": "Ask for our slots in your city.",
+    "namePlaceholder": "Full name",
+    "phonePlaceholder": "Mobile number",
+    "challengePlaceholder": "We want to help you with:",
+    "budget": {
+      "label": "Estimated budget",
+      "options": ["Up to 20 million COP", "20 - 70 million COP", "80 million COP or more"]
+    },
+    "checkbox": "I am a consultant, developer, or designer who wants to collaborate with EKOU",
+    "submit": "Schedule"
+  },
+  "blog": {
+    "title": "Blog & resources",
+    "subtitle": "Short articles with learnings and actionable practices for business and tech teams.",
+    "cta": "View articles"
+  }
+}

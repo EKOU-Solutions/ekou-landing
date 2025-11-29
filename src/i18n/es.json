@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "what": "Qué hacemos",
+    "group": "Grupo",
+    "process": "Procesos",
+    "team": "Equipo",
+    "blog": "Blog",
+    "contact": "Consulta"
+  },
+  "hero": {
+    "badge": "Estrategia en Digitalización",
+    "title": "Proyectos que escalan valor y negocios reales",
+    "subtitle": "Desarrollamos productos digitales, elevamos la tecnología y acompañamos a las personas que lideran cada proyecto.",
+    "cta": "Agenda una llamada"
+  },
+  "connect": {
+    "title": "Conectamos ideas con ejecución",
+    "subtitle": "Creemos en la práctica, en unir rápidamente decisiones y acciones que se convierten en valor para tu equipo, clientes y comunidad.",
+    "items": [
+      {
+        "title": "Estrategia y dirección",
+        "text": "Pensamos en el siguiente paso, en planes sostenibles y acción inmediata."
+      },
+      {
+        "title": "Tecnología a la medida",
+        "text": "Transformamos procesos y datos en productos digitales y automatizados."
+      },
+      {
+        "title": "Acompañamiento",
+        "text": "Crecemos juntos, guías claras y procesos visibles para todos los involucrados."
+      }
+    ]
+  },
+  "step": {
+    "title": "El siguiente paso suele ser evidente, pero la estrategia y las acciones concretas son lo que realmente representan la diferencia",
+    "items": [
+      {
+        "title": "Contexto inicial",
+        "text": "Definimos el terreno de juego, la realidad de la empresa y su crecimiento deseado."
+      },
+      {
+        "title": "Datos",
+        "text": "Buscamos las fuentes principales para definir decisión, reacción y priorización." 
+      },
+      {
+        "title": "Voluntad",
+        "text": "Validamos que los sponsors tengan plena apertura a acometer los retos." 
+      }
+    ]
+  },
+  "frentes": {
+    "title": "Un enfoque, tres frentes",
+    "subtitle": "Acompañamos a las empresas desde la conversación de negocio hasta la construcción y despliegue de productos digitales. Tres áreas, un mismo equipo, un mismo plan."
+  },
+  "group": {
+    "title": "Grupo EKOU",
+    "subtitle": "Tres organizaciones alineadas en propósito para acompañar a empresas, talentos y comunidades.",
+    "items": [
+      {
+        "title": "Ekou Solutions",
+        "text": "Soluciones tecnológicas para digitalizar y potenciar empresas con desarrollo de software, RPA, apps y productos web."
+      },
+      {
+        "title": "Ekou Foundations",
+        "text": "Formación y acompañamiento a jóvenes en carreras digitales para que construyan proyectos que sirvan y transformen comunidades."
+      },
+      {
+        "title": "Ekou Inmobiliario",
+        "text": "Acompañamiento en bienes raíces y proyectos de vivienda con transparencia total y soluciones habitacionales dignas." 
+      }
+    ]
+  },
+  "context": {
+    "title": "Contexto, diagnóstico y construcción",
+    "subtitle": "Todo parte de entender el problema. Desde allí diseñamos, construimos y desplegamos soluciones con visibilidad total.",
+    "timeline": [
+      {
+        "label": "Diagnóstico y Diseño",
+        "text": "Puntos ciegos, expectativas y ruta de trabajo clara."
+      },
+      {
+        "label": "Construcción",
+        "text": "Arquitectura, componentes y prototipos funcionales."
+      },
+      {
+        "label": "Monitoreo y análisis",
+        "text": "Seguimiento continuo, datos y ajustes iterativos."
+      },
+      {
+        "label": "Aceleración",
+        "text": "Optimización para escalar y mantener calidad."
+      }
+    ]
+  },
+  "pacto": {
+    "title": "Pacto integral",
+    "subtitle": "Tres frentes que avanzan al tiempo con un mismo objetivo: valor para el negocio y para las personas.",
+    "areas": [
+      {
+        "title": "Consultoría y Estrategia",
+        "items": ["Observar", "Definir la estrategia", "Planeación", "Acompañamiento"]
+      },
+      {
+        "title": "Tecnología",
+        "items": ["Plataformas web", "Aplicaciones Móviles", "IA y Chatbots", "RPA e Integraciones", "Headless"]
+      },
+      {
+        "title": "Productos",
+        "items": ["Investigación", "Diseño UX/UI", "Experiencia del Cliente", "PWA", "Recorridos de Valor"]
+      },
+      {
+        "title": "Operaciones",
+        "items": ["Consultorías especializadas", "KPIs de impacto", "Análisis de Datos", "Automatización de Procesos", "Gestión de cambio"]
+      }
+    ]
+  },
+  "team": {
+    "title": "Socios y Liderazgo",
+    "subtitle": "Equipo multidisciplinario con experiencia en estrategia, producto y tecnología.",
+    "members": [
+      {"name": "Luis Felipe López", "role": "CEO", "focus": "Operaciones y Estrategia", "bio": "+8 años liderando operaciones y estrategias de crecimiento en productos digitales."},
+      {"name": "Julián Ossa", "role": "Tecnología & Producto", "focus": "Descubrimiento, diseño y desarrollo", "bio": "+10 años trabajando en producto, transformación digital y arquitectura de software."},
+      {"name": "Johan Arbelaez", "role": "Estrategia & Producto", "focus": "Acompañamiento consultivo", "bio": "Estrategia para asegurar el éxito continuo de clientes y usuarios."},
+      {"name": "Juan David Grajales", "role": "Tecnología & Producto", "focus": "Implementación técnica", "bio": "Arquitecturas, soporte y equipos técnicos de alto desempeño."}
+    ]
+  },
+  "acompanamos": {
+    "title": "Cómo te acompañamos",
+    "subtitle": "Trabajamos contigo y tu equipo para que cada decisión se traduzca en acción concreta y medible.",
+    "items": [
+      "Sesiones de producto con patrocinadores y equipos a cargo",
+      "Materiales prácticos con repositorios, Figma y documentación",
+      "Rutas de valor y métricas para iterar y escalar",
+      "Soporte continuo y transparente"
+    ],
+    "cta": "Agenda tu sesión inicial"
+  },
+  "form": {
+    "title": "Consulta técnica gratuita",
+    "subtitle": "Diagnóstico inicial y plan de acción en 30 minutos para entender tu reto, definir prioridades y el mapa de ejecución.",
+    "phone": "Pregunta por nuestras agendas en tu ciudad.",
+    "namePlaceholder": "Nombre completo",
+    "phonePlaceholder": "Número celular",
+    "challengePlaceholder": "Queremos acompañarte en:",
+    "budget": {
+      "label": "Presupuesto estimado",
+      "options": ["Hasta 20 millones COP", "20 - 70 millones COP", "80 millones COP en adelante"]
+    },
+    "checkbox": "Soy consultor, desarrollador o diseñador que quiere colaborar con EKOU",
+    "submit": "Agendar"
+  },
+  "blog": {
+    "title": "Blog y recursos",
+    "subtitle": "Artículos cortos con aprendizajes y prácticas accionables para equipos de negocio y tecnología.",
+    "cta": "Ver artículos"
+  }
+}

@@ -1,0 +1,8 @@
+---
+const { title, excerpt, date, href } = Astro.props;
+---
+<a class="blog-card" href={href}>
+  <small>{date}</small>
+  <h3>{title}</h3>
+  <p>{excerpt}</p>
+</a>
