@@ -1,0 +1,53 @@
+---
+// Componente de ejemplo: Card
+---
+
+<div class="card">
+  <h3>Ejemplo de Card</h3>
+  <p>Esta es una card de ejemplo creada para probar JavaScript en Astro.</p>
+  <button id="test-btn">Haz clic para probar JS</button>
+</div>
+
+<script>
+  const btn = document.getElementById('test-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      alert('¡JavaScript funciona! Hola desde Astro.');
+    });
+  }
+</script>
+
+<style>
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .card p {
+    color: #666;
+  }
+
+  .card button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .card button:hover {
+    background: #0056b3;
+  }
+</style>
