@@ -1,6 +1,8 @@
 ---
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
+import ExampleCard from './ExampleCard.astro';
+import Counter from './Counter.jsx';
 ---
 
 <div id="container">
@@ -25,6 +27,8 @@ import background from '../assets/background.svg';
 				</a>
 			</section>
 		</section>
+		<ExampleCard />
+		<Counter client:load />
 	</main>
 
 	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
