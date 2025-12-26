@@ -1,0 +1,32 @@
+---
+import ekouLogo from "../assets/ekouLogo-v1.svg";
+import { Moon } from "lucide-react";
+import { Languages } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+
+const navItemClass =
+  "cursor-pointer text-sm transition-colors duration-150 hover:text-(--color-primary)";
+---
+
+<nav
+  class="w-[94%] h-14 m-auto bg-[#010514] text-(--color-text) flex justify-between items-center px-6 rounded-3xl fixed top-2 left-[3%] border border-(--color-border)"
+>
+  <img src={ekouLogo.src} alt="logo de ekou" />
+  <ul class="flex flex-1 justify-center items-center gap-8">
+    <li class={navItemClass}>Inicio</li>
+    <li class={navItemClass}>Quienes somos</li>
+    <li class={navItemClass}>Como te ayudamos</li>
+    <li class={navItemClass}>Casos de exito</li>
+    <li class={navItemClass}>Blog</li>
+    <li class={`${navItemClass} text-(--color-primary)`}>Hablemos</li>
+  </ul>
+  <div class="flex gap-5 text-(--color-primary)">
+    <button class="cursor-pointer">
+      <Moon />
+    </button>
+    <button class="flex justify-center items-center cursor-pointer">
+      <Languages />
+      <ChevronDown className="w-5 h-5" />
+    </button>
+  </div>
+</nav>
