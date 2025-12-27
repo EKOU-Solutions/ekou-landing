@@ -46,6 +46,8 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: .
+          alias-domains: |
+            preview.ekou.lat
           github-comment: true
 
   deploy_production:
