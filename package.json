@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "lint": "eslint .",
+    "typecheck": "astro check",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .js,.jsx,.astro",
@@ -23,6 +25,7 @@
     "@astrojs/react": "^4.4.2",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.6",
+    "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tailwindcss": "^4.1.18"
