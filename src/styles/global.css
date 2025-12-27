@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+:root {
+  --surface-primary: #020617;
+  --color-text: #ffffff;
+  --color-primary: #53eafd;
+  --color-border: #272a39;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--surface-primary);
+  padding: 0 44px;
+  padding-top: 70px;
+  color: #ffffff;
+}
