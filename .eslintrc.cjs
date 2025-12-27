@@ -13,6 +13,10 @@ module.exports = {
     es2022: true,
     node: true
   },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
   extends: [
     'standard',
     'plugin:astro/recommended',
@@ -24,8 +28,8 @@ module.exports = {
       files: ['*.astro'],
       parser: 'astro-eslint-parser',
       parserOptions: {
-        parser: '@babel/eslint-parser',
-        requireConfigFile: false
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro']
       }
     },
     {
@@ -37,6 +41,13 @@ module.exports = {
         'plugin:jsx-a11y/recommended',
         'prettier'
       ],
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true
+        }
+      },
       settings: {
         react: {
           version: 'detect'
