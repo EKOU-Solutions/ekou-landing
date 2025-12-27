@@ -1,0 +1,14 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "Who we are",
+    "help": "How we help",
+    "success": "Case studies",
+    "blog": "Blog",
+    "contact": "Let’s talk",
+    "translate": {
+      "es": "Spanish",
+      "en": "English"
+    }
+  }
+}
