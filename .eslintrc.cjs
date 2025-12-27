@@ -11,17 +11,13 @@ module.exports = {
   env: {
     browser: true,
     es2022: true,
-    node: true
+    node: true,
   },
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  extends: [
-    'standard',
-    'plugin:astro/recommended',
-    'prettier'
-  ],
+  extends: ['standard', 'plugin:astro/recommended', 'prettier'],
   plugins: ['astro'],
   overrides: [
     {
@@ -29,8 +25,8 @@ module.exports = {
       parser: 'astro-eslint-parser',
       parserOptions: {
         parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro']
-      }
+        extraFileExtensions: ['.astro'],
+      },
     },
     {
       files: ['**/*.{js,jsx}'],
@@ -39,27 +35,21 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:jsx-a11y/recommended',
-        'prettier'
+        'prettier',
       ],
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true
-        }
+          jsx: true,
+        },
       },
       settings: {
         react: {
-          version: 'detect'
-        }
-      }
-    }
+          version: 'detect',
+        },
+      },
+    },
   ],
-  ignorePatterns: [
-    'node_modules/',
-    'dist/',
-    '.astro/'
-  ]
+  ignorePatterns: ['node_modules/', 'dist/', '.astro/'],
 }
-
-

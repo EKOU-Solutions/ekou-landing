@@ -11,17 +11,16 @@ El enfoque central consiste en comprender las necesidades reales del usuario, di
 EKOU se dirige a tres grandes segmentos:
 
 1. **Empresas pequeñas y medianas**
-    
-    Restaurantes, tiendas, academias y negocios similares que requieren soporte tecnológico y estratégico.
-    
+
+   Restaurantes, tiendas, academias y negocios similares que requieren soporte tecnológico y estratégico.
+
 2. **Personas naturales con negocio propio**
-    
-    Emprendedores que buscan optimizar, digitalizar o escalar su operación.
-    
+
+   Emprendedores que buscan optimizar, digitalizar o escalar su operación.
+
 3. **Inversionistas y personas interesadas en el proyecto**
-    
-    Perfiles que desean entender el alcance, propuesta de valor y potencial del ecosistema EKOU.
-    
+
+   Perfiles que desean entender el alcance, propuesta de valor y potencial del ecosistema EKOU.
 
 ---
 
@@ -65,25 +64,24 @@ La landing debe transmitir:
 ## **5. Valores de la marca EKOU**
 
 1. **Orientación al Usuario**
-    
-    Las soluciones nacen de necesidades reales y buscan impacto directo en el negocio.
-    
+
+   Las soluciones nacen de necesidades reales y buscan impacto directo en el negocio.
+
 2. **Transparencia Total**
-    
-    Procesos claros, comunicación abierta y visibilidad en cada etapa del proyecto.
-    
+
+   Procesos claros, comunicación abierta y visibilidad en cada etapa del proyecto.
+
 3. **Acompañamiento Cercano**
-    
-    EKOU guía, explica y avanza junto al cliente; no solo entrega un producto.
-    
+
+   EKOU guía, explica y avanza junto al cliente; no solo entrega un producto.
+
 4. **Innovación Práctica**
-    
-    Tecnología aplicada con sentido, enfocada en resolver problemas reales y aportar valor.
-    
+
+   Tecnología aplicada con sentido, enfocada en resolver problemas reales y aportar valor.
+
 5. **Enfoque en Resultados**
-    
-    Iteración, medición y optimización continua para garantizar crecimiento sostenible.
-    
+
+   Iteración, medición y optimización continua para garantizar crecimiento sostenible.
 
 ---
 
@@ -107,19 +105,18 @@ La marca debe transmitir que detrás hay un equipo con experiencia multidiscipli
 ## **8. Filiales del ecosistema EKOU**
 
 1. **Ekou Foundations**
-    
-    Fundación centrada en empoderamiento juvenil a través de la tecnología.
-    
+
+   Fundación centrada en empoderamiento juvenil a través de la tecnología.
+
 2. **Ekou Solutions**
-    
-    Soluciones tecnológicas personalizadas para la evolución digital de empresas.
-    
+
+   Soluciones tecnológicas personalizadas para la evolución digital de empresas.
+
 3. **Ekou Real State**
-    
-    Servicios inmobiliarios: arriendos, proyectos de vivienda y gestión de finca raíz.
-    
-    Enfoque: “Viviendas dignas que mejoran la calidad de vida”.
-    
+
+   Servicios inmobiliarios: arriendos, proyectos de vivienda y gestión de finca raíz.
+
+   Enfoque: “Viviendas dignas que mejoran la calidad de vida”.
 
 ---
 
