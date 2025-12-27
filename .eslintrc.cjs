@@ -14,36 +14,41 @@ module.exports = {
     node: true
   },
   extends: [
-    "standard",
-    "plugin:astro/recommended"
+    'standard',
+    'plugin:astro/recommended',
+    'prettier'
   ],
-  plugins: ["astro"],
+  plugins: ['astro'],
   overrides: [
     {
-      files: ["*.astro"],
-      parser: "astro-eslint-parser",
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
       parserOptions: {
-        parser: "@babel/eslint-parser",
+        parser: '@babel/eslint-parser',
         requireConfigFile: false
       }
     },
     {
-      files: ["**/*.{js,jsx}"],
+      files: ['**/*.{js,jsx}'],
       extends: [
-        "standard",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
+        'standard',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
+        'prettier'
       ],
       settings: {
-        react: { version: "detect" }
+        react: {
+          version: 'detect'
+        }
       }
     }
   ],
   ignorePatterns: [
-    "dist/",
-    ".astro/",
-    "node_modules/"
+    'node_modules/',
+    'dist/',
+    '.astro/'
   ]
 }
+
 
