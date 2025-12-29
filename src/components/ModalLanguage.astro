@@ -1,12 +1,12 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-import iconES from "../assets/es.svg";
-import iconEN from "../assets/en.svg";
-import es from "../i18n/es.json";
-import en from "../i18n/en.json";
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import iconES from '../assets/es.svg'
+import iconEN from '../assets/en.svg'
+import es from '../i18n/es.json'
+import en from '../i18n/en.json'
 
-const locale = Astro.currentLocale;
-const t = locale === "es" ? es : en;
+const locale = Astro.currentLocale
+const t = locale === 'es' ? es : en
 ---
 
 <nav
@@ -14,30 +14,30 @@ const t = locale === "es" ? es : en;
 >
   <!-- Español -->
   <a
-    href={getRelativeLocaleUrl("es")}
+    href={getRelativeLocaleUrl('es')}
     class={`flex items-center gap-2 px-4 py-2 rounded-xl transition
-      ${locale === "es" ? "bg-white/5" : "opacity-70 hover:opacity-100"}`}
+      ${locale === 'es' ? 'bg-white/5' : 'opacity-70 hover:opacity-100'}`}
   >
     <img
       src={iconES.src}
       alt="icon español"
       class={`w-8 h-8 rounded-full transition
-        ${locale === "es" ? "" : "grayscale"}`}
+        ${locale === 'es' ? '' : 'grayscale'}`}
     />
     <span class="text-(--text-primary) text-sm">{t.navbar.translate.es}</span>
   </a>
 
   <!-- Inglés -->
   <a
-    href={getRelativeLocaleUrl("en")}
+    href={getRelativeLocaleUrl('en')}
     class={`flex items-center gap-2 px-4 py-2 rounded-xl transition
-      ${locale === "en" ? "bg-white/5" : "opacity-70 hover:opacity-100"}`}
+      ${locale === 'en' ? 'bg-white/5' : 'opacity-70 hover:opacity-100'}`}
   >
     <img
       src={iconEN.src}
       alt="icon inglés"
       class={`w-8 h-8 rounded-full transition
-        ${locale === "en" ? "" : "grayscale"}`}
+        ${locale === 'en' ? '' : 'grayscale'}`}
     />
     <span class="text-(--text-primary) text-sm">{t.navbar.translate.en}</span>
   </a>
