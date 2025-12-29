@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-:root {
+* {
+  box-sizing: border-box;
+}
+
+body.dark-mode {
   --surface-primary: #020617;
   --surface-secundary: #010514;
   --color-primary: #53eafd;
@@ -10,15 +14,21 @@
   --text-secundary: #b3bdd2;
 }
 
-* {
-  box-sizing: border-box;
+body.light-mode {
+  --surface-primary: #ffffff;
+  --surface-secundary: #0105147a;
+  --color-primary: #53eafd;
+  --color-secundary: #61107c;
+  --color-border: #272a39;
+  --text-primary: #000000;
+  --text-secundary: #4a4e58;
 }
 
 body {
+  color: var(--text-primary);
   background-color: var(--surface-primary);
-  padding: 0 44px;
+  padding: 0 46px;
   padding-top: 72px;
-  color: #ffffff;
 }
 
 button {
@@ -31,4 +41,11 @@ button:hover {
 
 button:active {
   transform: scale(0.9);
+}
+
+@media (width <= 768px) {
+  body {
+    padding: 0 18px;
+    padding-top: 72px;
+  }
 }
