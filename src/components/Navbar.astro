@@ -1,23 +1,21 @@
 ---
-import ekouLogo from "../assets/ekouLogo-v1.svg";
-import { Moon } from "lucide-react";
-import { Languages } from "lucide-react";
-import { ChevronDown } from "lucide-react";
-import ModalLanguage from "./ModalLanguage.astro";
-import es from "../i18n/es.json";
-import en from "../i18n/en.json";
+import ekouLogo from '../assets/ekouLogo-v1.svg'
+import { Moon , Languages , ChevronDown } from 'lucide-react'
+import ModalLanguage from './ModalLanguage.astro'
+import es from '../i18n/es.json'
+import en from '../i18n/en.json'
 
-const locale = Astro.currentLocale;
-const t = locale === "es" ? es : en;
+const locale = Astro.currentLocale
+const t = locale === 'es' ? es : en
 
 const navLinks = [
-  { href: "#main", label: t.navbar.home },
-  { href: "#quienes-somos", label: t.navbar.about },
-  { href: "#como-te-ayudamos", label: t.navbar.help },
-  { href: "#casos-de-exito", label: t.navbar.success },
-  { href: "#blog", label: t.navbar.blog },
-  { href: "#hablemos", label: t.navbar.contact, highlight: true },
-];
+  { href: '#main', label: t.navbar.home },
+  { href: '#quienes-somos', label: t.navbar.about },
+  { href: '#como-te-ayudamos', label: t.navbar.help },
+  { href: '#casos-de-exito', label: t.navbar.success },
+  { href: '#blog', label: t.navbar.blog },
+  { href: '#hablemos', label: t.navbar.contact, highlight: true },
+]
 ---
 
 <nav
@@ -31,7 +29,7 @@ const navLinks = [
           <a
             href={href}
             class={`cursor-pointer text-sm transition-transform duration-100 ease-in-out hover:text-(--color-primary)
-               ${highlight && "text-(--color-primary) hover:text-(--text-primary)"}`}
+               ${highlight && 'text-(--color-primary) hover:text-(--text-primary)'}`}
           >
             {label}
           </a>
@@ -43,15 +41,9 @@ const navLinks = [
     <button class="cursor-pointer">
       <Moon />
     </button>
-    <button
-      id="language-btn"
-      class="flex justify-center items-center cursor-pointer"
-    >
+    <button id="language-btn" class="flex justify-center items-center cursor-pointer">
       <Languages />
-      <ChevronDown
-        id="arrow"
-        className="w-5 h-5 transition-transform duration-200"
-      />
+      <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
     </button>
 
     <section id="language-modal" class="lang-modal fixed right-14 top-18">
@@ -61,23 +53,23 @@ const navLinks = [
 </nav>
 
 <script>
-  const btn = document.getElementById("language-btn");
-  const modal = document.getElementById("language-modal");
-  const arrow = document.getElementById("arrow");
+  const btn = document.getElementById('language-btn')
+  const modal = document.getElementById('language-modal')
+  const arrow = document.getElementById('arrow')
 
   if (btn && modal) {
-    btn.addEventListener("click", (event) => {
-      event.stopPropagation();
-      const isOpen = modal.classList.toggle("open");
-      arrow?.classList.toggle("rotate-180", isOpen);
-    });
+    btn.addEventListener('click', (event) => {
+      event.stopPropagation()
+      const isOpen = modal.classList.toggle('open')
+      arrow?.classList.toggle('rotate-180', isOpen)
+    })
 
-    modal.addEventListener("click", (event) => event.stopPropagation());
+    modal.addEventListener('click', (event) => event.stopPropagation())
 
-    document.addEventListener("click", () => {
-      modal.classList.remove("open");
-      arrow?.classList.remove("rotate-180");
-    });
+    document.addEventListener('click', () => {
+      modal.classList.remove('open')
+      arrow?.classList.remove('rotate-180')
+    })
   }
 </script>
 
