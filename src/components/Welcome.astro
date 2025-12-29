@@ -1,9 +1,86 @@
 ---
-
+import { CircleCheck } from "lucide-react";
+import { Sparkles } from "lucide-react";
 ---
 
-<section id="main">
-  <main>welcome</main>
+<section
+  id="main"
+  class="flex items-center text-(--text-primary) mb-20 md:mb-34 relative z-10"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-28 items-center">
+    <!-- TEXTO -->
+    <div class="space-y-4">
+      <span class="text-sm text-(--color-primary) flex items-center gap-2 mt-4">
+        <Sparkles className="w-4 h-4" /> Bienvenido a EKOU
+      </span>
+
+      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold md:lead ing-16">
+        Tecnología e innovación que impulsan tu
+        <span
+          class="bg-linear-to-r from-(--color-primary) to-(--color-secundary) bg-clip-text text-transparent"
+        >
+          crecimiento y generan impacto real.</span
+        >
+      </h1>
+
+      <p class="text-(--text-secundary) max-w-xl">
+        Acompañamos a empresas y emprendedores en su evolución digital,
+        integrando estrategia, tecnología e innovación para construir soluciones
+        alineadas con sus objetivos de negocio.
+      </p>
+
+      <button
+        class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-black font-semibold hover:opacity-70 border border-(--color-border) cursor-pointer"
+      >
+        Hablemos de tu proyecto
+      </button>
+
+      <!-- FEATURES -->
+      <div class="flex flex-wrap gap-6 mt-2 text-(--text-secundary)">
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-(--color-primary)"><CircleCheck /></span>
+          Estrategia con propósito
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-(--color-primary)"><CircleCheck /></span>
+          Ejecución integral
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-(--color-primary)"><CircleCheck /></span>
+          Acompañamiento continuo
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGEN -->
+    <div class="relative flex justify-center">
+      <div
+        class="rounded-[3rem] bg-[url('/grupoEkou.webp')] bg-cover bg- bg-no-repeat p-4 overflow-hidden"
+      >
+        <!-- Opacity -->
+        <div class="absolute inset-0 bg-(--surface-primary)/90"></div>
+        <!-- Glow -->
+        <div
+          class="absolute w-140 h-115 rounded-full rotate-180
+           bg-linear-to-br
+           from-(--color-primary)
+           via-(--color-secundary)
+           to-transparent
+           blur-[90px] opacity-30 pointer-events-none"
+        >
+        </div>
+        <img
+          src="/grupoEkou.webp"
+          alt="Equipo EKOU"
+          class="w-full h-full object-cover relative z-10"
+        />
+      </div>
+    </div>
+  </div>
 </section>
 
-<style></style>
+<!-- DECORACION -->
+<div
+  class="w-full h-50 lg:h-140 bg-[url('/decoration1.svg')] absolute z-0 left-0 -bottom-90 lg:-bottom-72 bg-cover bg-no-repeat p-4 overflow-hidden"
+>
+</div>
