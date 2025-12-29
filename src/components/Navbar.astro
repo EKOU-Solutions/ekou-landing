@@ -1,6 +1,6 @@
 ---
 import ekouLogo from "../assets/ekouLogo-v1.svg";
-import { Moon } from "lucide-react";
+import ThemeController from "./ThemeController";
 import { Languages } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 import ModalLanguage from "./ModalLanguage.astro";
@@ -21,7 +21,7 @@ const navLinks = [
 ---
 
 <nav
-  class="w-[94%] h-14 m-auto bg-(--surface-secundary) text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed top-2 left-[3%] border border-(--color-border)"
+  class="w-[94%] h-14 m-auto bg-(--surface-secundary)/80 backdrop-blur-md text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed z-50 top-2 left-[3%] border border-(--color-border)"
 >
   <img src={ekouLogo.src} alt="logo de ekou" />
   <ul class="flex flex-1 justify-center items-center gap-8">
@@ -40,9 +40,7 @@ const navLinks = [
     }
   </ul>
   <div class="relative flex gap-5 text-(--color-primary)">
-    <button class="cursor-pointer">
-      <Moon />
-    </button>
+    <ThemeController client:load />
     <button
       id="language-btn"
       class="flex justify-center items-center cursor-pointer"
@@ -54,7 +52,7 @@ const navLinks = [
       />
     </button>
 
-    <section id="language-modal" class="lang-modal fixed right-14 top-18">
+    <section id="language-modal" class="lang-modal fixed right-2 top-16">
       <ModalLanguage />
     </section>
   </div>
