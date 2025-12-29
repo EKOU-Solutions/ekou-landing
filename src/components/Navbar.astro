@@ -1,11 +1,10 @@
 ---
-import ekouLogo from "../assets/ekouLogo-v1.svg";
-import ThemeController from "./ThemeController";
-import { Languages } from "lucide-react";
-import { ChevronDown } from "lucide-react";
-import ModalLanguage from "./ModalLanguage.astro";
-import es from "../i18n/es.json";
-import en from "../i18n/en.json";
+import ekouLogo from '../assets/ekouLogo-v1.svg'
+import ThemeController from './ThemeController'
+import { ChevronDown, Languages } from 'lucide-react'
+import ModalLanguage from './ModalLanguage.astro'
+import es from '../i18n/es.json'
+import en from '../i18n/en.json'
 
 const locale = Astro.currentLocale
 const t = locale === 'es' ? es : en
@@ -41,10 +40,7 @@ const navLinks = [
   </ul>
   <div class="relative flex gap-5 text-(--color-primary)">
     <ThemeController client:load />
-    <button
-      id="language-btn"
-      class="flex justify-center items-center cursor-pointer"
-    >
+    <button id="language-btn" class="flex justify-center items-center cursor-pointer">
       <Languages />
       <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
     </button>

@@ -1,19 +1,17 @@
-import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Moon, Sun } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
 
 const ThemeController = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
   useEffect(() => {
-    document.body.className = isDarkMode ? "dark-mode" : "light-mode";
-  }, [isDarkMode]);
+    document.body.className = isDarkMode ? 'dark-mode' : 'light-mode'
+  }, [isDarkMode])
 
   return (
     <>
       <button
-        className={`cursor-pointer theme-toggle ${
-          isDarkMode ? "is-dark" : "is-light"
-        }`}
+        className={`cursor-pointer theme-toggle ${isDarkMode ? 'is-dark' : 'is-light'}`}
         onClick={() => setIsDarkMode(!isDarkMode)}
         aria-label="Toggle theme"
       >
@@ -57,7 +55,7 @@ const ThemeController = () => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
 
-export default ThemeController;
+export default ThemeController
