@@ -1,9 +1,78 @@
 ---
+import { CircleCheck, Sparkles } from 'lucide-react'
+import es from '../i18n/es.json'
+import en from '../i18n/en.json'
 
+const locale = Astro.currentLocale
+const t = locale === 'es' ? es : en
 ---
 
-<section id="main">
-  <main>welcome</main>
-</section>
+<section id="main" class="flex items-center text-(--text-primary) relative z-10">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
+    <!-- TEXTO -->
+    <div class="space-y-4">
+      <span class="text-sm text-(--color-primary) flex items-center gap-2 mt-4">
+        <Sparkles className="w-4 h-4" />
+        {t.welcome.badge}
+      </span>
 
-<style></style>
+      <h1 class="text-5xl xl:text-6xl font-bold">
+        {t.welcome.title}
+        <span
+          class="bg-linear-to-r from-(--color-primary) to-(--color-secundary) bg-clip-text text-transparent"
+        >
+          {t.welcome.titleHighlight}
+        </span>
+      </h1>
+
+      <p class="text-(--text-secundary) max-w-2xl lg:max-w-xl">
+        {t.welcome.description}
+      </p>
+
+      <button
+        class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-black font-semibold hover:opacity-70 border border-(--color-border) cursor-pointer"
+      >
+        {t.welcome.cta}
+      </button>
+
+      <!-- FEATURES -->
+      <div class="flex flex-wrap gap-4 mt-2 text-(--text-secundary) text-[12px] md:text-sm">
+        {
+          t.welcome.features.map((item) => (
+            <div class="flex items-center gap-2">
+              <span class="text-(--color-primary)">
+                <CircleCheck />
+              </span>
+              {item}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- IMAGEN -->
+    <div class="relative flex justify-center">
+      <div
+        class="rounded-[3rem] bg-[url('/grupoEkou.webp')] bg-cover bg- bg-no-repeat p-4 overflow-hidden"
+      >
+        <!-- Opacity -->
+        <div class="absolute inset-0 bg-(--surface-primary)/90"></div>
+        <!-- Glow -->
+        <div
+          class="absolute right-0 w-[70%] h-115 rounded-full rotate-180
+           bg-linear-to-br
+           from-(--color-primary)
+           via-(--color-secundary)
+           to-transparent
+           blur-[70px] opacity-25 pointer-events-none"
+        >
+        </div>
+        <img
+          src="/grupoEkou.webp"
+          alt="Equipo EKOU"
+          class="w-full h-full object-cover relative z-10"
+        />
+      </div>
+    </div>
+  </div>
+</section>

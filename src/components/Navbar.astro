@@ -1,6 +1,7 @@
 ---
 import ekouLogo from '../assets/ekouLogo-v1.svg'
-import { Moon , Languages , ChevronDown } from 'lucide-react'
+import ThemeController from './ThemeController'
+import { ChevronDown, Languages, Menu } from 'lucide-react'
 import ModalLanguage from './ModalLanguage.astro'
 import es from '../i18n/es.json'
 import en from '../i18n/en.json'
@@ -19,10 +20,10 @@ const navLinks = [
 ---
 
 <nav
-  class="w-[94%] h-14 m-auto bg-(--surface-secundary) text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed top-2 left-[3%] border border-(--color-border)"
+  class="w-[94%] h-14 m-auto bg-(--surface-secundary)/80 backdrop-blur-md text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed z-50 top-2 left-[3%] border border-(--color-border)"
 >
   <img src={ekouLogo.src} alt="logo de ekou" />
-  <ul class="flex flex-1 justify-center items-center gap-8">
+  <ul class="hidden lg:flex flex-1 justify-center items-center gap-8">
     {
       navLinks.map(({ href, label, highlight }) => (
         <li>
@@ -37,16 +38,18 @@ const navLinks = [
       ))
     }
   </ul>
-  <div class="relative flex gap-5 text-(--color-primary)">
-    <button class="cursor-pointer">
-      <Moon />
-    </button>
+  <div class="relative flex items-center gap-5 text-(--color-primary)">
+    <ThemeController client:load />
     <button id="language-btn" class="flex justify-center items-center cursor-pointer">
       <Languages />
       <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
     </button>
+    <!--menu hamburguesa -->
+    <button class="lg:hidden cursor-pointer" aria-label="Open menu">
+      <Menu />
+    </button>
 
-    <section id="language-modal" class="lang-modal fixed right-14 top-18">
+    <section id="language-modal" class="lang-modal fixed right-2 top-16">
       <ModalLanguage />
     </section>
   </div>

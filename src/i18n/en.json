@@ -5,10 +5,18 @@
     "help": "How we help",
     "success": "Case studies",
     "blog": "Blog",
-    "contact": "Let’s talk",
+    "contact": "Let's talk",
     "translate": {
       "es": "Spanish",
       "en": "English"
     }
+  },
+  "welcome": {
+    "badge": "Welcome to EKOU",
+    "title": "Technology and innovation that drive your",
+    "titleHighlight": "growth and generate real impact.",
+    "description": "We support companies and entrepreneurs in their digital evolution, integrating strategy, technology, and innovation to build solutions aligned with their business goals.",
+    "cta": "Let's talk about your project",
+    "features": ["Purpose-driven strategy", "End-to-end execution", "Ongoing support"]
   }
 }
