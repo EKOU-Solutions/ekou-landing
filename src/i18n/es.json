@@ -7,8 +7,16 @@
     "blog": "Blog",
     "contact": "Hablemos",
     "translate": {
-      "es": "Español",
+      "es": "Espanol",
       "en": "Ingles"
     }
+  },
+  "welcome": {
+    "badge": "Bienvenido a EKOU",
+    "title": "Tecnologia e innovacion que impulsan tu",
+    "titleHighlight": "crecimiento y generan impacto real.",
+    "description": "Acompanamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
+    "cta": "Hablemos de tu proyecto",
+    "features": ["Estrategia con proposito", "Ejecucion integral", "Acompanamiento continuo"]
   }
 }
