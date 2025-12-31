@@ -119,3 +119,40 @@ import '../styles/global.css'
     }
   })()
 </script>
+
+<script is:inline>
+  ;(() => {
+    if (typeof window === 'undefined') return
+    const links = Array.from(document.querySelectorAll('[data-section-link]'))
+    const sections = Array.from(document.querySelectorAll('section[id]'))
+    if (!links.length || !sections.length) return
+
+    const setActive = (id) => {
+      const hash = `#${id}`
+      links.forEach((link) => {
+        link.classList.toggle('is-active', link.getAttribute('data-section-link') === hash)
+      })
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+        if (!visible.length) return
+        setActive(visible[0].target.id)
+      },
+      {
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: [0, 0.25, 0.6],
+      }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+
+    const initial = window.location.hash?.slice(1)
+    if (initial) {
+      setActive(initial)
+    }
+  })()
+</script>

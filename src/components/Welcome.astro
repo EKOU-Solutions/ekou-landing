@@ -5,6 +5,8 @@ import en from '../i18n/en.json'
 
 const locale = Astro.currentLocale
 const t = locale === 'es' ? es : en
+const titleLines = t.welcome.title.split('\n')
+const titleHighlightLines = t.welcome.titleHighlight.split('\n')
 ---
 
 <section id="main" class="text-(--text-primary) relative z-10">
@@ -17,11 +19,25 @@ const t = locale === 'es' ? es : en
       </span>
 
       <h1 class="text-5xl xl:text-6xl font-bold">
-        {t.welcome.title}
+        {
+          titleLines.map((line, index) => (
+            <>
+              {line}
+              {index < titleLines.length - 1 && <br />}
+            </>
+          ))
+        }
         <span
           class="bg-linear-to-r from-(--color-primary) to-(--color-secundary) bg-clip-text text-transparent"
         >
-          {t.welcome.titleHighlight}
+          {
+            titleHighlightLines.map((line, index) => (
+              <>
+                {line}
+                {index < titleHighlightLines.length - 1 && <br />}
+              </>
+            ))
+          }
         </span>
       </h1>
 
@@ -74,19 +90,5 @@ const t = locale === 'es' ? es : en
         />
       </div>
     </div>
-  </div>
-  <div class="mt-12 text-(--text-secundary) max-w-2xl">
-    <p class="mb-4">
-      Texto temporal para visualizar el scroll. Aqui va contenido introductorio sobre EKOU, su
-      propuesta y el valor para el cliente.
-    </p>
-    <p class="mb-4">
-      Este bloque se reemplazara por copy real. Por ahora sirve para ocupar espacio y ver el
-      comportamiento del desplazamiento.
-    </p>
-    <p>
-      Seguimos agregando contenido dummy para dar altura a la seccion y comprobar el offset del
-      header fijo.
-    </p>
   </div>
 </section>
