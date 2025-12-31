@@ -7,7 +7,7 @@ const locale = Astro.currentLocale
 const t = locale === 'es' ? es : en
 ---
 
-<section id="main" class="flex items-center text-(--text-primary) relative z-10">
+<section id="main" class="text-(--text-primary) relative z-10">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
     <!-- TEXTO -->
     <div class="space-y-4">
@@ -74,5 +74,19 @@ const t = locale === 'es' ? es : en
         />
       </div>
     </div>
+  </div>
+  <div class="mt-12 text-(--text-secundary) max-w-2xl">
+    <p class="mb-4">
+      Texto temporal para visualizar el scroll. Aqui va contenido introductorio sobre EKOU, su
+      propuesta y el valor para el cliente.
+    </p>
+    <p class="mb-4">
+      Este bloque se reemplazara por copy real. Por ahora sirve para ocupar espacio y ver el
+      comportamiento del desplazamiento.
+    </p>
+    <p>
+      Seguimos agregando contenido dummy para dar altura a la seccion y comprobar el offset del
+      header fijo.
+    </p>
   </div>
 </section>

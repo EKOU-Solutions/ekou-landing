@@ -2,10 +2,23 @@ import { Moon, Sun } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 
 const ThemeController = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const getInitialTheme = () => {
+    if (typeof window === 'undefined') return true
+    const saved = localStorage.getItem('ekou-theme')
+    if (saved === 'dark') return true
+    if (saved === 'light') return false
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme)
 
   useEffect(() => {
-    document.body.className = isDarkMode ? 'dark-mode' : 'light-mode'
+    const themeClass = isDarkMode ? 'dark-mode' : 'light-mode'
+    document.body.classList.remove('dark-mode', 'light-mode')
+    document.documentElement.classList.remove('dark-mode', 'light-mode')
+    document.body.classList.add(themeClass)
+    document.documentElement.classList.add(themeClass)
+    localStorage.setItem('ekou-theme', isDarkMode ? 'dark' : 'light')
   }, [isDarkMode])
 
   return (

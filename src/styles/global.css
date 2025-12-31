@@ -4,7 +4,13 @@
   box-sizing: border-box;
 }
 
-body.dark-mode {
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body.dark-mode,
+html.dark-mode body {
   --surface-primary: #020617;
   --surface-secundary: #010514;
   --color-primary: #53eafd;
@@ -14,7 +20,8 @@ body.dark-mode {
   --text-secundary: #b3bdd2;
 }
 
-body.light-mode {
+body.light-mode,
+html.light-mode body {
   --surface-primary: #ffffff;
   --surface-secundary: #0105147a;
   --color-primary: #53eafd;
@@ -29,6 +36,10 @@ body {
   background-color: var(--surface-primary);
   padding: 0 46px;
   padding-top: 72px;
+}
+
+section {
+  scroll-margin-top: 96px;
 }
 
 button {
