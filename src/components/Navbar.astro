@@ -15,7 +15,7 @@ const navLinks = [
   { href: '#como-te-ayudamos', label: t.navbar.help },
   { href: '#casos-de-exito', label: t.navbar.success },
   { href: '#blog', label: t.navbar.blog },
-  { href: '#hablemos', label: t.navbar.contact, highlight: true },
+  { href: '#hablemos', label: t.navbar.contact },
 ]
 ---
 
@@ -30,8 +30,8 @@ const navLinks = [
         <li>
           <a
             href={href}
-            class={`cursor-pointer text-sm transition-transform duration-100 ease-in-out hover:text-(--color-primary)
-               ${highlight && 'text-(--color-primary) hover:text-(--text-primary)'}`}
+            data-section-link={href}
+            class="cursor-pointer text-sm transition-transform duration-100 ease-in-out hover:text-(--color-primary)"
           >
             {label}
           </a>
@@ -91,5 +91,9 @@ const navLinks = [
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  a.is-active {
+    color: var(--color-primary);
   }
 </style>
