@@ -1,0 +1,69 @@
+---
+import { Moon, Sun } from 'lucide-react'
+---
+
+<button id="theme-toggle" class="cursor-pointer theme-toggle is-dark" aria-label="Toggle theme">
+  <span class="theme-icon theme-icon--moon">
+    <Sun />
+  </span>
+  <span class="theme-icon theme-icon--sun">
+    <Moon />
+  </span>
+</button>
+
+<script>
+  const root = document.documentElement
+  const btn = document.getElementById('theme-toggle')
+  const storageKey = 'theme'
+
+  const setTheme = (theme) => {
+    root.dataset.theme = theme
+    if (!btn) return
+    btn.classList.toggle('is-dark', theme === 'dark')
+    btn.classList.toggle('is-light', theme === 'light')
+  }
+
+  if (btn) {
+    const storedTheme = localStorage.getItem(storageKey)
+    setTheme(storedTheme || root.dataset.theme || 'dark')
+    btn.addEventListener('click', () => {
+      const next = root.dataset.theme === 'light' ? 'dark' : 'light'
+      setTheme(next)
+      localStorage.setItem(storageKey, next)
+    })
+  }
+</script>
+
+<style>
+  .theme-toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .theme-icon {
+    position: absolute;
+    opacity: 0;
+    transition:
+      opacity 200ms ease,
+      transform 200ms ease;
+  }
+
+  .theme-icon--moon {
+    transform: translateX(-10px);
+  }
+
+  .theme-icon--sun {
+    transform: translateX(10px);
+  }
+
+  .theme-toggle.is-dark .theme-icon--moon,
+  .theme-toggle.is-light .theme-icon--sun {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
