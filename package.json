@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.jsx,.astro",
     "typecheck": "astro check",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint . --ext .js,.jsx,.astro",
     "lint:fix": "eslint . --ext .js,.jsx,.astro --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
@@ -28,7 +27,8 @@
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.5",
