@@ -1,6 +1,7 @@
 ---
 import ekouLogo from '../assets/ekouLogo-v1.svg'
 import ThemeController from './ThemeController.astro'
+import MobileMenu from './MobileMenu.astro'
 import {
   BookOpen,
   Briefcase,
@@ -28,7 +29,6 @@ const navLinks = [
   { href: '#blog', label: navbar.blog, icon: BookOpen },
   { href: '#hablemos', label: navbar.contact, icon: MessageCircle },
 ]
-const lastNavIndex = navLinks.length - 1
 ---
 
 <nav
@@ -74,43 +74,9 @@ const lastNavIndex = navLinks.length - 1
       <ModalLanguage />
     </section>
   </div>
-
-  <section
-    id="mobile-menu"
-    class="mobile-menu absolute left-0 top-full -mt-1 w-full lg:hidden text-(--text-primary) z-40"
-    aria-label="Main navigation"
-  >
-    <div
-      class="rounded-3xl bg-(--surface-secundary)/80 backdrop-blur-md border border-(--color-border) shadow-lg px-6 py-6"
-    >
-      <ul class="flex flex-col items-stretch gap-4 text-left">
-        {
-          navLinks.map(({ href, label, icon: Icon }, index) => (
-            <li class={index === lastNavIndex ? 'flex items-center gap-3' : ''}>
-              <a
-                href={href}
-                data-section-link={href}
-                class={`mobile-menu-link flex items-center justify-start gap-3 cursor-pointer text-lg transition-transform duration-100 ease-in-out hover:text-(--color-primary) ${
-                  index === lastNavIndex ? 'flex-1' : 'w-full'
-                }`}
-              >
-                <span class="mobile-menu-icon">
-                  <Icon className="w-5 h-5" aria-hidden="true" />
-                </span>
-                <span>{label}</span>
-              </a>
-              {index === lastNavIndex && (
-                <div class="flex items-center justify-center scale-130">
-                  <ThemeController />
-                </div>
-              )}
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
 </nav>
+
+<MobileMenu navLinks={navLinks} />
 
 <script>
   const btn = document.getElementById('language-btn')
@@ -124,9 +90,34 @@ const lastNavIndex = navLinks.length - 1
     arrow?.classList.remove('rotate-180')
   }
 
-  const closeMobileMenu = () => {
-    mobileMenu?.classList.remove('open')
-    if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false')
+  const isMobileMenuOpen = () => mobileMenu?.classList.contains('open')
+
+  const setMobileMenuState = (isOpen) => {
+    if (!mobileMenu) return
+    mobileMenu.classList.toggle('open', isOpen)
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen))
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', String(isOpen))
+  }
+
+  const focusFirstMenuLink = () => {
+    const firstLink = mobileMenu?.querySelector('a[href^="#"]')
+    if (firstLink instanceof HTMLElement) {
+      firstLink.focus({ preventScroll: true })
+    }
+  }
+
+  const openMobileMenu = () => {
+    if (!mobileMenu) return
+    setMobileMenuState(true)
+    requestAnimationFrame(focusFirstMenuLink)
+  }
+
+  const closeMobileMenu = ({ restoreFocus = true } = {}) => {
+    if (!isMobileMenuOpen()) return
+    setMobileMenuState(false)
+    if (restoreFocus && menuBtn instanceof HTMLElement) {
+      menuBtn.focus({ preventScroll: true })
+    }
   }
 
   const getClosestLink = (event) => {
@@ -160,21 +151,24 @@ const lastNavIndex = navLinks.length - 1
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', (event) => {
       event.stopPropagation()
-      const isOpen = mobileMenu.classList.toggle('open')
-      menuBtn.setAttribute('aria-expanded', String(isOpen))
+      if (isMobileMenuOpen()) {
+        closeMobileMenu({ restoreFocus: true })
+        return
+      }
+      openMobileMenu()
     })
 
     mobileMenu.addEventListener('click', (event) => {
       event.stopPropagation()
       const link = getClosestLink(event)
       if (!link) return
-      closeMobileMenu()
+      closeMobileMenu({ restoreFocus: false })
     })
   }
 
   document.addEventListener('click', () => {
     closeLanguage()
-    closeMobileMenu()
+    closeMobileMenu({ restoreFocus: true })
   })
 
   document.addEventListener('keydown', (event) => {
@@ -200,45 +194,14 @@ const lastNavIndex = navLinks.length - 1
     pointer-events: auto;
   }
 
-  .mobile-menu {
-    opacity: 0;
-    transform: translateY(-8px);
-    pointer-events: none;
-    transition:
-      opacity 200ms ease,
-      transform 200ms ease;
-  }
-
-  .mobile-menu.open {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
   a.is-active {
     color: var(--color-primary);
   }
 
-  .mobile-menu a .mobile-menu-icon {
-    color: #ffffff;
-    transition: color 160ms ease;
-  }
-
-  .mobile-menu-link {
-    padding: 10px 14px;
-    border-radius: 8px;
-    transition:
-      background-color 160ms ease,
-      color 160ms ease;
-  }
-
-  .mobile-menu-link:hover {
-    background-color: #0d1020;
-  }
-
-  .mobile-menu a:hover .mobile-menu-icon,
-  .mobile-menu a.is-active .mobile-menu-icon {
-    color: var(--color-primary);
+  #mobile-menu-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 9999px;
   }
 
   a[data-section-link] {
