@@ -1,5 +1,8 @@
 ---
 import { Sparkles } from 'lucide-react'
+import InnovationIcon from './icons/InnovationIcon.jsx'
+import ServiceIcon from './icons/ServiceIcon.jsx'
+import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
 ---
 
 <section id="quienes-somos" class="-mt-20 md:-mt-60 w-full">
@@ -11,10 +14,42 @@ import { Sparkles } from 'lucide-react'
     <h2 class="mt-3 text-center text-white text-4xl md:text-7xl font-semibold">
       Conectamos ideas con ejecucion
     </h2>
-    <p class="mt-6 mb-4 text-center text-(--text-secundary) max-w-2xl text-xl">
-      Acompañamos a organizaciones en el diseño y desarrollo de soluciones innovadoras, adaptadas a
-      sus necesidades específicas, impulsando su crecimiento, generando alianzas estratégicas y
+    <p class="mt-6 mb-4 text-center text-(--text-secundary) max-w-2xl">
+      Acompanamos a organizaciones en el diseno y desarrollo de soluciones innovadoras, adaptadas a
+      sus necesidades especificas, impulsando su crecimiento, generando alianzas estrategicas y
       optimizando procesos hacia un mercado global.
     </p>
+    <div class="mt-8 grid w-full max-w-[1400px] gap-1 md:grid-cols-3 md:gap-32 lg:gap-36">
+      <div
+        class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0f1627] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+      >
+        <InnovationIcon className="mx-auto mb-4 h-16 w-16 text-white" />
+        <h3 class="text-xl font-semibold text-white">Innovacion</h3>
+        <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+          Transformamos retos en soluciones escalables, diseniamos productos y procesos medibles que
+          permiten evaluar y mejorar el impacto en cada iteracion.
+        </p>
+      </div>
+      <div
+        class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#131224] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 rotate-3 translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+      >
+        <ServiceIcon className="mx-auto mb-4 h-14 w-14 text-white" />
+        <h3 class="text-xl font-semibold text-white">Servicio</h3>
+        <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+          Acompanamiento cercano y ejecucion agil con equipos dedicados, validacion continua y
+          entregas incrementales. Priorizamos el impacto medible y la claridad en cada etapa.
+        </p>
+      </div>
+      <div
+        class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0d1223] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+      >
+        <ProfessionalismIcon className="mx-auto mb-4 h-[80px] w-[80px] text-white" />
+        <h3 class="text-xl font-semibold text-white">Profesionalismo</h3>
+        <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+          Establecemos procesos claros y estandares de calidad, aplicando gobernanza tecnica solida
+          para garantizar trazabilidad, confianza y mejora continua en cada proyecto.
+        </p>
+      </div>
+    </div>
   </main>
 </section>
