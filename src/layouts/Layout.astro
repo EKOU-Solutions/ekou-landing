@@ -1,27 +1,20 @@
 ---
 import '../styles/global.css'
+import { getLangFromUrl } from '../i18n/utils/config'
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang} data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>EKOU SOLUTIONS</title>
-    <script is:inline>
-      ;(() => {
-        const saved = localStorage.getItem('ekou-theme')
-        const prefersDark =
-          saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        const themeClass = prefersDark ? 'dark-mode' : 'light-mode'
-        document.documentElement.classList.add(themeClass)
-        if (document.body) document.body.classList.add(themeClass)
-      })()
-    </script>
   </head>
-  <body class="dark-mode">
+  <body>
     <slot />
   </body>
 </html>
@@ -38,10 +31,10 @@ import '../styles/global.css'
 <script is:inline>
   ;(() => {
     if (typeof window === 'undefined') return
-    const SCROLL_DURATION = 700
+    const SCROLL_DURATION = 200
     const EXTRA_OFFSET = 12
 
-    const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
+    const easeLinear = (t) => t
 
     const getHeaderOffset = () => {
       const header = document.querySelector('[data-site-header]')
@@ -59,7 +52,7 @@ import '../styles/global.css'
         if (startTime === undefined) startTime = timestamp
         const elapsed = timestamp - startTime
         const progress = Math.min(elapsed / duration, 1)
-        const eased = easeInOutCubic(progress)
+        const eased = easeLinear(progress)
         window.scrollTo(0, startY + diff * eased)
         if (elapsed < duration) requestAnimationFrame(step)
       }

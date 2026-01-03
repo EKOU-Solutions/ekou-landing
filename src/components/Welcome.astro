@@ -1,12 +1,12 @@
 ---
 import { CircleCheck, Sparkles } from 'lucide-react'
-import es from '../i18n/es.json'
-import en from '../i18n/en.json'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
-const locale = Astro.currentLocale
-const t = locale === 'es' ? es : en
-const titleLines = t.welcome.title.split('\n')
-const titleHighlightLines = t.welcome.titleHighlight.split('\n')
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const welcome = t('welcome')
+const titleLines = welcome.title.split('\n')
+const titleHighlightLines = welcome.titleHighlight.split('\n')
 ---
 
 <section id="main" class="text-(--text-primary) relative z-10">
@@ -15,7 +15,7 @@ const titleHighlightLines = t.welcome.titleHighlight.split('\n')
     <div class="space-y-4">
       <span class="text-sm text-(--color-primary) flex items-center gap-2 mt-4">
         <Sparkles className="w-4 h-4" />
-        {t.welcome.badge}
+        {welcome.badge}
       </span>
 
       <h1 class="text-5xl xl:text-6xl font-bold">
@@ -42,19 +42,19 @@ const titleHighlightLines = t.welcome.titleHighlight.split('\n')
       </h1>
 
       <p class="text-(--text-secundary) max-w-2xl lg:max-w-xl">
-        {t.welcome.description}
+        {welcome.description}
       </p>
 
       <button
         class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-black font-semibold hover:opacity-70 border border-(--color-border) cursor-pointer"
       >
-        {t.welcome.cta}
+        {welcome.cta}
       </button>
 
       <!-- FEATURES -->
       <div class="flex flex-wrap gap-4 mt-2 text-(--text-secundary) text-[12px] md:text-sm">
         {
-          t.welcome.features.map((item) => (
+          welcome.features.map((item) => (
             <div class="flex items-center gap-2">
               <span class="text-(--color-primary)">
                 <CircleCheck />

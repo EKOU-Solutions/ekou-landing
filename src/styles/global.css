@@ -9,8 +9,7 @@ html {
   scroll-padding-top: 96px;
 }
 
-body.dark-mode,
-html.dark-mode body {
+:root {
   --surface-primary: #020617;
   --surface-secundary: #010514;
   --color-primary: #53eafd;
@@ -20,8 +19,7 @@ html.dark-mode body {
   --text-secundary: #b3bdd2;
 }
 
-body.light-mode,
-html.light-mode body {
+:root[data-theme='light'] {
   --surface-primary: #ffffff;
   --surface-secundary: #0105147a;
   --color-primary: #53eafd;
@@ -62,11 +60,4 @@ button:hover {
 
 button:active {
   transform: scale(0.9);
-}
-
-@media (width <= 768px) {
-  body {
-    padding: 0 3%;
-    padding-top: 72px;
-  }
 }
