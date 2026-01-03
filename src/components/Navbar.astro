@@ -28,6 +28,7 @@ const navLinks = [
   { href: '#blog', label: navbar.blog, icon: BookOpen },
   { href: '#hablemos', label: navbar.contact, icon: MessageCircle },
 ]
+const lastNavIndex = navLinks.length - 1
 ---
 
 <nav
@@ -51,7 +52,9 @@ const navLinks = [
     }
   </ul>
   <div class="relative flex items-center gap-5 text-(--color-primary)">
-    <ThemeController />
+    <div class="hidden lg:flex items-center">
+      <ThemeController />
+    </div>
     <button id="language-btn" class="flex justify-center items-center cursor-pointer">
       <Languages />
       <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
@@ -82,18 +85,25 @@ const navLinks = [
     >
       <ul class="flex flex-col items-stretch gap-4 text-left">
         {
-          navLinks.map(({ href, label, icon: Icon }) => (
-            <li>
+          navLinks.map(({ href, label, icon: Icon }, index) => (
+            <li class={index === lastNavIndex ? 'flex items-center gap-3' : ''}>
               <a
                 href={href}
                 data-section-link={href}
-                class="flex w-full items-center justify-start gap-3 cursor-pointer text-lg transition-transform duration-100 ease-in-out hover:text-(--color-primary)"
+                class={`mobile-menu-link flex items-center justify-start gap-3 cursor-pointer text-lg transition-transform duration-100 ease-in-out hover:text-(--color-primary) ${
+                  index === lastNavIndex ? 'flex-1' : 'w-full'
+                }`}
               >
                 <span class="mobile-menu-icon">
-                  <Icon className="w-4 h-4" aria-hidden="true" />
+                  <Icon className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <span>{label}</span>
               </a>
+              {index === lastNavIndex && (
+                <div class="flex items-center justify-center scale-130">
+                  <ThemeController />
+                </div>
+              )}
             </li>
           ))
         }
@@ -212,6 +222,18 @@ const navLinks = [
   .mobile-menu a .mobile-menu-icon {
     color: #ffffff;
     transition: color 160ms ease;
+  }
+
+  .mobile-menu-link {
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease;
+  }
+
+  .mobile-menu-link:hover {
+    background-color: #0d1020;
   }
 
   .mobile-menu a:hover .mobile-menu-icon,
