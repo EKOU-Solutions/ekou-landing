@@ -1,7 +1,19 @@
 ---
 import ekouLogo from '../assets/ekouLogo-v1.svg'
 import ThemeController from './ThemeController.astro'
-import { ChevronDown, Languages, Menu } from 'lucide-react'
+import MobileMenu from './MobileMenu.astro'
+import {
+  BookOpen,
+  Briefcase,
+  ChevronDown,
+  CircleCheck,
+  Handshake,
+  House,
+  Languages,
+  Lightbulb,
+  Menu,
+  MessageCircle,
+} from 'lucide-react'
 import ModalLanguage from './ModalLanguage.astro'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 const lang = getLangFromUrl(Astro.url)
@@ -9,13 +21,13 @@ const t = useTranslations(lang)
 const navbar = t('navbar')
 
 const navLinks = [
-  { href: '#main', label: navbar.home },
-  { href: '#quienes-somos', label: navbar.about },
-  { href: '#como-te-ayudamos', label: navbar.help },
-  { href: '#servicios', label: navbar.services },
-  { href: '#casos-de-exito', label: navbar.success },
-  { href: '#blog', label: navbar.blog },
-  { href: '#hablemos', label: navbar.contact },
+  { href: '#main', label: navbar.home, icon: House },
+  { href: '#quienes-somos', label: navbar.about, icon: Lightbulb },
+  { href: '#como-te-ayudamos', label: navbar.help, icon: Handshake },
+  { href: '#servicios', label: navbar.services, icon: Briefcase },
+  { href: '#casos-de-exito', label: navbar.success, icon: CircleCheck },
+  { href: '#blog', label: navbar.blog, icon: BookOpen },
+  { href: '#hablemos', label: navbar.contact, icon: MessageCircle },
 ]
 ---
 
@@ -40,26 +52,91 @@ const navLinks = [
     }
   </ul>
   <div class="relative flex items-center gap-5 text-(--color-primary)">
-    <ThemeController />
+    <div class="hidden lg:flex items-center">
+      <ThemeController />
+    </div>
     <button id="language-btn" class="flex justify-center items-center cursor-pointer">
       <Languages />
       <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
     </button>
     <!--menu hamburguesa -->
-    <button class="lg:hidden cursor-pointer" aria-label="Open menu">
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden cursor-pointer"
+      aria-label="Open menu"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
       <Menu />
     </button>
 
-    <section id="language-modal" class="lang-modal fixed right-2 top-16">
+    <section id="language-modal" class="lang-modal fixed right-2 top-16 z-50">
       <ModalLanguage />
     </section>
   </div>
 </nav>
 
+<MobileMenu navLinks={navLinks} />
+
 <script>
   const btn = document.getElementById('language-btn')
   const modal = document.getElementById('language-modal')
   const arrow = document.getElementById('arrow')
+  const menuBtn = document.getElementById('mobile-menu-btn')
+  const mobileMenu = document.getElementById('mobile-menu')
+
+  const closeLanguage = () => {
+    modal?.classList.remove('open')
+    arrow?.classList.remove('rotate-180')
+  }
+
+  const isMobileMenuOpen = () => mobileMenu?.classList.contains('open')
+
+  const setMobileMenuState = (isOpen) => {
+    if (!mobileMenu) return
+    mobileMenu.classList.toggle('open', isOpen)
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen))
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', String(isOpen))
+  }
+
+  const focusFirstMenuLink = () => {
+    const firstLink = mobileMenu?.querySelector('a[href^="#"]')
+    if (firstLink instanceof HTMLElement) {
+      firstLink.focus({ preventScroll: true })
+    }
+  }
+
+  const openMobileMenu = () => {
+    if (!mobileMenu) return
+    setMobileMenuState(true)
+    requestAnimationFrame(focusFirstMenuLink)
+  }
+
+  const closeMobileMenu = ({ restoreFocus = true } = {}) => {
+    if (!isMobileMenuOpen()) return
+    setMobileMenuState(false)
+    if (restoreFocus && menuBtn instanceof HTMLElement) {
+      menuBtn.focus({ preventScroll: true })
+    }
+  }
+
+  const getClosestLink = (event) => {
+    if (typeof event.composedPath === 'function') {
+      const path = event.composedPath()
+      for (const node of path) {
+        if (node?.nodeType === 1) {
+          const link = node.closest('a[href^="#"]')
+          if (link) return link
+        }
+      }
+    }
+
+    if (event.target?.nodeType === 1) {
+      return event.target.closest('a[href^="#"]')
+    }
+
+    return null
+  }
 
   if (btn && modal) {
     btn.addEventListener('click', (event) => {
@@ -69,12 +146,36 @@ const navLinks = [
     })
 
     modal.addEventListener('click', (event) => event.stopPropagation())
+  }
 
-    document.addEventListener('click', () => {
-      modal.classList.remove('open')
-      arrow?.classList.remove('rotate-180')
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', (event) => {
+      event.stopPropagation()
+      if (isMobileMenuOpen()) {
+        closeMobileMenu({ restoreFocus: true })
+        return
+      }
+      openMobileMenu()
+    })
+
+    mobileMenu.addEventListener('click', (event) => {
+      event.stopPropagation()
+      const link = getClosestLink(event)
+      if (!link) return
+      closeMobileMenu({ restoreFocus: false })
     })
   }
+
+  document.addEventListener('click', () => {
+    closeLanguage()
+    closeMobileMenu({ restoreFocus: true })
+  })
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return
+    closeLanguage()
+    closeMobileMenu()
+  })
 </script>
 
 <style>
@@ -95,6 +196,12 @@ const navLinks = [
 
   a.is-active {
     color: var(--color-primary);
+  }
+
+  #mobile-menu-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 9999px;
   }
 
   a[data-section-link] {
