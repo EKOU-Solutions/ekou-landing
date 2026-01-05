@@ -11,6 +11,8 @@ const CasesSlider = ({ items }) => {
     pagination: true,
     arrows: true,
     focus: 'left',
+    keyboard: 'global',
+    slideFocus: true,
     breakpoints: {
       1280: { perPage: 3.2 },
       980: { perPage: 2.8 },
@@ -26,7 +28,7 @@ const CasesSlider = ({ items }) => {
         className="cases-slider ml-10 md:ml-26 pb-10 cursor-grab active:cursor-grabbing"
       >
         {items.map((item, index) => (
-          <SplideSlide key={index}>
+          <SplideSlide key={`${item.title}-${index}`}>
             <div className="relative isolate h-full rounded-3xl overflow-hidden shadow-[-10px_10px_20px_rgba(0,0,0,0.50)] will-change-transform backdrop-blur-md before:content-[''] before:absolute before:z-15 before:inset-0 before:rounded-[inherit] before:bg-transparent before:shadow-[inset_0_0_10px_rgba(255,255,255,0.30)] before:pointer-events-none">
               {/* Image */}
               <div className="relative z-10 h-54 w-full overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-black/20 before:z-10 before:pointer-events-none">
@@ -49,7 +51,10 @@ const CasesSlider = ({ items }) => {
                   {item.description}
                 </p>
 
-                <button className="mt-2 w-fit text-xs text-(--text-primary) font-medium px-3 py-1.5 rounded-xl inline-flex items-center gap-2 bg-white/5 border border-(--color-border) backdrop-blur-md hover:bg-white/10 transition-all duration-300 cursor-pointer relative z-30">
+                <button
+                  className="mt-2 w-fit text-xs text-(--text-primary) font-medium px-3 py-1.5 rounded-xl inline-flex items-center gap-2 bg-white/5 border border-(--color-border) backdrop-blur-md hover:bg-white/10 transition-all duration-300 cursor-pointer relative z-30"
+                  aria-label={`Ver más sobre ${item.title}`}
+                >
                   Ver mas
                   <ArrowUpRight className="w-3.5 h-3.5 text-(--color-primary)" />
                 </button>
