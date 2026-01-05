@@ -2,7 +2,7 @@
 import { Moon, Sun } from 'lucide-react'
 ---
 
-<button id="theme-toggle" class="cursor-pointer theme-toggle is-dark" aria-label="Toggle theme">
+<button class="cursor-pointer theme-toggle is-dark" aria-label="Toggle theme" data-theme-toggle>
   <span class="theme-icon theme-icon--moon">
     <Sun />
   </span>
@@ -12,26 +12,44 @@ import { Moon, Sun } from 'lucide-react'
 </button>
 
 <script>
-  const root = document.documentElement
-  const btn = document.getElementById('theme-toggle')
-  const storageKey = 'theme'
+  ;(() => {
+    if (typeof window === 'undefined') return
 
-  const setTheme = (theme) => {
-    root.dataset.theme = theme
-    if (!btn) return
-    btn.classList.toggle('is-dark', theme === 'dark')
-    btn.classList.toggle('is-light', theme === 'light')
-  }
+    const root = document.documentElement
+    const storageKey = 'theme'
 
-  if (btn) {
-    const storedTheme = localStorage.getItem(storageKey)
-    setTheme(storedTheme || root.dataset.theme || 'dark')
-    btn.addEventListener('click', () => {
-      const next = root.dataset.theme === 'light' ? 'dark' : 'light'
-      setTheme(next)
-      localStorage.setItem(storageKey, next)
-    })
-  }
+    const setTheme = (theme) => {
+      root.dataset.theme = theme
+      document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+        btn.classList.toggle('is-dark', theme === 'dark')
+        btn.classList.toggle('is-light', theme === 'light')
+      })
+    }
+
+    const initThemeToggles = () => {
+      const buttons = Array.from(document.querySelectorAll('[data-theme-toggle]'))
+      if (!buttons.length) return
+
+      const storedTheme = localStorage.getItem(storageKey)
+      setTheme(storedTheme || root.dataset.theme || 'dark')
+
+      buttons.forEach((btn) => {
+        if (btn.getAttribute('data-theme-toggle-bound') === 'true') return
+        btn.setAttribute('data-theme-toggle-bound', 'true')
+        btn.addEventListener('click', () => {
+          const next = root.dataset.theme === 'light' ? 'dark' : 'light'
+          setTheme(next)
+          localStorage.setItem(storageKey, next)
+        })
+      })
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initThemeToggles, { once: true })
+    } else {
+      initThemeToggles()
+    }
+  })()
 </script>
 
 <style>
