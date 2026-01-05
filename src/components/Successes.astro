@@ -1,19 +1,45 @@
 ---
-
+import { Sparkles } from 'lucide-react'
+import CasesSlider from './CasesSlider'
+import { cases } from '../data/casesData'
 ---
 
-<section id="casos-de-exito">
-  <main>
-    <h2 class="text-5xl xl:text-6xl font-bold mb-4">Casos de exito</h2>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Texto dummy temporal para visualizar el scroll. Aqui mostraremos casos de exito y resultados
-      medibles.
-    </p>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Este texto es relleno para generar altura y probar el desplazamiento.
-    </p>
-    <p class="text-(--text-secundary) max-w-2xl">
-      Mas lineas de prueba para dejar claro el espacio de la seccion.
-    </p>
+<section id="casos-de-exito" class="bg-(--surface-primary) overflow-hidden relative">
+  <img
+    src="barsInclined.svg"
+    alt="overlay"
+    class="w-full object-cover h-full absolute -left-6 bottom-40 opacity-80"
+  />
+  <div
+    class="absolute left-18 z-20 bottom-10 w-[20%] h-100 rounded-full rotate-10 bg-linear-to-br from-(--color-primary) to-(--color-secundary) blur-[70px] opacity-12 pointer-events-none"
+  >
+  </div>
+
+  <main class="relative mx-auto md:max-w-7xl">
+    <div class="text-center mb-10">
+      <span class="inline-flex items-center gap-2 text-sm uppercase text-(--color-primary)">
+        <Sparkles className="w-4 h-4" />
+        Casos de exito
+      </span>
+
+      <h2 class="mt-4 text-3xl md:text-5xl font-semibold text-(--text-primary)">Impacto real</h2>
+
+      <p class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
+        Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que
+        acompanamos a las organizaciones.
+      </p>
+    </div>
+
+    <!-- Shadow right -->
+    <div
+      class="absolute z-10 -right-20 -top-10 w-35 md:w-50 h-160 bg-(--surface-primary) blur-[20px] pointer-events-none"
+    >
+    </div>
+    <!-- Shadow left -->
+    <div
+      class="absolute z-10 -left-10 -top-10 w-10 h-screen bg-(--surface-primary) blur-lg pointer-events-none"
+    >
+    </div>
+    <CasesSlider items={cases} client:load />
   </main>
 </section>
