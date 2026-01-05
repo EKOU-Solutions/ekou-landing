@@ -37,6 +37,10 @@ module.exports = {
         'plugin:jsx-a11y/recommended',
         'prettier',
       ],
+      rules: {
+        'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
