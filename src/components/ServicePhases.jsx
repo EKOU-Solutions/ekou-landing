@@ -59,17 +59,17 @@ const ServicePhases = () => {
       <div className="relative flex items-center justify-center md:h-100">
         <div className="absolute z-10 left-0 bottom-0 hidden md:flex flex-col items-center justify-center">
           <PhaseCircle
-            icon="./search.svg"
+            icon="/search.svg"
             phase="1"
             className="relative before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-white before:h-51 md:before:h-53 before:-top-47 before:left-32 md:before:left-38 before:w-px before:rotate-28 md:before:rotate-34"
           />
         </div>
         <div className="absolute z-20 left-[34%] top-0 hidden md:flex flex-col items-center justify-center">
-          <PhaseCircle icon="./artist.svg" phase="2" />
+          <PhaseCircle icon="/artist.svg" phase="2" />
         </div>
         <div className="absolute z-10 right-0 md:right-10 bottom-34 hidden md:flex flex-col items-center justify-center">
           <PhaseCircle
-            icon="./code.svg"
+            icon="/code.svg"
             phase="3"
             className="relative z-10 before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-white before:h-24 md:before:h-38 before:-top-16 md:before:-top-20 before:-left-4 md:before:-left-15 before:w-px before:-rotate-48 md:before:-rotate-58"
           />
@@ -100,7 +100,12 @@ const ServicePhases = () => {
       </div>
 
       <div className="h-105 w-full relative flex flex-col justify-center items-center gap-4 md:gap-6 pb-8">
-        <img src="gfx.svg" alt="s" className="gfx-sway w-full h-full absolute left-0 top-0" />
+        <img
+          src="/gfx.svg"
+          alt="s"
+          className="gfx-sway w-full h-full absolute left-0 top-0"
+          aria-hidden="true"
+        />
         <h3 className="text-lg md:text-xl font-semibold text-(--color-primary) text-center flex flex-col gap-1">
           {currentPhaseData.title}{' '}
           <span className="text-md :text-lg">{currentPhaseData.subtitle}</span>

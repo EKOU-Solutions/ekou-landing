@@ -19,5 +19,24 @@
     "description": "Acompanamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
     "cta": "Hablemos de tu proyecto",
     "features": ["Estrategia con proposito", "Ejecucion integral", "Acompanamiento continuo"]
+  },
+  "helpyou": {
+    "badge": "Como te ayudamos",
+    "title": "No solo desarrollamos productos",
+    "description": "Ofrecemos acompanamiento consultivo integral: estrategia, innovacion y optimizacion para generar valor real.",
+    "items": [
+      {
+        "title": "Entendemos tu negocio",
+        "description": "Analizamos tus necesidades y alineamos soluciones con tus objetivos estrategicos."
+      },
+      {
+        "title": "Innovamos con sentido",
+        "description": "Aplicamos tecnologia de vanguardia para resolver problemas reales y medibles."
+      },
+      {
+        "title": "Acompanamos tu crecimiento",
+        "description": "Guiamos cada etapa con transparencia, iteracion continua y foco en resultados."
+      }
+    ]
   }
 }
