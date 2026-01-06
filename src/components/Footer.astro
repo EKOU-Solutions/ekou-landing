@@ -1,12 +1,65 @@
-<footer id="footer">
-  <main class="pt-24 pb-12">
-    <h2 class="text-5xl xl:text-6xl font-bold mb-4">Footer</h2>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Texto dummy temporal para visualizar el scroll. Aqui ira el contenido del footer, links y
-      datos legales.
+---
+import { Gamepad2, Dribbble, Instagram, Linkedin } from 'lucide-react'
+import ekouLogo from '../assets/icons/ekouLogo-v1.svg'
+import bgContact from '../assets/img/bgContact.svg'
+---
+
+<footer
+  id="footer"
+  class="relative w-full border-t border-(--color-border) bg-(--surface-secundary) px-6 md:px-10 py-6"
+  role="contentinfo"
+>
+  <!-- glow -->
+  <div
+    class="absolute left-0 md:left-40 z-20 -top-100 w-[60%] h-100 rounded-full rotate-10 bg-linear-to-br from-(--color-primary) to-(--color-secundary) blur-[70px] opacity-10 pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
+  <img
+    src={bgContact.src}
+    alt=""
+    class="absolute inset-0 w-full h-100 object-cover -top-100 left-0"
+    aria-hidden="true"
+  />
+
+  <div class="relative z-10 flex items-center gap-4 md:gap-6 justify-between">
+    <a href="#main" class="flex items-center gap-3" aria-label="EKOU home" itemprop="url">
+      <img src={ekouLogo.src} alt="Logo EKOU" class="w-full h-10" itemprop="logo" />
+    </a>
+
+    <p class="text-xs text-(--text-secundary) text-center hidden md:block">
+      (c) 2025 EKOU. Todos los derechos reservados.
     </p>
-    <p class="text-(--text-secundary) max-w-2xl">
-      Relleno adicional para mantener altura mientras armamos el footer real.
-    </p>
-  </main>
+
+    <nav class="flex items-center gap-3" aria-label="Social links">
+      <a
+        href="#"
+        class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
+        aria-label="Gamepad"
+      >
+        <Gamepad2 className="w-4 h-4" />
+      </a>
+      <a
+        href="#"
+        class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
+        aria-label="Dribbble"
+      >
+        <Dribbble className="w-4 h-4" />
+      </a>
+      <a
+        href="#"
+        class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
+        aria-label="Instagram"
+      >
+        <Instagram className="w-4 h-4" />
+      </a>
+      <a
+        href="#"
+        class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
+        aria-label="LinkedIn"
+      >
+        <Linkedin className="w-4 h-4" />
+      </a>
+    </nav>
+  </div>
 </footer>

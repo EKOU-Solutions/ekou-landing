@@ -38,5 +38,80 @@
         "description": "Guiamos cada etapa con transparencia, iteracion continua y foco en resultados."
       }
     ]
+  },
+  "services": {
+    "badge": "Servicios",
+    "title": "Como te acompanamos",
+    "description": "Un proceso estrategico, iterativo y enfocado en resultados reales."
+  },
+  "successes": {
+    "badge": "Casos de exito",
+    "title": "Impacto real",
+    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompanamos a las organizaciones."
+  },
+  "servicePhases": {
+    "labels": {
+      "phaseLabel": "FASE",
+      "helpsTitle": "Como te ayudamos",
+      "deliverablesTitle": "Entregables",
+      "prevAria": "Fase anterior",
+      "nextAria": "Siguiente fase"
+    },
+    "phases": [
+      {
+        "id": "1",
+        "title": "Fase 1",
+        "subtitle": "Estrategia y Planeacion",
+        "tagline": "Evitar improvisar y avanzar con seguridad.",
+        "helps": [
+          "Entendemos tu contexto y objetivos",
+          "Validamos ideas antes de invertir",
+          "Definimos un plan claro y medible"
+        ],
+        "deliverables": ["Roadmap estrategico", "Priorizacion", "OKRs y metricas"]
+      },
+      {
+        "id": "2",
+        "title": "Fase 2",
+        "subtitle": "Diseno y Prototipado",
+        "tagline": "Convertir la estrategia en una experiencia clara.",
+        "helps": [
+          "Definimos el flujo y la arquitectura",
+          "Probamos ideas con prototipos rapidos",
+          "Alineamos el producto con usuarios"
+        ],
+        "deliverables": ["Wireframes", "UI Kit", "Prototipo navegable"]
+      },
+      {
+        "id": "3",
+        "title": "Fase 3",
+        "subtitle": "Desarrollo y Lanzamiento",
+        "tagline": "Construir, validar y salir con confianza.",
+        "helps": [
+          "Desarrollamos con enfoque en calidad",
+          "Iteramos con feedback real",
+          "Preparamos el lanzamiento y escalado"
+        ],
+        "deliverables": ["MVP funcional", "QA y optimizacion", "Soporte de lanzamiento"]
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Contacto",
+    "title": "Consulta tecnica gratuita",
+    "description": "Cuentanos tu idea. Nosotros te ayudamos a convertirla en una solucion real.",
+    "email": "contacto@ekou.com",
+    "phone": "+57 3243263523",
+    "form": {
+      "nameLabel": "Nombre",
+      "emailLabel": "Email",
+      "projectLabel": "Proyecto",
+      "messageLabel": "Mensaje",
+      "namePlaceholder": "Tu nombre",
+      "emailPlaceholder": "example@gmail.com",
+      "projectPlaceholder": "Website, app movil, SaaS...",
+      "messagePlaceholder": "Cuentanos brevemente tu necesidad",
+      "submit": "Enviar mensaje"
+    }
   }
 }
