@@ -1,7 +1,8 @@
 ---
 import { Sparkles, Rocket, Cpu, Atom } from 'lucide-react'
-import arrowA from '../assets/arrowA.svg'
-import arrowB from '../assets/arrowB.svg'
+import arrowA from '../assets/img/arrowA.svg'
+import arrowB from '../assets/img/arrowB.svg'
+import decoration2 from '../assets/img/decoration2.svg'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
 const lang = getLangFromUrl(Astro.url)
@@ -59,7 +60,7 @@ const icons = [Rocket, Cpu, Atom]
 </section>
 
 <img
-  src="/decoration2.svg"
+  src={decoration2.src}
   alt="decoration2"
   class="w-full h-[80%] z-10 absolute object-contain left-0 top-344 opacity-40"
   aria-hidden="true"
