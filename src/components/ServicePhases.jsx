@@ -1,4 +1,3 @@
-import React from 'react'
 import PhaseCircle from './PhaseCircle'
 import { usePhasesStore } from '../store/phasesStore'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
@@ -72,7 +71,7 @@ const ServicePhases = () => {
           <PhaseCircle
             icon="./code.svg"
             phase="3"
-            className="relative z-10 before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-white before:h-24 md:before:h-39 before:-top-16 md:before:-top-20 before:-left-4 md:before:-left-15 before:w-px before:-rotate-48 md:before:-rotate-58"
+            className="relative z-10 before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-white before:h-24 md:before:h-38 before:-top-16 md:before:-top-20 before:-left-4 md:before:-left-15 before:w-px before:-rotate-48 md:before:-rotate-58"
           />
         </div>
         <div className="absolute bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6">
@@ -101,7 +100,7 @@ const ServicePhases = () => {
       </div>
 
       <div className="h-105 w-full relative flex flex-col justify-center items-center gap-4 md:gap-6 pb-8">
-        <img src="gfx.svg" alt="s" className="w-full h-full absolute left-0 top-0" />
+        <img src="gfx.svg" alt="s" className="gfx-sway w-full h-full absolute left-0 top-0" />
         <h3 className="text-lg md:text-xl font-semibold text-(--color-primary) text-center flex flex-col gap-1">
           {currentPhaseData.title}{' '}
           <span className="text-md :text-lg">{currentPhaseData.subtitle}</span>
@@ -132,6 +131,29 @@ const ServicePhases = () => {
           </div>
         </div>
       </div>
+      <style>{`
+        @keyframes gfxSway {
+          0%,
+          100% {
+            transform: rotate(-2deg);
+          }
+          50% {
+            transform: rotate(2deg);
+          }
+        }
+
+        .gfx-sway {
+          animation: gfxSway 6s ease-in-out infinite;
+          transform-origin: center;
+          will-change: transform;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .gfx-sway {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   )
 }
