@@ -1,19 +1,54 @@
 ---
+import { Sparkles, Mail, Phone } from 'lucide-react'
+import robotShappe from '../assets/img/robotShappe.svg'
+import ContactForm from './ContactForm'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const contact = t('contact')
 ---
 
-<section id="hablemos">
-  <main>
-    <h2 class="text-5xl xl:text-6xl font-bold mb-4">Hablemos</h2>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Texto dummy temporal para visualizar el scroll. Aqui ira el formulario o los datos de
-      contacto.
-    </p>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Agregamos mas contenido de prueba para generar altura suficiente.
-    </p>
-    <p class="text-(--text-secundary) max-w-2xl">
-      Un ultimo parrafo de relleno mientras definimos el contenido final.
-    </p>
+<section id="hablemos" class="relative w-full h-full overflow-hidden">
+  <main class="relative z-10 mx-auto max-w-7xl px-6 md:px-0 pb-10 md:pb-20">
+    <div class="text-center">
+      <span
+        class="inline-flex items-center gap-2 text-xs uppercase text-(--color-primary) tracking-wider"
+      >
+        <Sparkles className="w-4 h-4" />
+        {contact.badge}
+      </span>
+      <h2 class="mt-3 text-3xl md:text-5xl font-semibold text-(--text-primary)">
+        {contact.title}
+      </h2>
+      <p class="mt-3 text-(--text-secundary) max-w-2xl mx-auto">
+        {contact.description}
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-20 lg:grid-cols-[1fr_1.1fr] items-center">
+      <div class="relative flex items-center justify-center">
+        <img src={robotShappe.src} alt="Robot EKOU" class="w-full max-w-md md:max-w-lg" />
+
+        <div
+          class="absolute left-15 md:left-40 -bottom-4 flex flex-wrap items-center gap-3 text-xs text-(--text-secundary)"
+        >
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-(--color-border) bg-(--surface-primary)/30 px-3 py-1 backdrop-blur-lg"
+          >
+            <Mail className="w-3.5 h-3.5 text-(--color-primary)" />
+            {contact.email}
+          </span>
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-(--color-border) bg-(--surface-primary)/30 px-3 py-1 backdrop-blur-lg"
+          >
+            <Phone className="w-3.5 h-3.5 text-(--color-primary)" />
+            {contact.phone}
+          </span>
+        </div>
+      </div>
+
+      <ContactForm client:load labels={contact.form} />
+    </div>
   </main>
 </section>
