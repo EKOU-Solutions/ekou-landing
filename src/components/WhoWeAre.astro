@@ -1,5 +1,6 @@
 ---
 import { Sparkles } from 'lucide-react'
+import start from '../assets/icons/start.svg'
 import InnovationIcon from './icons/InnovationIcon.jsx'
 import ServiceIcon from './icons/ServiceIcon.jsx'
 import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
@@ -19,37 +20,88 @@ import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
       sus necesidades especificas, impulsando su crecimiento, generando alianzas estrategicas y
       optimizando procesos hacia un mercado global.
     </p>
-    <div class="mt-8 grid w-full max-w-[1400px] gap-1 md:grid-cols-3 md:gap-32 lg:gap-36">
-      <div
-        class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0f1627] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
-      >
-        <InnovationIcon className="mx-auto mb-4 h-16 w-16 text-white" />
-        <h3 class="text-xl font-semibold text-white">Innovacion</h3>
-        <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-          Transformamos retos en soluciones escalables, diseniamos productos y procesos medibles que
-          permiten evaluar y mejorar el impacto en cada iteracion.
-        </p>
-      </div>
-      <div
-        class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#131224] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 rotate-3 translate-x-12 scale-85 md:translate-x-0 md:scale-100"
-      >
-        <ServiceIcon className="mx-auto mb-4 h-14 w-14 text-white" />
-        <h3 class="text-xl font-semibold text-white">Servicio</h3>
-        <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-          Acompanamiento cercano y ejecucion agil con equipos dedicados, validacion continua y
-          entregas incrementales. Priorizamos el impacto medible y la claridad en cada etapa.
-        </p>
-      </div>
-      <div
-        class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0d1223] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
-      >
-        <ProfessionalismIcon className="mx-auto mb-4 h-[80px] w-[80px] text-white" />
-        <h3 class="text-xl font-semibold text-white">Profesionalismo</h3>
-        <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-          Establecemos procesos claros y estandares de calidad, aplicando gobernanza tecnica solida
-          para garantizar trazabilidad, confianza y mejora continua en cada proyecto.
-        </p>
+    <div class="relative mt-8 w-full max-w-[1400px]">
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-3 h-3 absolute -left-5 top-20 md:-left-10 md:top-28 z-10 pointer-events-none"
+        style="animation-delay: 0s;"
+        aria-hidden="true"
+      />
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-6 h-6 absolute right-[12%] -top-3 md:right-[18%] md:-top-6 z-10 pointer-events-none"
+        style="animation-delay: 0.6s;"
+        aria-hidden="true"
+      />
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-4 h-4 absolute left-[22%] -bottom-2 md:left-[15%] md:-bottom-4 z-10 pointer-events-none"
+        style="animation-delay: 1s;"
+        aria-hidden="true"
+      />
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-4 h-4 absolute -right-3 top-36 md:right-2 md:top-44 z-10 pointer-events-none"
+        style="animation-delay: 1.4s;"
+        aria-hidden="true"
+      />
+      <div class="relative z-0 grid w-full gap-1 md:grid-cols-3 md:gap-32 lg:gap-36">
+        <div
+          class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0f1627] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+        >
+          <InnovationIcon className="mx-auto mb-4 h-16 w-16 text-white" />
+          <h3 class="text-xl font-semibold text-white">Innovacion</h3>
+          <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+            Transformamos retos en soluciones escalables, diseniamos productos y procesos medibles
+            que permiten evaluar y mejorar el impacto en cada iteracion.
+          </p>
+        </div>
+        <div
+          class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#131224] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 rotate-3 translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+        >
+          <ServiceIcon className="mx-auto mb-4 h-14 w-14 text-white" />
+          <h3 class="text-xl font-semibold text-white">Servicio</h3>
+          <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+            Acompanamiento cercano y ejecucion agil con equipos dedicados, validacion continua y
+            entregas incrementales. Priorizamos el impacto medible y la claridad en cada etapa.
+          </p>
+        </div>
+        <div
+          class="relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0d1223] px-4 pt-2 pb-4 text-center shadow-2xl transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+        >
+          <ProfessionalismIcon className="mx-auto mb-4 h-[80px] w-[80px] text-white" />
+          <h3 class="text-xl font-semibold text-white">Profesionalismo</h3>
+          <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+            Establecemos procesos claros y estandares de calidad, aplicando gobernanza tecnica
+            solida para garantizar trazabilidad, confianza y mejora continua en cada proyecto.
+          </p>
+        </div>
       </div>
     </div>
   </main>
 </section>
+
+<style>
+  @keyframes starTwinkle {
+    0%,
+    100% {
+      transform: scale(0.7);
+      filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+      opacity: 0.75;
+    }
+    50% {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+      opacity: 1;
+    }
+  }
+
+  .star-twinkle {
+    animation: starTwinkle 2.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+</style>
