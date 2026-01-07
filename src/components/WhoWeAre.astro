@@ -6,6 +6,11 @@ import decoration2 from '../assets/img/decoration2.svg'
 import InnovationIcon from './icons/InnovationIcon.jsx'
 import ServiceIcon from './icons/ServiceIcon.jsx'
 import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const whoweare = t('whoweare')
 ---
 
 <section id="quienes-somos" class="-mt-20 md:-mt-60 w-full relative">
@@ -17,15 +22,13 @@ import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
   <main class="relative z-10 flex flex-col items-center justify-center">
     <h1 class="text-sm md:text-md text-(--color-primary) flex items-center gap-2 mt-4">
       <Sparkles className="w-4 h-4" />
-      Quienes somos
+      {whoweare.badge}
     </h1>
     <h2 class="mt-3 text-center text-white text-4xl md:text-7xl font-semibold">
-      Conectamos ideas con ejecucion
+      {whoweare.title}
     </h2>
     <p class="mt-6 mb-4 text-center text-(--text-secundary) max-w-2xl">
-      Acompanamos a organizaciones en el diseno y desarrollo de soluciones innovadoras, adaptadas a
-      sus necesidades especificas, impulsando su crecimiento, generando alianzas estrategicas y
-      optimizando procesos hacia un mercado global.
+      {whoweare.description}
     </p>
     <div class="relative mt-8 w-full max-w-[1400px]">
       <img
@@ -74,10 +77,9 @@ import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
           />
           <div class="relative z-10">
             <InnovationIcon className="mx-auto mb-4 h-24 w-24 text-white" />
-            <h3 class="text-xl font-semibold text-white">Innovacion</h3>
+            <h3 class="text-xl font-semibold text-white">{whoweare.cards[0].title}</h3>
             <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-              Transformamos retos en soluciones escalables, diseniamos productos y procesos medibles
-              que permiten evaluar y mejorar el impacto en cada iteracion.
+              {whoweare.cards[0].description}
             </p>
           </div>
         </div>
@@ -92,10 +94,9 @@ import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
           />
           <div class="relative z-10">
             <ServiceIcon className="mx-auto mb-4 h-20 w-20 text-white" />
-            <h3 class="text-xl font-semibold text-white">Servicio</h3>
+            <h3 class="text-xl font-semibold text-white">{whoweare.cards[1].title}</h3>
             <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-              Acompañamiento cercano y ejecucion agil con equipos dedicados, validacion continua y
-              entregas incrementales. Priorizamos el impacto medible y la claridad en cada etapa.
+              {whoweare.cards[1].description}
             </p>
           </div>
         </div>
@@ -110,10 +111,9 @@ import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
           />
           <div class="relative z-10">
             <ProfessionalismIcon className="mx-auto mb-4 h-24 w-24 text-white" />
-            <h3 class="text-xl font-semibold text-white">Profesionalismo</h3>
+            <h3 class="text-xl font-semibold text-white">{whoweare.cards[2].title}</h3>
             <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-              Establecemos procesos claros y estandares de calidad, aplicando gobernanza tecnica
-              solida para garantizar trazabilidad, confianza y mejora continua en cada proyecto.
+              {whoweare.cards[2].description}
             </p>
           </div>
         </div>
@@ -143,10 +143,10 @@ import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
   }
 
   .whoweare-card {
-    box-shadow:
-      0 10px 35px rgba(0, 0, 0, 0.45),
-      0 0 0 1px rgba(255, 255, 255, 0.04),
-      0 0 70px rgba(83, 234, 253, 0.08);
+    --card-glow: rgba(255, 255, 255, 0.08);
+    --card-glow-transparent: rgba(255, 255, 255, 0);
+    --card-glow-pos: 20% 0%;
+    box-shadow: -18px 18px 50px var(--card-glow);
     z-index: 0;
   }
 
@@ -156,27 +156,21 @@ import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
     inset: 0;
     border-radius: inherit;
     background: radial-gradient(
-      140% 120% at 20% 0%,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0) 60%
+      140% 120% at var(--card-glow-pos),
+      var(--card-glow),
+      var(--card-glow-transparent) 60%
     );
     pointer-events: none;
     z-index: 0;
   }
 
-  .whoweare-card--service::before {
-    background: radial-gradient(
-      140% 120% at 85% 0%,
-      rgba(97, 16, 124, 0.1),
-      rgba(97, 16, 124, 0) 65%
-    );
+  .whoweare-card--service {
+    --card-glow: rgba(97, 16, 124, 0.1);
+    --card-glow-transparent: rgba(97, 16, 124, 0);
+    --card-glow-pos: 85% 0%;
   }
 
-  .whoweare-card--pro::before {
-    background: radial-gradient(
-      140% 120% at 100% 40%,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0) 65%
-    );
+  .whoweare-card--pro {
+    --card-glow-pos: 100% 40%;
   }
 </style>
