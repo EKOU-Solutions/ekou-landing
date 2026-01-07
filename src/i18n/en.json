@@ -19,5 +19,24 @@
     "description": "We support companies and entrepreneurs in their digital evolution, integrating strategy, technology, and innovation to build solutions aligned with their business goals.",
     "cta": "Let's talk about your project",
     "features": ["Purpose-driven strategy", "End-to-end execution", "Ongoing support"]
+  },
+  "helpyou": {
+    "badge": "Help you",
+    "title": "We do more than build products",
+    "description": "We provide end-to-end consulting support: strategy, innovation, and optimization to create real value.",
+    "items": [
+      {
+        "title": "Understand your business",
+        "description": "We analyze your needs and align solutions with your strategic goals."
+      },
+      {
+        "title": "Innovate with purpose",
+        "description": "We apply cutting-edge technology to solve real, measurable problems."
+      },
+      {
+        "title": "Support your growth",
+        "description": "We guide every stage with transparency, continuous iteration, and focus on results."
+      }
+    ]
   }
 }

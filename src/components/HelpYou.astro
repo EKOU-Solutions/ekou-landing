@@ -1,19 +1,99 @@
 ---
+import { Sparkles, Rocket, Cpu, Atom } from 'lucide-react'
+import arrowA from '../assets/img/arrowA.svg'
+import arrowB from '../assets/img/arrowB.svg'
+import decoration2 from '../assets/img/decoration2.svg'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const helpyou = t('helpyou')
+const icons = [Rocket, Cpu, Atom]
 ---
 
-<section id="como-te-ayudamos">
-  <main>
-    <h2 class="text-5xl xl:text-6xl font-bold mb-4">Como te ayudamos</h2>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Texto dummy temporal para visualizar el scroll. Aqui detallaremos los servicios y el proceso
-      de acompanamiento.
-    </p>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Relleno adicional para generar altura y verificar el comportamiento del scroll suave.
-    </p>
-    <p class="text-(--text-secundary) max-w-2xl">
-      Mas texto de prueba para completar la seccion mientras llega el contenido final.
-    </p>
+<section id="como-te-ayudamos" class="relative w-full bg-(--surface-primary) mb-24">
+  <main class="mx-auto px-10 md:px-0 md:max-w-6xl">
+    <!-- Header -->
+    <div class="text-center mb-8 md:mb-16">
+      <span class="inline-flex items-center gap-2 text-sm uppercase text-(--color-primary)">
+        <Sparkles className="w-4 h-4" />
+        {helpyou.badge}
+      </span>
+
+      <h2 class="mt-4 text-3xl md:text-5xl font-semibold text-(--text-primary)">
+        {helpyou.title}
+      </h2>
+
+      <p class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">{helpyou.description}</p>
+    </div>
+
+    <!-- Content -->
+    <ul class="mt-8 grid gap-10 md:gap-10 md:grid-cols-3" role="list">
+      {
+        helpyou.items.map((item, index) => {
+          const Icon = icons[index]
+          return (
+            <li
+              class:list={[
+                'relative text-center',
+                index === 0 && 'helpyou-arrow-a',
+                index === 1 && 'helpyou-arrow-b',
+              ]}
+            >
+              <div
+                class="mx-auto w-28 h-28 rounded-[20px_20px_20px_0] bg-[linear-gradient(40deg,#19315940_0%,var(--surface-primary)_80%)] border border-(--color-border)
+                 backdrop-blur-md flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+              >
+                <Icon
+                  className="w-14 h-14 stroke-[1.5px] text-(--text-primary)"
+                  aria-hidden="true"
+                />
+              </div>
+              <h3 class="mt-4 text-(--color-primary) font-semibold text-lg">{item.title}</h3>
+              <p class="text-(--text-secundary) text-sm leading-relaxed">{item.description}</p>
+            </li>
+          )
+        })
+      }
+    </ul>
   </main>
 </section>
+
+<img
+  src={decoration2.src}
+  alt="decoration2"
+  class="w-full h-[80%] z-10 absolute object-contain left-0 top-344 opacity-40"
+  aria-hidden="true"
+/>
+
+<style define:vars={{ arrowA: `url(${arrowA.src})`, arrowB: `url(${arrowB.src})` }}>
+  .helpyou-arrow-a::before,
+  .helpyou-arrow-b::before {
+    content: '';
+    position: absolute;
+    right: -8rem;
+    top: 0;
+    width: 14.5rem;
+    height: 10rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    display: none;
+  }
+
+  .helpyou-arrow-a::before {
+    background-image: var(--arrowA);
+  }
+
+  .helpyou-arrow-b::before {
+    background-image: var(--arrowB);
+    top: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .helpyou-arrow-a::before,
+    .helpyou-arrow-b::before {
+      display: block;
+    }
+  }
+</style>

@@ -1,22 +1,82 @@
 ---
 import { Sparkles } from 'lucide-react'
+import start from '../assets/icons/start.svg'
+import ServicePhases from './ServicePhases'
 ---
 
-<section id="servicios" class="-mt-20 md:-mt-60 w-full">
-  <main class="flex flex-col items-center justify-center">
-    <h1 class="text-sm md:text-md text-(--color-primary) flex items-center gap-2 mt-4">
-      <Sparkles className="w-4 h-4" />
-      Servicios
-    </h1>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Texto dummy temporal para visualizar el scroll. Aqui describiremos los servicios y el alcance.
-    </p>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Este bloque es solo relleno para dar altura. Se reemplazara por contenido real cuando
-      definamos la propuesta.
-    </p>
-    <p class="text-(--text-secundary) max-w-2xl">
-      Mas texto de prueba para simular varias lineas y validar el offset del header.
-    </p>
+<section id="servicios" class="relative w-full bg-(--surface-primary)">
+  <!-- Glow -->
+  <div
+    class="absolute left-0 bottom-0 w-[50%] h-120 rounded-full rotate-180
+           bg-linear-to-br
+           from-(--color-primary)
+           to-(--color-secundary)
+           blur-[70px] opacity-12 pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
+  <!-- Stars -->
+  <img
+    src={start.src}
+    alt={`icon-star`}
+    class="star-twinkle w-4 h-4 absolute left-0 md:left-20 top-60"
+    style="animation-delay: 0s;"
+    aria-hidden="true"
+  />
+  <img
+    src={start.src}
+    alt={`icon-star`}
+    class="star-twinkle w-3 h-3 absolute right-0 md:right-20 top-50"
+    style="animation-delay: 0.6s;"
+    aria-hidden="true"
+  />
+  <img
+    src={start.src}
+    alt={`icon-star`}
+    class="star-twinkle w-3 h-3 absolute left-1/2 -translate-x-1/2 top-140"
+    style="animation-delay: 1.1s;"
+    aria-hidden="true"
+  />
+
+  <main class="mx-auto max-w-7xl">
+    <!-- Header -->
+    <div class="text-center md:mb-16">
+      <span class="inline-flex items-center gap-2 text-sm uppercase text-(--color-primary)">
+        <Sparkles className="w-4 h-4" />
+        Servicios
+      </span>
+
+      <h2 class="mt-4 text-3xl md:text-5xl font-semibold text-(--text-primary)">
+        Cómo te acompañamos
+      </h2>
+
+      <p class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
+        Un proceso estratégico, iterativo y enfocado en resultados reales.
+      </p>
+    </div>
+
+    <!-- Content -->
+    <ServicePhases client:load />
   </main>
 </section>
+
+<style>
+  @keyframes starTwinkle {
+    0%,
+    100% {
+      transform: scale(0.7);
+      filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+      opacity: 0.75;
+    }
+    50% {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+      opacity: 1;
+    }
+  }
+
+  .star-twinkle {
+    animation: starTwinkle 2.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+</style>

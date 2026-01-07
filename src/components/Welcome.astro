@@ -1,5 +1,6 @@
 ---
 import { CircleCheck, Sparkles } from 'lucide-react'
+import grupoEkou from '../assets/img/grupoEkou.webp'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
 const lang = getLangFromUrl(Astro.url)
@@ -69,7 +70,8 @@ const titleHighlightLines = welcome.titleHighlight.split('\n')
     <!-- IMAGEN -->
     <div class="relative flex justify-center">
       <div
-        class="rounded-[3rem] bg-[url('/grupoEkou.webp')] bg-cover bg- bg-no-repeat p-4 overflow-hidden"
+        class="rounded-[3rem] bg-cover bg- bg-no-repeat p-4 overflow-hidden"
+        style={`background-image: url(${grupoEkou.src});`}
       >
         <!-- Opacity -->
         <div class="absolute inset-0 bg-(--surface-primary)/90"></div>
@@ -84,7 +86,7 @@ const titleHighlightLines = welcome.titleHighlight.split('\n')
         >
         </div>
         <img
-          src="/grupoEkou.webp"
+          src={grupoEkou.src}
           alt="Equipo EKOU"
           class="w-full h-full object-cover relative z-10"
         />
