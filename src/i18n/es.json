@@ -38,5 +38,24 @@
         "description": "Guiamos cada etapa con transparencia, iteracion continua y foco en resultados."
       }
     ]
+  },
+  "whoweare": {
+    "badge": "Quiénes somos",
+    "title": "Conectamos ideas con ejecución",
+    "description": "Acompañamos a organizaciones en el diseño y desarrollo de soluciones innovadoras, adaptadas a sus necesidades específicas, impulsando su crecimiento, generando alianzas estratégicas y optimizando procesos hacia un mercado global.",
+    "cards": [
+      {
+        "title": "Innovación",
+        "description": "Transformamos retos en soluciones escalables, diseñamos productos y procesos medibles que permiten evaluar y mejorar el impacto en cada iteración."
+      },
+      {
+        "title": "Servicio",
+        "description": "Acompañamiento cercano y ejecución ágil con equipos dedicados, validación continua y entregas incrementales. Priorizamos el impacto medible y la claridad en cada etapa."
+      },
+      {
+        "title": "Profesionalismo",
+        "description": "Establecemos procesos claros y estándares de calidad, aplicando gobernanza técnica sólida para garantizar trazabilidad, confianza y mejora continua en cada proyecto."
+      }
+    ]
   }
 }

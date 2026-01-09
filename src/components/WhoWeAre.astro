@@ -1,23 +1,176 @@
 ---
 import { Sparkles } from 'lucide-react'
+import start from '../assets/icons/start.svg'
+import ekouLogo from '../assets/icons/ekou.svg'
+import decoration2 from '../assets/img/decoration2.svg'
+import InnovationIcon from './icons/InnovationIcon.jsx'
+import ServiceIcon from './icons/ServiceIcon.jsx'
+import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const whoweare = t('whoweare')
 ---
 
-<section id="quienes-somos" class="-mt-20 md:-mt-60 w-full">
-  <main class="flex flex-col items-center justify-center">
+<section id="quienes-somos" class="-mt-20 md:-mt-60 w-full relative">
+  <div
+    class="absolute -left-28 md:-left-44 top-1 md:top-4 h-60 w-72 md:h-96 md:w-[30rem] rounded-full bg-[#1931594D] blur-3xl pointer-events-none z-0"
+    aria-hidden="true"
+  >
+  </div>
+  <main class="relative z-10 flex flex-col items-center justify-center">
     <h1 class="text-sm md:text-md text-(--color-primary) flex items-center gap-2 mt-4">
       <Sparkles className="w-4 h-4" />
-      Quienes somos
+      {whoweare.badge}
     </h1>
-    <p class="mb-4 text-(--text-secundary) max-w-2xlç">
-      Texto dummy temporal para visualizar el scroll. Aqui describiremos al equipo y el enfoque de
-      trabajo.
+    <h2 class="mt-3 text-center text-white text-4xl md:text-7xl font-semibold">
+      {whoweare.title}
+    </h2>
+    <p class="mt-6 mb-4 text-center text-(--text-secundary) max-w-2xl">
+      {whoweare.description}
     </p>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Este bloque es solo relleno para dar altura. Se reemplazara por contenido real cuando
-      definamos la narrativa.
-    </p>
-    <p class="text-(--text-secundary) max-w-2xl">
-      Mas texto de prueba para simular varias lineas y validar el offset del header.
-    </p>
+    <div class="relative mt-8 w-full max-w-[1400px]">
+      <img
+        src={decoration2.src}
+        alt="decoration2"
+        class="absolute left-0 top-0 w-full h-[80%] object-contain opacity-40 pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-3 h-3 absolute -left-5 top-20 md:-left-10 md:top-28 z-10 pointer-events-none"
+        style="animation-delay: 0s;"
+        aria-hidden="true"
+      />
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-6 h-6 absolute right-[12%] -top-3 md:right-[18%] md:-top-6 z-10 pointer-events-none"
+        style="animation-delay: 0.6s;"
+        aria-hidden="true"
+      />
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-4 h-4 absolute left-[22%] -bottom-2 md:left-[15%] md:-bottom-4 z-10 pointer-events-none"
+        style="animation-delay: 1s;"
+        aria-hidden="true"
+      />
+      <img
+        src={start.src}
+        alt="icon-star"
+        class="star-twinkle w-4 h-4 absolute -right-3 top-36 md:right-2 md:top-44 z-10 pointer-events-none"
+        style="animation-delay: 1.4s;"
+        aria-hidden="true"
+      />
+      <div class="relative z-0 grid w-full gap-1 md:grid-cols-3 md:gap-32 lg:gap-36">
+        <div
+          class="whoweare-card relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0f1627] px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+        >
+          <img
+            src={ekouLogo.src}
+            alt=""
+            class="absolute right-0 bottom-0 h-32 w-auto translate-y-2 opacity-[0.02] md:-right-4 md:bottom-0 md:h-44 md:translate-y-3 object-contain pointer-events-none select-none z-0"
+            aria-hidden="true"
+          />
+          <div class="relative z-10">
+            <InnovationIcon className="mx-auto mb-4 h-24 w-24 text-white" />
+            <h3 class="text-xl font-semibold text-white">{whoweare.cards[0].title}</h3>
+            <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+              {whoweare.cards[0].description}
+            </p>
+          </div>
+        </div>
+        <div
+          class="whoweare-card whoweare-card--service relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#111123] px-4 pt-2 pb-4 text-center transition-transform duration-500 rotate-3 translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+        >
+          <img
+            src={ekouLogo.src}
+            alt=""
+            class="absolute right-0 bottom-0 h-32 w-auto translate-y-2 opacity-[0.02] md:-right-4 md:bottom-0 md:h-44 md:translate-y-3 object-contain pointer-events-none select-none z-0"
+            aria-hidden="true"
+          />
+          <div class="relative z-10">
+            <ServiceIcon className="mx-auto mb-4 h-20 w-20 text-white" />
+            <h3 class="text-xl font-semibold text-white">{whoweare.cards[1].title}</h3>
+            <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+              {whoweare.cards[1].description}
+            </p>
+          </div>
+        </div>
+        <div
+          class="whoweare-card whoweare-card--pro relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0d1223] px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+        >
+          <img
+            src={ekouLogo.src}
+            alt=""
+            class="absolute right-0 bottom-0 h-32 w-auto translate-y-2 opacity-[0.02] md:-right-4 md:bottom-0 md:h-44 md:translate-y-3 object-contain pointer-events-none select-none z-0"
+            aria-hidden="true"
+          />
+          <div class="relative z-10">
+            <ProfessionalismIcon className="mx-auto mb-4 h-24 w-24 text-white" />
+            <h3 class="text-xl font-semibold text-white">{whoweare.cards[2].title}</h3>
+            <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
+              {whoweare.cards[2].description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </section>
+
+<style>
+  @keyframes starTwinkle {
+    0%,
+    100% {
+      transform: scale(0.7);
+      filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+      opacity: 0.75;
+    }
+    50% {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+      opacity: 1;
+    }
+  }
+
+  .star-twinkle {
+    animation: starTwinkle 2.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .whoweare-card {
+    --card-glow: rgba(255, 255, 255, 0.08);
+    --card-glow-transparent: rgba(255, 255, 255, 0);
+    --card-glow-pos: 20% 0%;
+    box-shadow: -18px 18px 50px var(--card-glow);
+    z-index: 0;
+  }
+
+  .whoweare-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      140% 120% at var(--card-glow-pos),
+      var(--card-glow),
+      var(--card-glow-transparent) 60%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .whoweare-card--service {
+    --card-glow: rgba(97, 16, 124, 0.1);
+    --card-glow-transparent: rgba(97, 16, 124, 0);
+    --card-glow-pos: 85% 0%;
+  }
+
+  .whoweare-card--pro {
+    --card-glow-pos: 100% 40%;
+  }
+</style>

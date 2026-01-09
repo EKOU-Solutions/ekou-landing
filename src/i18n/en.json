@@ -38,5 +38,24 @@
         "description": "We guide every stage with transparency, continuous iteration, and focus on results."
       }
     ]
+  },
+  "whoweare": {
+    "badge": "Who we are",
+    "title": "We connect ideas with execution",
+    "description": "We support organizations in the design and development of innovative solutions, tailored to their specific needs, boosting their growth, building strategic partnerships, and optimizing processes for a global market.",
+    "cards": [
+      {
+        "title": "Innovation",
+        "description": "We turn challenges into scalable solutions, designing measurable products and processes that allow us to evaluate and improve impact in every iteration."
+      },
+      {
+        "title": "Service",
+        "description": "Close support and agile execution with dedicated teams, continuous validation, and incremental delivery. We prioritize measurable impact and clarity at every stage."
+      },
+      {
+        "title": "Professionalism",
+        "description": "We establish clear processes and quality standards, applying solid technical governance to ensure traceability, trust, and continuous improvement in every project."
+      }
+    ]
   }
 }
