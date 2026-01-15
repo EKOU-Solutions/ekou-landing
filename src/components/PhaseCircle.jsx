@@ -11,7 +11,7 @@ const PhaseCircle = ({ icon, phase, className, label }) => {
     <>
       <button
         type="button"
-        className={`group w-30 md:w-32 h-30 md:h-32 relative rounded-full border border-(--text-color) bg-(--surface-primary) flex items-center justify-center cursor-pointer transition ${isActive ? 'scale-107' : 'hover:scale-107'} ${className}`}
+        className={`group w-30 md:w-32 h-30 md:h-32 relative rounded-full border border-(--text-primary) bg-(--surface-primary) flex items-center justify-center hover:scale-105 transition ${isActive ? 'scale-107' : ''} ${className}`}
         onClick={handleClick}
         aria-pressed={isActive}
         aria-label={`Seleccionar fase ${phase}`}

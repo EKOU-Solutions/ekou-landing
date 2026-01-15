@@ -132,5 +132,8 @@
       "messagePlaceholder": "Tell us briefly what you need",
       "submit": "Send message"
     }
+  },
+  "footer": {
+    "copyright": "© 2025 EKOU. All rights reserved."
   }
 }

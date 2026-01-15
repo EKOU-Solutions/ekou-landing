@@ -1,7 +1,7 @@
 export const cases = [
   {
     title: 'Breath Natural',
-    description: 'Tu refugio digital en la naturaleza. Inspirate, desconecta y respira hondo.',
+    description: 'Tu refugio digital en la naturaleza. Inspírate, desconecta y respira hondo.',
     image:
       'https://elements-resized.envatousercontent.com/elements-cover-images/7b777702-38f1-4f82-9f9f-6f8327a2f918?w=433&cf_fit=scale-down&q=85&format=auto&s=bda707d13d1cef23df5eb1d849df2d12b0f62057a87d5b6f64bf8805ac8a5c21',
   },
@@ -13,7 +13,7 @@ export const cases = [
   },
   {
     title: 'Breath Natural',
-    description: 'Tu refugio digital en la naturaleza. Inspirate, desconecta y respira hondo.',
+    description: 'Tu refugio digital en la naturaleza. Inspírate, desconecta y respira hondo.',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxU_ehVM0OVBvN_YOOS5VUSlTrhAiVrMEIpg&s',
   },
@@ -31,7 +31,7 @@ export const cases = [
   },
   {
     title: 'Breath Natural',
-    description: 'Tu refugio digital en la naturaleza. Inspirate, desconecta y respira hondo.',
+    description: 'Tu refugio digital en la naturaleza. Inspírate, desconecta y respira hondo.',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2qzyBpVSYqCAkKq5sFIVukRucFV00UL9HNQ&s',
   },

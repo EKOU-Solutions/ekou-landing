@@ -5,19 +5,17 @@ import '@splidejs/react-splide/css'
 const CasesSlider = ({ items }) => {
   const options = {
     type: 'loop',
-    perPage: 4,
+    autoWidth: true,
     perMove: 1,
     gap: '1.4rem',
     pagination: true,
     arrows: true,
-    focus: 'left',
+    focus: 0,
     keyboard: 'global',
     slideFocus: true,
     breakpoints: {
-      1280: { perPage: 3.2 },
-      980: { perPage: 2.8 },
-      768: { perPage: 1.5 },
-      480: { perPage: 1.3 },
+      768: { gap: '1.1rem' },
+      480: { gap: '0.9rem' },
     },
   }
 
@@ -25,7 +23,7 @@ const CasesSlider = ({ items }) => {
     <>
       <Splide
         options={options}
-        className="cases-slider ml-10 md:ml-26 pb-10 cursor-grab active:cursor-grabbing"
+        className="cases-slider pb-10 pl-4 md:pl-10 cursor-grab active:cursor-grabbing"
       >
         {items.map((item, index) => (
           <SplideSlide key={`${item.title}-${index}`}>
@@ -45,7 +43,7 @@ const CasesSlider = ({ items }) => {
               {/* Content */}
               <div className="relative z-10 p-5 flex flex-col gap-2">
                 {/* Glow */}
-                <div className="absolute left-0 bottom-0 w-[70%] h-120 rounded-full rotate-180 bg-linear-to-br from-(--color-primary) to-(--color-secundary) blur-[70px] opacity-12 pointer-events-none" />
+                <div className="case-glow absolute left-0 bottom-0 w-[70%] h-120 rounded-full rotate-180 bg-linear-to-br from-(--color-primary) to-(--color-secundary) blur-[70px] pointer-events-none" />
                 <h3 className="text-white font-semibold text-2xl -mt-4">{item.title}</h3>
                 <p className="text-(--text-secundary) text-sm leading-relaxed line-clamp-3">
                   {item.description}
@@ -75,11 +73,11 @@ const CasesSlider = ({ items }) => {
         }
 
         .cases-slider .splide__arrow--prev {
-          left: -40px;
+          left: -10px;
         }
 
         .cases-slider .splide__arrow--next {
-          right: -20px;
+          right: -10px;
           z-index: 20;
         }
 
@@ -90,11 +88,29 @@ const CasesSlider = ({ items }) => {
         .cases-slider .splide__pagination__page.is-active {
           background: var(--color-primary);
         }
+
+        .cases-slider .splide__slide {
+          width: clamp(220px, 82vw, 340px);
+        }
+
+        .cases-slider .case-glow {
+          opacity: 0.12;
+        }
         
         @media (width <= 768px) {
             .cases-slider .splide__arrow--next {
-              right: 0px;
+              right: 2px;
             }
+
+            .cases-slider .splide__arrow--prev {
+              left: 2px;
+            }
+        }
+
+        @media (width <= 520px) {
+          .cases-slider .case-glow {
+            opacity: 0;
+          }
         }
       `}</style>
     </>

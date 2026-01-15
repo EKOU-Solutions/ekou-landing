@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@splidejs/react-splide/css';
 
 * {
   box-sizing: border-box;
@@ -34,6 +35,9 @@ html {
 body {
   color: var(--text-primary);
   background-color: var(--surface-primary);
+  padding: 0 3%;
+  padding-top: 72px;
+  overflow-x: hidden;
 }
 
 .box {

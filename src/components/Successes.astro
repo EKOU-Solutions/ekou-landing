@@ -14,7 +14,8 @@ const successes = t('successes')
   <img
     src={barsInclined.src}
     alt="overlay"
-    class="w-full object-cover h-full absolute -left-6 bottom-40 opacity-80"
+    class="w-full object-cover h-full absolute -left-6 bottom-40 opacity-80 pointer-events-none"
+    aria-hidden="true"
   />
   <!--glow -->
   <div
@@ -22,7 +23,7 @@ const successes = t('successes')
   >
   </div>
 
-  <main class="relative mx-auto md:max-w-7xl">
+  <main class="relative z-10 mx-auto md:max-w-7xl">
     <div class="text-center mb-10">
       <span class="inline-flex items-center gap-2 text-sm uppercase text-(--color-primary)">
         <Sparkles className="w-4 h-4" />
