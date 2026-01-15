@@ -57,5 +57,79 @@
         "description": "We establish clear processes and quality standards, applying solid technical governance to ensure traceability, trust, and continuous improvement in every project."
       }
     ]
+  "services": {
+    "badge": "Services",
+    "title": "How we support you",
+    "description": "A strategic, iterative process focused on real results."
+  },
+  "successes": {
+    "badge": "Case studies",
+    "title": "Real impact",
+    "description": "Measurable outcomes that show the value of our solutions and how we support organizations."
+  },
+  "servicePhases": {
+    "labels": {
+      "phaseLabel": "Phase",
+      "helpsTitle": "How we help",
+      "deliverablesTitle": "Deliverables",
+      "prevAria": "Previous phase",
+      "nextAria": "Next phase"
+    },
+    "phases": [
+      {
+        "id": "1",
+        "title": "Phase 1",
+        "subtitle": "Strategy and Planning",
+        "tagline": "Avoid improvisation and move forward with confidence.",
+        "helps": [
+          "We understand your context and goals",
+          "We validate ideas before investing",
+          "We define a clear and measurable plan"
+        ],
+        "deliverables": ["Strategic roadmap", "Prioritization", "OKRs and metrics"]
+      },
+      {
+        "id": "2",
+        "title": "Phase 2",
+        "subtitle": "Design and Prototyping",
+        "tagline": "Turn strategy into a clear experience.",
+        "helps": [
+          "We define flow and architecture",
+          "We test ideas with fast prototypes",
+          "We align the product with users"
+        ],
+        "deliverables": ["Wireframes", "UI Kit", "Navigable prototype"]
+      },
+      {
+        "id": "3",
+        "title": "Phase 3",
+        "subtitle": "Development and Launch",
+        "tagline": "Build, validate, and launch with confidence.",
+        "helps": [
+          "We develop with a quality-first approach",
+          "We iterate with real feedback",
+          "We prepare launch and scale"
+        ],
+        "deliverables": ["Functional MVP", "QA and optimization", "Launch support"]
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Free technical consultation",
+    "description": "Tell us your idea. We help you turn it into a real solution.",
+    "email": "contact@ekou.com",
+    "phone": "+57 3243263523",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "projectLabel": "Project",
+      "messageLabel": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "example@gmail.com",
+      "projectPlaceholder": "Website, mobile app, SaaS...",
+      "messagePlaceholder": "Tell us briefly what you need",
+      "submit": "Send message"
+    }
   }
 }
