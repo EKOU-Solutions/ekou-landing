@@ -2,16 +2,18 @@
 import { Sparkles } from 'lucide-react'
 import start from '../assets/icons/start.svg'
 import ServicePhases from './ServicePhases'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const services = t('services')
+const servicePhases = t('servicePhases')
 ---
 
 <section id="servicios" class="relative w-full bg-(--surface-primary)">
   <!-- Glow -->
   <div
-    class="absolute left-0 bottom-0 w-[50%] h-120 rounded-full rotate-180
-           bg-linear-to-br
-           from-(--color-primary)
-           to-(--color-secundary)
-           blur-[70px] opacity-12 pointer-events-none"
+    class="absolute left-0 bottom-0 w-[50%] h-120 rounded-full rotate-180 bg-linear-to-br from-(--color-primary) to-(--color-secundary) blur-[70px] opacity-10 pointer-events-none"
     aria-hidden="true"
   >
   </div>
@@ -43,20 +45,20 @@ import ServicePhases from './ServicePhases'
     <div class="text-center md:mb-16">
       <span class="inline-flex items-center gap-2 text-sm uppercase text-(--color-primary)">
         <Sparkles className="w-4 h-4" />
-        Servicios
+        {services.badge}
       </span>
 
       <h2 class="mt-4 text-3xl md:text-5xl font-semibold text-(--text-primary)">
-        Cómo te acompañamos
+        {services.title}
       </h2>
 
       <p class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
-        Un proceso estratégico, iterativo y enfocado en resultados reales.
+        {services.description}
       </p>
     </div>
 
     <!-- Content -->
-    <ServicePhases client:load />
+    <ServicePhases client:load phasesData={servicePhases.phases} labels={servicePhases.labels} />
   </main>
 </section>
 
