@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { CircleCheck, Sparkles } from 'lucide-react'
 import grupoEkou from '../assets/img/grupoEkou.webp'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
@@ -85,10 +86,12 @@ const titleHighlightLines = welcome.titleHighlight.split('\n')
            blur-[70px] opacity-25 pointer-events-none"
         >
         </div>
-        <img
-          src={grupoEkou.src}
+        <Image
+          src={grupoEkou}
           alt="Equipo EKOU"
           class="w-full h-full object-cover relative z-10"
+          loading="eager"
+          decoding="async"
         />
       </div>
     </div>

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { Sparkles, Rocket, Cpu, Atom } from 'lucide-react'
 import arrowA from '../assets/img/arrowA.svg'
 import arrowB from '../assets/img/arrowB.svg'
@@ -59,8 +60,8 @@ const icons = [Rocket, Cpu, Atom]
   </main>
 </section>
 
-<img
-  src={decoration2.src}
+<Image
+  src={decoration2}
   alt="decoration2"
   class="w-full h-[80%] z-10 absolute object-contain left-0 top-344 opacity-40"
   aria-hidden="true"

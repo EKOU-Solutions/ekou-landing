@@ -33,6 +33,8 @@ const CasesSlider = ({ items }) => {
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   className="relative z-0 h-full w-full object-cover"
                 />
               </div>
