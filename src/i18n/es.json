@@ -132,5 +132,8 @@
       "messagePlaceholder": "Cuentanos brevemente tu necesidad",
       "submit": "Enviar mensaje"
     }
+  },
+  "footer": {
+    "copyright": "© 2025 EKOU. Todos los derechos reservados."
   }
 }
