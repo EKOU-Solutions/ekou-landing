@@ -19,19 +19,50 @@ const footer = t('footer')
 
         <div class="flex items-center gap-3">
           <button type="button" aria-label="Instagram" class="footer-social">
-            <Instagram className="h-4 w-4" />
+            <Instagram className="h-5 w-5" />
           </button>
           <button type="button" aria-label="Twitch" class="footer-social">
-            <Twitch className="h-4 w-4" />
+            <Twitch className="h-5 w-5" />
           </button>
           <button type="button" aria-label="Dribbble" class="footer-social">
-            <Dribbble className="h-4 w-4" />
+            <Dribbble className="h-5 w-5" />
           </button>
           <button type="button" aria-label="LinkedIn" class="footer-social">
-            <Linkedin className="h-4 w-4" />
+            <Linkedin className="h-5 w-5" />
           </button>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition:
+      color 160ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .footer-social:hover {
+    color: #001018;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+  }
+
+  .footer-social:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+</style>
