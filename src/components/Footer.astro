@@ -1,12 +1,64 @@
-<footer id="footer">
-  <main class="pt-24 pb-12">
-    <h2 class="text-5xl xl:text-6xl font-bold mb-4">Footer</h2>
-    <p class="mb-4 text-(--text-secundary) max-w-2xl">
-      Texto dummy temporal para visualizar el scroll. Aqui ira el contenido del footer, links y
-      datos legales.
-    </p>
-    <p class="text-(--text-secundary) max-w-2xl">
-      Relleno adicional para mantener altura mientras armamos el footer real.
-    </p>
-  </main>
+---
+import ekouLogo from '../assets/icons/ekouLogo-v1.svg'
+import { Dribbble, Instagram, Linkedin, Twitch } from 'lucide-react'
+---
+
+<footer id="footer" class="w-full">
+  <div class="w-full border-t border-(--color-border)">
+    <div class="mx-auto w-full max-w-7xl px-6 py-6 md:px-10">
+      <div class="flex items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src={ekouLogo.src} alt="EKOU" class="h-9 w-auto cursor-pointer" />
+          <div class="hidden md:block text-sm text-(--text-secundary)">
+            © 2025 EKOU. Todos los derechos reservados.
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button type="button" aria-label="Instagram" class="footer-social">
+            <Instagram className="h-4 w-4" />
+          </button>
+          <button type="button" aria-label="Twitch" class="footer-social">
+            <Twitch className="h-4 w-4" />
+          </button>
+          <button type="button" aria-label="Dribbble" class="footer-social">
+            <Dribbble className="h-4 w-4" />
+          </button>
+          <button type="button" aria-label="LinkedIn" class="footer-social">
+            <Linkedin className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .footer-social {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition:
+      color 160ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .footer-social:hover {
+    color: #001018;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+  }
+
+  .footer-social:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+</style>

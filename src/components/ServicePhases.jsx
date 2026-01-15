@@ -108,7 +108,7 @@ const ServicePhases = () => {
         />
         <h3 className="text-lg md:text-xl font-semibold text-(--color-primary) text-center flex flex-col gap-1">
           {currentPhaseData.title}{' '}
-          <span className="text-md :text-lg">{currentPhaseData.subtitle}</span>
+          <span className="text-base md:text-lg">{currentPhaseData.subtitle}</span>
         </h3>
 
         <p className="text-(--text-secundary) text-xs md:text-lg">{currentPhaseData.tagline}</p>
