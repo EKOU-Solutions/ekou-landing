@@ -130,7 +130,10 @@
       "emailPlaceholder": "example@gmail.com",
       "projectPlaceholder": "Website, mobile app, SaaS...",
       "messagePlaceholder": "Tell us briefly what you need",
-      "submit": "Send message"
+      "submit": "Send message",
+      "loadingMessage": "Sending...",
+      "successMessage": "Thanks, we received your message. We'll reach out soon.",
+      "errorMessage": "We couldn't send your message. Please try again."
     }
   },
   "footer": {

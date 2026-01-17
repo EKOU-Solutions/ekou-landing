@@ -7,7 +7,7 @@ const validators = {
   message: (value) => value.trim().length >= 10,
 }
 
-const ContactForm = ({ labels }) => {
+const ContactForm = ({ labels, endpoint }) => {
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -21,6 +21,7 @@ const ContactForm = ({ labels }) => {
     project: false,
     message: false,
   })
+  const [status, setStatus] = useState('idle')
 
   // Calcula errores por campo segun los valores actuales.
   const errors = useMemo(() => {
@@ -34,6 +35,9 @@ const ContactForm = ({ labels }) => {
 
   const setFieldValue = (field, value) => {
     setValues((prev) => ({ ...prev, [field]: value }))
+    if (status !== 'idle' && status !== 'submitting') {
+      setStatus('idle')
+    }
   }
 
   const setFieldTouched = (field) => {
@@ -65,15 +69,65 @@ const ContactForm = ({ labels }) => {
     return 'border-(--color-border)'
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     setTouched({ name: true, email: true, project: true, message: true })
+    if (Object.values(errors).some(Boolean)) {
+      return
+    }
+    if (!endpoint) {
+      setStatus('error')
+      return
+    }
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    setStatus('submitting')
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setValues({ name: '', email: '', project: '', message: '' })
+        setTouched({ name: false, email: false, project: false, message: false })
+        return
+      }
+
+      setStatus('error')
+    } catch (error) {
+      setStatus('error')
+    }
   }
+
+  const isSubmitting = status === 'submitting'
+  const statusMessage =
+    status === 'submitting'
+      ? labels.loadingMessage
+      : status === 'success'
+        ? labels.successMessage
+        : status === 'error'
+          ? labels.errorMessage
+          : ''
+  const statusClass =
+    status === 'success'
+      ? 'text-(--color-primary)'
+      : status === 'error'
+        ? 'text-red-400'
+        : 'text-(--text-secundary)'
+  const statusRole = status === 'error' ? 'alert' : 'status'
 
   return (
     <form
       className="relative w-full rounded-2xl border border-(--color-border) bg-transparent backdrop-blur-xs p-6 md:p-8 shadow-[0_10px_20px_rgba(0,0,0,0.20)]"
+      action={endpoint || undefined}
+      method="POST"
       onSubmit={handleSubmit}
+      aria-busy={isSubmitting}
       noValidate
     >
       <div
@@ -93,6 +147,7 @@ const ContactForm = ({ labels }) => {
               onChange={(event) => setFieldValue('name', event.target.value)}
               onBlur={() => setFieldTouched('name')}
               aria-invalid={getValidationState('name').isInvalid}
+              disabled={isSubmitting}
               className={`h-10 rounded-xl border bg-(--surface-input)/60 px-4 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) ${getInputClass('name')}`}
             />
           </label>
@@ -106,6 +161,7 @@ const ContactForm = ({ labels }) => {
               onChange={(event) => setFieldValue('email', event.target.value)}
               onBlur={() => setFieldTouched('email')}
               aria-invalid={getValidationState('email').isInvalid}
+              disabled={isSubmitting}
               className={`h-10 rounded-xl border bg-(--surface-input)/60 px-4 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) ${getInputClass('email')}`}
             />
           </label>
@@ -121,6 +177,7 @@ const ContactForm = ({ labels }) => {
             onChange={(event) => setFieldValue('project', event.target.value)}
             onBlur={() => setFieldTouched('project')}
             aria-invalid={getValidationState('project').isInvalid}
+            disabled={isSubmitting}
             className={`h-10 rounded-xl border bg-(--surface-input)/60 px-4 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) ${getInputClass('project')}`}
           />
         </label>
@@ -135,16 +192,23 @@ const ContactForm = ({ labels }) => {
             onChange={(event) => setFieldValue('message', event.target.value)}
             onBlur={() => setFieldTouched('message')}
             aria-invalid={getValidationState('message').isInvalid}
+            disabled={isSubmitting}
             className={`min-h-28 rounded-xl border bg-(--surface-input)/60 px-4 py-3 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) resize-none ${getInputClass('message')}`}
           />
         </label>
 
         <button
           type="submit"
+          disabled={isSubmitting}
           className="mt-2 w-full md:w-44 self-center mx-auto rounded-lg bg-(--text-secundary) text-black text-sm font-semibold py-2 hover:opacity-80 transition"
         >
           {labels.submit}
         </button>
+        {statusMessage ? (
+          <p className={`text-xs text-center ${statusClass}`} role={statusRole} aria-live="polite">
+            {statusMessage}
+          </p>
+        ) : null}
       </div>
     </form>
   )
