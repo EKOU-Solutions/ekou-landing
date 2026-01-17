@@ -1,6 +1,8 @@
 import PhaseCircle from './PhaseCircle'
 import { usePhasesStore } from '../store/phasesStore'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CodeIcon } from 'lucide-react'
+import ArtIcon from './icons/ArtIcon.jsx'
+import SearchIcon from './icons/SearchIcon.jsx'
 
 const ServicePhases = ({ phasesData, labels }) => {
   const currentPhase = usePhasesStore((state) => state.currentPhase)
@@ -21,26 +23,30 @@ const ServicePhases = ({ phasesData, labels }) => {
       <div className="relative flex items-center justify-center md:h-100">
         <div className="absolute z-10 left-0 bottom-0 hidden md:flex flex-col items-center justify-center">
           <PhaseCircle
-            icon="/search.svg"
+            icon={<CodeIcon className="w-8 h-8 text-(--surface-secundary)" />}
             phase="1"
-            className="relative before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-white before:h-51 md:before:h-53 before:-top-47 before:left-32 md:before:left-38 before:w-px before:rotate-28 md:before:rotate-34"
+            className="relative before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-(--text-primary) before:h-51 md:before:h-53 before:-top-47 before:left-32 md:before:left-38 before:w-px before:rotate-28 md:before:rotate-34"
             label={labels.phaseLabel}
           />
         </div>
         <div className="absolute z-20 left-[34%] top-0 hidden md:flex flex-col items-center justify-center">
-          <PhaseCircle icon="/artist.svg" phase="2" label={labels.phaseLabel} />
+          <PhaseCircle
+            icon={<ArtIcon className="w-8 h-8 text-(--surface-secundary)" />}
+            phase="2"
+            label={labels.phaseLabel}
+          />
         </div>
         <div className="absolute z-10 right-0 md:right-10 bottom-34 hidden md:flex flex-col items-center justify-center">
           <PhaseCircle
-            icon="/code.svg"
+            icon={<SearchIcon className="w-8 h-8 text-(--surface-secundary)" />}
             phase="3"
-            className="relative z-10 before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-white before:h-24 md:before:h-38 before:-top-16 md:before:-top-20 before:-left-4 md:before:-left-15 before:w-px before:-rotate-48 md:before:-rotate-58"
+            className="relative z-10 before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-(--text-primary) before:h-24 md:before:h-38 before:-top-16 md:before:-top-20 before:-left-4 md:before:-left-15 before:w-px before:-rotate-48 md:before:-rotate-58"
             label={labels.phaseLabel}
           />
         </div>
         <div className="absolute bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6">
           <button
-            className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-(--text-secundary) hover:text-(--color-primary) transition-all duration-300 bg-white/2 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6),0_4px_0px_rgba(0,0,0,0.15)] hover:bg-white/8"
+            className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-(--text-secundary) hover:text-(--color-primary) transition-all duration-300 bg-white/1 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6),0_4px_0px_rgba(0,0,0,0.05)]  border border-(--color-border) hover:bg-white/8"
             onClick={() => setPhaseByIndex(currentIndex - 1)}
             aria-label={labels.prevAria}
             type="button"
@@ -48,12 +54,12 @@ const ServicePhases = ({ phasesData, labels }) => {
             <ArrowLeft />
           </button>
 
-          <div className="px-4 w-20 py-2 rounded-full bg-(--surface-secundary)/40 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6)] text-xs text-center text-(--text-primary)">
+          <div className="px-4 w-20 py-2 rounded-xl text-(--color-primary) border border-(--color-border) bg-(--surface-secundary)/40 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6)] text-xs text-center">
             {labels.phaseLabel} {currentPhase ?? '1'}
           </div>
 
           <button
-            className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-(--text-secundary) hover:text-(--color-primary) transition-all duration-300 bg-white/2 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6),0_4px_0px_rgba(0,0,0,0.15)] hover:bg-white/8"
+            className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-(--text-secundary) hover:text-(--color-primary) transition-all duration-300 bg-white/1 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6),0_4px_0px_rgba(0,0,0,0.05)] border border-(--color-border) hover:bg-white/8"
             onClick={() => setPhaseByIndex(currentIndex + 1)}
             aria-label={labels.nextAria}
             type="button"

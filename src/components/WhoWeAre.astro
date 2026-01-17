@@ -15,7 +15,7 @@ const whoweare = t('whoweare')
 
 <section id="quienes-somos" class="-mt-20 md:-mt-60 w-full relative">
   <div
-    class="absolute -left-28 md:-left-44 top-1 md:top-4 h-60 w-72 md:h-96 md:w-[30rem] rounded-full bg-[#1931594D] blur-3xl pointer-events-none z-0"
+    class="absolute -left-28 md:-left-44 top-1 md:top-4 h-60 w-72 md:h-96 md:w-120 rounded-full bg-[#1930592c] blur-3xl pointer-events-none z-0"
     aria-hidden="true"
   >
   </div>
@@ -24,13 +24,13 @@ const whoweare = t('whoweare')
       <Sparkles className="w-4 h-4" />
       {whoweare.badge}
     </h1>
-    <h2 class="mt-3 text-center text-white text-4xl md:text-7xl font-semibold">
+    <h2 class="mt-3 text-center text-4xl md:text-7xl font-semibold text-(--text-primary)">
       {whoweare.title}
     </h2>
     <p class="mt-6 mb-4 text-center text-(--text-secundary) max-w-2xl">
       {whoweare.description}
     </p>
-    <div class="relative mt-8 w-full max-w-[1400px]">
+    <div class="relative mt-8 w-full max-w-350">
       <img
         src={decoration2.src}
         alt="decoration2"
@@ -66,8 +66,9 @@ const whoweare = t('whoweare')
         aria-hidden="true"
       />
       <div class="relative z-0 grid w-full gap-1 md:grid-cols-3 md:gap-32 lg:gap-36">
+        <!-- card 1 -->
         <div
-          class="whoweare-card relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0f1627] px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+          class="whoweare-card relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-2 border-(--color-border) bg-(--surface-secundary) px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
         >
           <img
             src={ekouLogo.src}
@@ -76,15 +77,18 @@ const whoweare = t('whoweare')
             aria-hidden="true"
           />
           <div class="relative z-10">
-            <InnovationIcon className="mx-auto mb-4 h-24 w-24 text-white" />
-            <h3 class="text-xl font-semibold text-white">{whoweare.cards[0].title}</h3>
+            <InnovationIcon
+              className="mx-auto mb-2 mt-2 h-24 rotate-4 w-24 text-(--text-primary)"
+            />
+            <h3 class="text-xl font-semibold text-(--text-primary)">{whoweare.cards[0].title}</h3>
             <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
               {whoweare.cards[0].description}
             </p>
           </div>
         </div>
+        <!-- card 2 -->
         <div
-          class="whoweare-card whoweare-card--service relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#111123] px-4 pt-2 pb-4 text-center transition-transform duration-500 rotate-3 translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+          class="whoweare-card whoweare-card--service relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-2 border-(--color-border) px-4 pt-2 pb-4 text-center transition-transform duration-500 rotate-3 translate-x-12 scale-85 md:translate-x-0 md:scale-100"
         >
           <img
             src={ekouLogo.src}
@@ -93,15 +97,16 @@ const whoweare = t('whoweare')
             aria-hidden="true"
           />
           <div class="relative z-10">
-            <ServiceIcon className="mx-auto mb-4 h-20 w-20 text-white" />
-            <h3 class="text-xl font-semibold text-white">{whoweare.cards[1].title}</h3>
+            <ServiceIcon className="mx-auto mt-2 mb-4 h-18 w-18 fill-(--text-primary)" />
+            <h3 class="text-xl font-semibold text-(--text-primary)">{whoweare.cards[1].title}</h3>
             <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
               {whoweare.cards[1].description}
             </p>
           </div>
         </div>
+        <!-- card 3 -->
         <div
-          class="whoweare-card whoweare-card--pro relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-[2.2px] border-[#272a39] bg-[#0d1223] px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
+          class="whoweare-card whoweare-card--pro relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-2 border-(--color-border) px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
         >
           <img
             src={ekouLogo.src}
@@ -110,8 +115,10 @@ const whoweare = t('whoweare')
             aria-hidden="true"
           />
           <div class="relative z-10">
-            <ProfessionalismIcon className="mx-auto mb-4 h-24 w-24 text-white" />
-            <h3 class="text-xl font-semibold text-white">{whoweare.cards[2].title}</h3>
+            <ProfessionalismIcon
+              className="mx-auto rotate-6 mt-2 h-24 w-24 fill-(--text-primary)"
+            />
+            <h3 class="text-xl font-semibold text-(--text-primary)">{whoweare.cards[2].title}</h3>
             <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
               {whoweare.cards[2].description}
             </p>
@@ -142,10 +149,14 @@ const whoweare = t('whoweare')
     transform-origin: center;
   }
 
+  .icon svg {
+    color: aqua;
+  }
+
   .whoweare-card {
-    --card-glow: rgba(255, 255, 255, 0.08);
-    --card-glow-transparent: rgba(255, 255, 255, 0);
-    --card-glow-pos: 20% 0%;
+    --card-glow: rgba(34, 185, 245, 0.068);
+    --card-glow-transparent: var(--surface-secundary);
+    --card-glow-pos: 80% 15%;
     box-shadow: -18px 18px 50px var(--card-glow);
     z-index: 0;
   }
@@ -165,12 +176,12 @@ const whoweare = t('whoweare')
   }
 
   .whoweare-card--service {
-    --card-glow: rgba(97, 16, 124, 0.1);
-    --card-glow-transparent: rgba(97, 16, 124, 0);
-    --card-glow-pos: 85% 0%;
+    --card-glow: rgba(136, 25, 174, 0.1);
+    --card-glow-transparent: var(--surface-secundary);
+    --card-glow-pos: 80% 0%;
   }
 
   .whoweare-card--pro {
-    --card-glow-pos: 100% 40%;
+    --card-glow-pos: 90% 20%;
   }
 </style>

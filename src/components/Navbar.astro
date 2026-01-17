@@ -1,5 +1,5 @@
 ---
-import ekouLogo from '../assets/icons/ekouLogo-v1.svg'
+import EkouLogo from './icons/EkouLogo.jsx'
 import ThemeController from './ThemeController.astro'
 import MobileMenu from './MobileMenu.astro'
 import {
@@ -35,7 +35,7 @@ const navLinks = [
   data-site-header
   class="w-[94%] h-14 m-auto bg-(--surface-secundary)/80 backdrop-blur-md text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed z-50 top-2 left-[3%] border border-(--color-border)"
 >
-  <img src={ekouLogo.src} alt="logo de ekou" />
+  <EkouLogo />
   <ul class="hidden lg:flex flex-1 justify-center items-center gap-8">
     {
       navLinks.map(({ href, label }) => (

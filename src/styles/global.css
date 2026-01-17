@@ -22,27 +22,25 @@ html {
 }
 
 :root[data-theme='light'] {
-  --surface-primary: #ffffff;
-  --surface-secundary: #0105147a;
-  --color-primary: #53eafd;
+  --surface-primary: #f0fbff;
+  --surface-secundary: #d5e6eedf;
+  --color-primary: #2bbacd;
   --color-secundary: #61107c;
-  --color-border: #272a39;
+  --color-border: #afb2bd;
   --text-primary: #000000;
-  --text-secundary: #4a4e58;
-  --surface-input: #969eca;
+  --text-secundary: #292a30;
+  --surface-input: #e7eaff;
 }
 
 body {
   color: var(--text-primary);
   background-color: var(--surface-primary);
-  padding: 0 3%;
   padding-top: 72px;
   overflow-x: hidden;
 }
 
 .box {
   padding: 0 3%;
-  padding-top: 72px;
   overflow: hidden;
 }
 

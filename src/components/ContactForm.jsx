@@ -141,7 +141,7 @@ const ContactForm = ({ labels }) => {
 
         <button
           type="submit"
-          className="mt-2 w-full md:w-44 self-center mx-auto rounded-lg bg-(--text-secundary) text-black text-sm font-semibold py-2 hover:opacity-80 transition"
+          className="mt-2 w-full md:w-44 self-center mx-auto rounded-lg bg-[#b3bdd2] text-black text-sm font-semibold py-2 hover:opacity-80 transition"
         >
           {labels.submit}
         </button>
