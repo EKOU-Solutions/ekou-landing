@@ -71,6 +71,9 @@ const ContactForm = ({ labels, endpoint }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if (status === 'submitting') {
+      return
+    }
     setTouched({ name: true, email: true, project: true, message: true })
     if (Object.values(errors).some(Boolean)) {
       return
@@ -120,6 +123,16 @@ const ContactForm = ({ labels, endpoint }) => {
         ? 'text-red-400'
         : 'text-(--text-secundary)'
   const statusRole = status === 'error' ? 'alert' : 'status'
+  const errorMessages = {
+    name: labels.nameError,
+    email: labels.emailError,
+    project: labels.projectError,
+    message: labels.messageError,
+  }
+  const nameValidation = getValidationState('name')
+  const emailValidation = getValidationState('email')
+  const projectValidation = getValidationState('project')
+  const messageValidation = getValidationState('message')
 
   return (
     <form
@@ -146,10 +159,16 @@ const ContactForm = ({ labels, endpoint }) => {
               value={values.name}
               onChange={(event) => setFieldValue('name', event.target.value)}
               onBlur={() => setFieldTouched('name')}
-              aria-invalid={getValidationState('name').isInvalid}
+              aria-invalid={nameValidation.isInvalid}
+              aria-describedby={nameValidation.isInvalid ? 'name-error' : undefined}
               disabled={isSubmitting}
               className={`h-10 rounded-xl border bg-(--surface-input)/60 px-4 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) ${getInputClass('name')}`}
             />
+            {nameValidation.isInvalid ? (
+              <p id="name-error" className="text-[11px] text-red-400" role="alert">
+                {errorMessages.name}
+              </p>
+            ) : null}
           </label>
           <label className={`text-xs flex flex-col gap-2 ${getLabelClass('email')}`}>
             {labels.emailLabel}
@@ -160,10 +179,16 @@ const ContactForm = ({ labels, endpoint }) => {
               value={values.email}
               onChange={(event) => setFieldValue('email', event.target.value)}
               onBlur={() => setFieldTouched('email')}
-              aria-invalid={getValidationState('email').isInvalid}
+              aria-invalid={emailValidation.isInvalid}
+              aria-describedby={emailValidation.isInvalid ? 'email-error' : undefined}
               disabled={isSubmitting}
               className={`h-10 rounded-xl border bg-(--surface-input)/60 px-4 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) ${getInputClass('email')}`}
             />
+            {emailValidation.isInvalid ? (
+              <p id="email-error" className="text-[11px] text-red-400" role="alert">
+                {errorMessages.email}
+              </p>
+            ) : null}
           </label>
         </div>
 
@@ -176,10 +201,16 @@ const ContactForm = ({ labels, endpoint }) => {
             value={values.project}
             onChange={(event) => setFieldValue('project', event.target.value)}
             onBlur={() => setFieldTouched('project')}
-            aria-invalid={getValidationState('project').isInvalid}
+            aria-invalid={projectValidation.isInvalid}
+            aria-describedby={projectValidation.isInvalid ? 'project-error' : undefined}
             disabled={isSubmitting}
             className={`h-10 rounded-xl border bg-(--surface-input)/60 px-4 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) ${getInputClass('project')}`}
           />
+          {projectValidation.isInvalid ? (
+            <p id="project-error" className="text-[11px] text-red-400" role="alert">
+              {errorMessages.project}
+            </p>
+          ) : null}
         </label>
 
         <label className={`text-xs flex flex-col gap-2 ${getLabelClass('message')}`}>
@@ -191,16 +222,22 @@ const ContactForm = ({ labels, endpoint }) => {
             value={values.message}
             onChange={(event) => setFieldValue('message', event.target.value)}
             onBlur={() => setFieldTouched('message')}
-            aria-invalid={getValidationState('message').isInvalid}
+            aria-invalid={messageValidation.isInvalid}
+            aria-describedby={messageValidation.isInvalid ? 'message-error' : undefined}
             disabled={isSubmitting}
             className={`min-h-28 rounded-xl border bg-(--surface-input)/60 px-4 py-3 text-sm text-(--text-primary) outline-none focus:border-(--color-primary) resize-none ${getInputClass('message')}`}
           />
+          {messageValidation.isInvalid ? (
+            <p id="message-error" className="text-[11px] text-red-400" role="alert">
+              {errorMessages.message}
+            </p>
+          ) : null}
         </label>
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-2 w-full md:w-44 self-center mx-auto rounded-lg bg-(--text-secundary) text-black text-sm font-semibold py-2 hover:opacity-80 transition"
+          className="mt-2 w-full md:w-44 self-center mx-auto rounded-lg bg-[#b3bdd2] text-black text-sm font-semibold py-2 hover:opacity-80 transition disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:opacity-60"
         >
           {labels.submit}
         </button>
