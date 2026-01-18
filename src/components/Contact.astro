@@ -7,6 +7,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const contact = t('contact')
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT // endpoint que se obtiene del servicio "formspree"
 ---
 
 <section id="hablemos" class="relative w-full overflow-hidden">
@@ -48,7 +49,7 @@ const contact = t('contact')
         </div>
       </div>
 
-      <ContactForm client:load labels={contact.form} />
+      <ContactForm client:load labels={contact.form} endpoint={formspreeEndpoint} />
     </div>
   </main>
 </section>

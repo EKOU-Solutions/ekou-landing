@@ -130,10 +130,17 @@
       "emailPlaceholder": "example@gmail.com",
       "projectPlaceholder": "Website, mobile app, SaaS...",
       "messagePlaceholder": "Tell us briefly what you need",
-      "submit": "Send message"
+      "nameError": "Please enter your name (min 3 characters).",
+      "emailError": "Enter a valid email address.",
+      "projectError": "Tell us about your project (min 3 characters).",
+      "messageError": "Message should be at least 10 characters.",
+      "submit": "Send message",
+      "loadingMessage": "Sending...",
+      "successMessage": "Thanks, we received your message. We'll reach out soon.",
+      "errorMessage": "We couldn't send your message. Please try again."
     }
   },
   "footer": {
-    "copyright": "© 2025 EKOU. All rights reserved."
+    "copyright": "© 2026 EKOU. All rights reserved."
   }
 }
