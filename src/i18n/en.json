@@ -14,11 +14,15 @@
   },
   "welcome": {
     "badge": "Welcome to EKOU",
-    "title": "Technology and\ninnovation that\ndrive your",
-    "titleHighlight": "growth and\ngenerate real impact.",
-    "description": "We support companies and entrepreneurs in their digital evolution, integrating strategy, technology, and innovation to build solutions aligned with their business goals.",
+    "title": "Strategic and technological consulting\nfor companies",
+    "titleHighlight": "seeking to evolve\nwith real results",
+    "description": "We support companies and entrepreneurs by integrating strategy, technology, and practical innovation to build sustainable solutions.",
     "cta": "Let's talk about your project",
-    "features": ["Purpose-driven strategy", "End-to-end execution", "Ongoing support"]
+    "features": [
+      "Consultative strategy",
+      "Applied technology",
+      "Real outcomes"
+    ]
   },
   "helpyou": {
     "badge": "Help you",
@@ -40,21 +44,21 @@
     ]
   },
   "whoweare": {
-    "badge": "Who we are",
-    "title": "We connect ideas with execution",
-    "description": "We support organizations in the design and development of innovative solutions, tailored to their specific needs, boosting their growth, building strategic partnerships, and optimizing processes for a global market.",
+    "badge": "Who we are?",
+    "title": "Strategy, technology, and innovation applied to business growth",
+    "description": "EKOU Solutions is a consulting and technology development partner for companies and entrepreneurs seeking to evolve with real results. We are not a traditional agency: we work with a close, consultative approach grounded in strategy, technology, and practical innovation.",
     "cards": [
       {
-        "title": "Innovation",
-        "description": "We turn challenges into scalable solutions, designing measurable products and processes that allow us to evaluate and improve impact in every iteration."
+        "title": "What is EKOU Solutions?",
+        "description": "A partner that integrates consulting, strategy, and technology to turn business goals into sustainable solutions."
       },
       {
-        "title": "Service",
-        "description": "Close support and agile execution with dedicated teams, continuous validation, and incremental delivery. We prioritize measurable impact and clarity at every stage."
+        "title": "Who we support",
+        "description": "Companies and entrepreneurs that need to digitize, scale, or optimize with clarity and measurable outcomes."
       },
       {
-        "title": "Professionalism",
-        "description": "We establish clear processes and quality standards, applying solid technical governance to ensure traceability, trust, and continuous improvement in every project."
+        "title": "Consultative difference",
+        "description": "We go beyond deliverables, guiding decisions, execution, and continuous improvement with transparency and close collaboration."
       }
     ]
   },
@@ -87,7 +91,11 @@
           "We validate ideas before investing",
           "We define a clear and measurable plan"
         ],
-        "deliverables": ["Strategic roadmap", "Prioritization", "OKRs and metrics"]
+        "deliverables": [
+          "Strategic roadmap",
+          "Prioritization",
+          "OKRs and metrics"
+        ]
       },
       {
         "id": "2",
@@ -99,7 +107,11 @@
           "We test ideas with fast prototypes",
           "We align the product with users"
         ],
-        "deliverables": ["Wireframes", "UI Kit", "Navigable prototype"]
+        "deliverables": [
+          "Wireframes",
+          "UI Kit",
+          "Navigable prototype"
+        ]
       },
       {
         "id": "3",
@@ -111,7 +123,11 @@
           "We iterate with real feedback",
           "We prepare launch and scale"
         ],
-        "deliverables": ["Functional MVP", "QA and optimization", "Launch support"]
+        "deliverables": [
+          "Functional MVP",
+          "QA and optimization",
+          "Launch support"
+        ]
       }
     ]
   },
