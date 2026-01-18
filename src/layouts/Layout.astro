@@ -1,8 +1,23 @@
 ---
 import '../styles/global.css'
-import { getLangFromUrl } from '../i18n/utils/config'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
 const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const welcome = t('welcome')
+const siteTitle = 'EKOU Solutions'
+const description = welcome.description
+const canonicalUrl = new URL(Astro.url.pathname, Astro.url.origin).href
+const currentPath = Astro.url.pathname
+const esPath = currentPath.replace(/^\/en(?=\/|$)/, '') || '/'
+const enPath = currentPath.startsWith('/en')
+  ? currentPath
+  : `/en${currentPath === '/' ? '' : currentPath}`
+const esUrl = new URL(esPath, Astro.url.origin).href
+const enUrl = new URL(enPath, Astro.url.origin).href
+const ogImage = new URL('/og-image.svg', Astro.url.origin).href
+const ogLocale = lang === 'es' ? 'es_ES' : 'en_US'
+const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_ES'
 ---
 
 <!doctype html>
@@ -12,7 +27,23 @@ const lang = getLangFromUrl(Astro.url)
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico?v=2" />
     <meta name="generator" content={Astro.generator} />
-    <title>EKOU SOLUTIONS</title>
+    <title>{siteTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
     <slot />

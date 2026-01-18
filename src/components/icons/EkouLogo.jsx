@@ -6,7 +6,7 @@ const EkouLogo = ({ className } = {}) => {
   return (
     <header className="flex items-center">
       {image}
-      <h1 className="text-xl font-medium text-(--text-primary)">EKOU</h1>
+      <span className="text-xl font-medium text-(--text-primary)">EKOU</span>
     </header>
   )
 }
