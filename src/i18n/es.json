@@ -14,11 +14,15 @@
   },
   "welcome": {
     "badge": "Bienvenido a EKOU",
-    "title": "Tecnologia e\ninnovacion que\nimpulsan el \n",
-    "titleHighlight": "crecimiento y generan\n impacto real.",
-    "description": "Acompanamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
-    "cta": "Hablemos de tu proyecto",
-    "features": ["Estrategia con proposito", "Ejecucion integral", "Acompanamiento continuo"]
+    "title": "Consultoria tecnologica y estrategica\npara empresas",
+    "titleHighlight": "que buscan evolucionar\ncon resultados reales",
+    "description": "Acompanamos empresas y emprendedores integrando estrategia, tecnologia e innovacion practica para construir soluciones sostenibles.",
+    "cta": "Conversemos sobre tu proyecto",
+    "features": [
+      "Estrategia consultiva",
+      "Tecnologia aplicada",
+      "Resultados reales"
+    ]
   },
   "helpyou": {
     "badge": "Como te ayudamos",
@@ -40,27 +44,27 @@
     ]
   },
   "whoweare": {
-    "badge": "Quiénes somos",
-    "title": "Conectamos ideas con ejecución",
-    "description": "Acompañamos a organizaciones en el diseño y desarrollo de soluciones innovadoras, adaptadas a sus necesidades específicas, impulsando su crecimiento, generando alianzas estratégicas y optimizando procesos hacia un mercado global.",
+    "badge": "Quienes somos",
+    "title": "Estrategia, tecnología e innovación aplicadas al crecimiento empresarial",
+    "description": "EKOU Solutions es un socio estrategico en consultoria y desarrollo tecnologico para empresas y emprendedores que buscan evolucionar con resultados reales. No somos una agencia tradicional: trabajamos con un enfoque consultivo, cercano y basado en estrategia, tecnologia e innovacion practica.",
     "cards": [
       {
-        "title": "Innovación",
-        "description": "Transformamos retos en soluciones escalables, diseñamos productos y procesos medibles que permiten evaluar y mejorar el impacto en cada iteración."
+        "title": "¿Que es EKOU Solutions?",
+        "description": "Un socio estrategico que integra consultoria, estrategia y tecnologia para transformar objetivos de negocio en soluciones sostenibles."
       },
       {
-        "title": "Servicio",
-        "description": "Acompañamiento cercano y ejecución ágil con equipos dedicados, validación continua y entregas incrementales. Priorizamos el impacto medible y la claridad en cada etapa."
+        "title": "¿A quien acompanamos?",
+        "description": "Empresas y emprendedores que necesitan digitalizarse, escalar u optimizar con claridad y resultados medibles."
       },
       {
-        "title": "Profesionalismo",
-        "description": "Establecemos procesos claros y estándares de calidad, aplicando gobernanza técnica sólida para garantizar trazabilidad, confianza y mejora continua en cada proyecto."
+        "title": "Diferencia consultiva",
+        "description": "No entregamos solo proyectos: guiamos decisiones, ejecución y mejora continua con transparencia y cercania."
       }
     ]
   },
   "services": {
     "badge": "Servicios",
-    "title": "Como te acompanamos",
+    "title": "¿Como te acompañamos?",
     "description": "Un proceso estrategico, iterativo y enfocado en resultados reales."
   },
   "successes": {
@@ -87,7 +91,11 @@
           "Validamos ideas antes de invertir",
           "Definimos un plan claro y medible"
         ],
-        "deliverables": ["Roadmap estrategico", "Priorizacion", "OKRs y metricas"]
+        "deliverables": [
+          "Roadmap estrategico",
+          "Priorizacion",
+          "OKRs y metricas"
+        ]
       },
       {
         "id": "2",
@@ -99,7 +107,11 @@
           "Probamos ideas con prototipos rapidos",
           "Alineamos el producto con usuarios"
         ],
-        "deliverables": ["Wireframes", "UI Kit", "Prototipo navegable"]
+        "deliverables": [
+          "Wireframes",
+          "UI Kit",
+          "Prototipo navegable"
+        ]
       },
       {
         "id": "3",
@@ -111,7 +123,11 @@
           "Iteramos con feedback real",
           "Preparamos el lanzamiento y escalado"
         ],
-        "deliverables": ["MVP funcional", "QA y optimizacion", "Soporte de lanzamiento"]
+        "deliverables": [
+          "MVP funcional",
+          "QA y optimizacion",
+          "Soporte de lanzamiento"
+        ]
       }
     ]
   },
