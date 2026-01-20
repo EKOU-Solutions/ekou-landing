@@ -18,7 +18,11 @@
     "titleHighlight": "seeking to evolve\nwith real results",
     "description": "We support companies and entrepreneurs by integrating strategy, technology, and practical innovation to build sustainable solutions.",
     "cta": "Let's talk about your project",
-    "features": ["Consultative strategy", "Applied technology", "Real outcomes"]
+    "features": [
+      "Consultative strategy",
+      "Applied technology",
+      "Real outcomes"
+    ]
   },
   "helpyou": {
     "badge": "Help you",
@@ -87,7 +91,11 @@
           "We validate ideas before investing",
           "We define a clear and measurable plan"
         ],
-        "deliverables": ["Strategic roadmap", "Prioritization", "OKRs and metrics"]
+        "deliverables": [
+          "Strategic roadmap",
+          "Prioritization",
+          "OKRs and metrics"
+        ]
       },
       {
         "id": "2",
@@ -99,7 +107,11 @@
           "We test ideas with fast prototypes",
           "We align the product with users"
         ],
-        "deliverables": ["Wireframes", "UI Kit", "Navigable prototype"]
+        "deliverables": [
+          "Wireframes",
+          "UI Kit",
+          "Navigable prototype"
+        ]
       },
       {
         "id": "3",
@@ -111,37 +123,11 @@
           "We iterate with real feedback",
           "We prepare launch and scale"
         ],
-        "deliverables": ["Functional MVP", "QA and optimization", "Launch support"]
-      }
-    ]
-  },
-  "team": {
-    "badge": "Team",
-    "title": "Founding leadership and vision",
-    "members": [
-      {
-        "name": "Esteban Jimenez",
-        "position": "CEO",
-        "role": "Leadership & Vision",
-        "description": "The strategic mind. Transforms ideas into clear paths and guides the course with determination and global perspective.",
-        "image": "/team/esteban.webp",
-        "linkedin": "https://linkedin.com/in/"
-      },
-      {
-        "name": "Jouler Talaigua",
-        "position": "CEO",
-        "role": "Innovation & Creativity",
-        "description": "The creative engine. Transforms visions into tangible solutions, breaking molds with ingenuity and originality.",
-        "image": "/team/jouler.webp",
-        "linkedin": "https://linkedin.com/in/"
-      },
-      {
-        "name": "Kevin Useche",
-        "position": "CEO",
-        "role": "Execution & Technology",
-        "description": "The architect of action. Leads with technical precision and turns strategies into operational realities.",
-        "image": "/team/kevin.webp",
-        "linkedin": "https://linkedin.com/in/"
+        "deliverables": [
+          "Functional MVP",
+          "QA and optimization",
+          "Launch support"
+        ]
       }
     ]
   },
