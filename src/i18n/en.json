@@ -25,21 +25,21 @@
     ]
   },
   "helpyou": {
-    "badge": "Help you",
-    "title": "We do more than build products",
-    "description": "We provide end-to-end consulting support: strategy, innovation, and optimization to create real value.",
+    "badge": "How we support",
+    "title": "A strategic, iterative process focused on results",
+    "description": "We work with a consultative method that reduces risk and accelerates decisions at every stage.",
     "items": [
       {
-        "title": "Understand your business",
-        "description": "We analyze your needs and align solutions with your strategic goals."
+        "title": "Consulting, strategy, and planning",
+        "description": "We diagnose the business, set goals, and prioritize a clear roadmap."
       },
       {
-        "title": "Innovate with purpose",
-        "description": "We apply cutting-edge technology to solve real, measurable problems."
+        "title": "Development and innovation",
+        "description": "We build digital solutions focused on value, validating fast and with quality."
       },
       {
-        "title": "Support your growth",
-        "description": "We guide every stage with transparency, continuous iteration, and focus on results."
+        "title": "Measurement, evolution, and optimization",
+        "description": "We measure impact, iterate, and optimize to sustain results."
       }
     ]
   },
@@ -64,8 +64,30 @@
   },
   "services": {
     "badge": "Services",
-    "title": "How we support you",
-    "description": "A strategic, iterative process focused on real results."
+    "title": "Business-focused consulting and technology solutions",
+    "description": "A strategic, iterative process focused on real results.",
+    "items": [
+      {
+        "title": "Business consulting and strategy",
+        "bullets": [
+          "Diagnosis",
+          "Optimization",
+          "Innovation",
+          "Conversion",
+          "Data-driven decisions"
+        ]
+      },
+      {
+        "title": "Custom technology development",
+        "bullets": [
+          "Web and applications",
+          "Automation",
+          "RPA",
+          "Chatbots",
+          "Integrations"
+        ]
+      }
+    ]
   },
   "successes": {
     "badge": "Case studies",
@@ -83,13 +105,14 @@
     "phases": [
       {
         "id": "1",
-        "title": "Phase 1",
-        "subtitle": "Strategy and Planning",
-        "tagline": "Avoid improvisation and move forward with confidence.",
+        "title": "Business consulting and strategy",
+        "subtitle": "Diagnosis and optimization",
+        "tagline": "Innovation applied to clearer decisions.",
         "helps": [
-          "We understand your context and goals",
-          "We validate ideas before investing",
-          "We define a clear and measurable plan"
+          "Diagnosis",
+          "Optimization",
+          "Innovation",
+          "Conversion"
         ],
         "deliverables": [
           "Strategic roadmap",
@@ -99,29 +122,31 @@
       },
       {
         "id": "2",
-        "title": "Phase 2",
-        "subtitle": "Design and Prototyping",
-        "tagline": "Turn strategy into a clear experience.",
+        "title": "Custom technology development",
+        "subtitle": "Web and applications",
+        "tagline": "Automation, RPA, chatbots, and integrations.",
         "helps": [
-          "We define flow and architecture",
-          "We test ideas with fast prototypes",
-          "We align the product with users"
+          "Web and applications",
+          "Automation",
+          "RPA",
+          "Chatbots",
+          "Integrations"
         ],
         "deliverables": [
           "Wireframes",
-          "UI Kit",
+          "UI kit",
           "Navigable prototype"
         ]
       },
       {
         "id": "3",
-        "title": "Phase 3",
-        "subtitle": "Development and Launch",
-        "tagline": "Build, validate, and launch with confidence.",
+        "title": "Execution and launch with results",
+        "subtitle": "",
+        "tagline": "We build, validate, and launch solutions with measurable results.",
         "helps": [
-          "We develop with a quality-first approach",
+          "We build with quality to generate value",
           "We iterate with real feedback",
-          "We prepare launch and scale"
+          "We prepare launch and scaling"
         ],
         "deliverables": [
           "Functional MVP",

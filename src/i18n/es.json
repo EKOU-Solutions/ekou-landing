@@ -1,81 +1,103 @@
 {
   "navbar": {
     "home": "Inicio",
-    "about": "Quienes somos",
-    "help": "Como te ayudamos",
+    "about": "Quiénes somos",
+    "help": "Cómo te ayudamos",
     "services": "Servicios",
-    "success": "Casos de exito",
+    "success": "Casos de éxito",
     "blog": "Blog",
     "contact": "Hablemos",
     "translate": {
-      "es": "Espanol",
-      "en": "Ingles"
+      "es": "Español",
+      "en": "Inglés"
     }
   },
   "welcome": {
     "badge": "Bienvenido a EKOU",
-    "title": "Consultoria tecnologica y estrategica\npara empresas",
+    "title": "Consultoría tecnológica y estratégica\npara empresas",
     "titleHighlight": "que buscan evolucionar\ncon resultados reales",
-    "description": "Acompanamos empresas y emprendedores integrando estrategia, tecnologia e innovacion practica para construir soluciones sostenibles.",
+    "description": "Acompañamos empresas y emprendedores integrando estrategia, tecnología e innovación práctica para construir soluciones sostenibles.",
     "cta": "Conversemos sobre tu proyecto",
     "features": [
       "Estrategia consultiva",
-      "Tecnologia aplicada",
+      "Tecnología aplicada",
       "Resultados reales"
     ]
   },
   "helpyou": {
-    "badge": "Como te ayudamos",
-    "title": "No solo desarrollamos productos",
-    "description": "Ofrecemos acompanamiento consultivo integral: estrategia, innovacion y optimizacion para generar valor real.",
+    "badge": "Cómo acompañamos",
+    "title": "Un proceso estratégico, iterativo y orientado a resultados",
+    "description": "Trabajamos con un método consultivo que reduce riesgos y acelera decisiones en cada etapa.",
     "items": [
       {
-        "title": "Entendemos tu negocio",
-        "description": "Analizamos tus necesidades y alineamos soluciones con tus objetivos estrategicos."
+        "title": "Consultoría, estrategia y planeación",
+        "description": "Diagnosticamos el negocio, definimos objetivos y priorizamos un roadmap claro."
       },
       {
-        "title": "Innovamos con sentido",
-        "description": "Aplicamos tecnologia de vanguardia para resolver problemas reales y medibles."
+        "title": "Desarrollo e innovación",
+        "description": "Construimos soluciones digitales enfocadas en valor, validando rápido y con calidad."
       },
       {
-        "title": "Acompanamos tu crecimiento",
-        "description": "Guiamos cada etapa con transparencia, iteracion continua y foco en resultados."
+        "title": "Medición, evolución y optimización",
+        "description": "Medimos impacto, iteramos y optimizamos para sostener resultados."
       }
     ]
   },
   "whoweare": {
-    "badge": "Quienes somos",
+    "badge": "Quiénes somos",
     "title": "Estrategia, tecnología e innovación aplicadas al crecimiento empresarial",
-    "description": "EKOU Solutions es partner de consultoría y desarrollo tecnologico para empresas y emprendedores que buscan evolucionar con resultados reales. No somos una agencia tradicional: trabajamos con un enfoque consultivo, cercano y basado en estrategia, tecnología e innovacion práctica.",
+    "description": "EKOU Solutions es partner de consultoría y desarrollo tecnológico para empresas y emprendedores que buscan evolucionar con resultados reales. No somos una agencia tradicional: trabajamos con un enfoque consultivo, cercano y basado en estrategia, tecnología e innovación práctica.",
     "cards": [
       {
-        "title": "¿Que es EKOU Solutions?",
-        "description": "Un partner que integra consultoría, estrategia y tecnologia para transformar objetivos de negocio en soluciones sostenibles."
+        "title": "¿Qué es EKOU Solutions?",
+        "description": "Un partner que integra consultoría, estrategia y tecnología para transformar objetivos de negocio en soluciones sostenibles."
       },
       {
-        "title": "¿A quien acompanamos?",
+        "title": "¿A quién acompañamos?",
         "description": "Empresas y emprendedores que necesitan digitalizarse, escalar u optimizar con claridad y resultados medibles."
       },
       {
         "title": "Diferencia consultiva",
-        "description": "No entregamos solo proyectos: guiamos decisiones, ejecución y mejora continua con transparencia y cercania."
+        "description": "No entregamos solo proyectos: guiamos decisiones, ejecución y mejora continua con transparencia y cercanía."
       }
     ]
   },
   "services": {
     "badge": "Servicios",
-    "title": "¿Como te acompañamos?",
-    "description": "Un proceso estrategico, iterativo y enfocado en resultados reales."
+    "title": "Soluciones de consultoría y tecnología enfocadas en negocio",
+    "description": "Un proceso estratégico, iterativo y enfocado en resultados reales.",
+    "items": [
+      {
+        "title": "Consultoría y estrategia empresarial",
+        "bullets": [
+          "Diagnóstico",
+          "Optimización",
+          "Innovación",
+          "Conversión",
+          "Decisiones basadas en datos"
+        ]
+      },
+      {
+        "title": "Desarrollo de soluciones tecnológicas a medida",
+        "bullets": [
+          "Web y aplicaciones",
+          "Automatización",
+          "RPA",
+          "Chatbots",
+          "Integraciones"
+        ]
+      }
+    ]
   },
   "successes": {
-    "badge": "Casos de exito",
+    "badge": "Casos de éxito",
     "title": "Impacto real",
-    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompanamos a las organizaciones."
+    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompañamos a las organizaciones."
   },
   "servicePhases": {
     "labels": {
       "phaseLabel": "FASE",
-      "helpsTitle": "Como te ayudamos",
+      "helpsTitle": "Cómo te ayudamos",
       "deliverablesTitle": "Entregables",
       "prevAria": "Fase anterior",
       "nextAria": "Siguiente fase"
@@ -83,49 +105,52 @@
     "phases": [
       {
         "id": "1",
-        "title": "Fase 1",
-        "subtitle": "Estrategia y Planeacion",
-        "tagline": "Evitar improvisar y avanzar con seguridad.",
+        "title": "Consultoría y estrategia empresarial",
+        "subtitle": "Diagnóstico y optimización",
+        "tagline": "Innovación aplicada para decisiones claras.",
         "helps": [
-          "Entendemos tu contexto y objetivos",
-          "Validamos ideas antes de invertir",
-          "Definimos un plan claro y medible"
+          "Diagnóstico",
+          "Optimización",
+          "Innovación",
+          "Conversión"
         ],
         "deliverables": [
-          "Roadmap estrategico",
-          "Priorizacion",
-          "OKRs y metricas"
+          "Roadmap estratégico",
+          "Priorización",
+          "OKRs y métricas"
         ]
       },
       {
         "id": "2",
-        "title": "Fase 2",
-        "subtitle": "Diseno y Prototipado",
-        "tagline": "Convertir la estrategia en una experiencia clara.",
+        "title": "Desarrollo de soluciones tecnológicas a medida",
+        "subtitle": "Web y aplicaciones",
+        "tagline": "Automatización, RPA, chatbots e integraciones.",
         "helps": [
-          "Definimos el flujo y la arquitectura",
-          "Probamos ideas con prototipos rapidos",
-          "Alineamos el producto con usuarios"
+          "Web y aplicaciones",
+          "Automatización",
+          "RPA",
+          "Chatbots",
+          "Integraciones"
         ],
         "deliverables": [
           "Wireframes",
-          "UI Kit",
+          "UI kit",
           "Prototipo navegable"
         ]
       },
       {
         "id": "3",
-        "title": "Fase 3",
-        "subtitle": "Desarrollo y Lanzamiento",
-        "tagline": "Construir, validar y salir con confianza.",
+        "title": "Ejecución y lanzamiento con resultados",
+        "subtitle": "",
+        "tagline": "Construimos, validamos y lanzamos soluciones con resultados medibles.",
         "helps": [
-          "Desarrollamos con enfoque en calidad",
+          "Desarrollamos con calidad para generar valor",
           "Iteramos con feedback real",
           "Preparamos el lanzamiento y escalado"
         ],
         "deliverables": [
           "MVP funcional",
-          "QA y optimizacion",
+          "QA y optimización",
           "Soporte de lanzamiento"
         ]
       }
@@ -133,8 +158,8 @@
   },
   "contact": {
     "badge": "Contacto",
-    "title": "Consulta tecnica gratuita",
-    "description": "Cuentanos tu idea. Nosotros te ayudamos a convertirla en una solucion real.",
+    "title": "Consulta técnica gratuita",
+    "description": "Cuéntanos tu idea. Nosotros te ayudamos a convertirla en una solución real.",
     "email": "contacto@ekou.com",
     "phone": "+57 3243263523",
     "form": {
@@ -144,11 +169,11 @@
       "messageLabel": "Mensaje",
       "namePlaceholder": "Tu nombre",
       "emailPlaceholder": "example@gmail.com",
-      "projectPlaceholder": "Website, app movil, SaaS...",
-      "messagePlaceholder": "Cuentanos brevemente tu necesidad",
-      "nameError": "Ingresa tu nombre (minimo 3 caracteres).",
-      "emailError": "Ingresa un email valido.",
-      "projectError": "Cuentanos sobre tu proyecto (minimo 3 caracteres).",
+      "projectPlaceholder": "Website, app móvil, SaaS...",
+      "messagePlaceholder": "Cuéntanos brevemente tu necesidad",
+      "nameError": "Ingresa tu nombre (mínimo 3 caracteres).",
+      "emailError": "Ingresa un email válido.",
+      "projectError": "Cuéntanos sobre tu proyecto (mínimo 3 caracteres).",
       "messageError": "El mensaje debe tener al menos 10 caracteres.",
       "submit": "Enviar mensaje",
       "loadingMessage": "Enviando...",
