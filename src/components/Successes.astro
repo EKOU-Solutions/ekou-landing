@@ -1,16 +1,20 @@
 ---
-import { Sparkles } from 'lucide-react'
-import CasesSlider from './CasesSlider'
-import { cases } from '../data/casesData'
 import barsInclined from '../assets/img/barsInclined.svg'
+import { cases } from '../data/casesData'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+import Badge from './Badge.astro'
+import CasesSlider from './CasesSlider'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const successes = t('successes')
 ---
 
-<section id="casos-de-exito" class="bg-(--surface-primary) overflow-hidden relative">
+<section
+  id="casos-de-exito"
+  class="overflow-x-clip relative min-h-[80vh] flex items-center"
+  tabindex="-1"
+>
   <img
     src={barsInclined.src}
     alt="overlay"
@@ -23,14 +27,13 @@ const successes = t('successes')
   >
   </div>
 
-  <main class="relative z-10 mx-auto md:max-w-7xl">
+  <main class="relative z-10 w-full container-custom mx-auto px-3 md:px-12">
     <div class="text-center mb-10">
-      <span class="inline-flex items-center gap-2 text-sm uppercase text-(--color-primary)">
-        <Sparkles className="w-4 h-4" />
+      <Badge>
         {successes.badge}
-      </span>
+      </Badge>
 
-      <h2 class="mt-4 text-3xl md:text-5xl font-semibold text-(--text-primary)">
+      <h2 class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
         {successes.title}
       </h2>
 
@@ -39,11 +42,6 @@ const successes = t('successes')
       </p>
     </div>
 
-    <!-- Shadow right -->
-    <div
-      class="absolute z-10 -right-20 -top-10 w-35 md:w-50 h-160 bg-(--surface-primary) blur-[20px] pointer-events-none"
-    >
-    </div>
     <!-- Shadow left -->
     <div
       class="absolute z-10 -left-20 -top-10 w-15 h-screen bg-(--surface-primary) blur-lg pointer-events-none"

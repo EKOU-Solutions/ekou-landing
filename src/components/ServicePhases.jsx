@@ -82,20 +82,20 @@ const ServicePhases = ({ phasesData, labels }) => {
           <span className="text-base md:text-lg">{currentPhaseData.subtitle}</span>
         </h3>
 
-        <p className="text-(--text-secundary) text-xs md:text-lg">{currentPhaseData.tagline}</p>
+        <p className="text-(--text-secundary) text-sm md:text-lg">{currentPhaseData.tagline}</p>
 
-        <div className="text-sm">
+        <div className="max-w-70 md:max-w-90 w-full">
           <p className="mb-2 text-(--color-primary) font-medium">{labels.helpsTitle}</p>
-          <ul className="list-disc list-inside space-y-1 text-(--text-secundary)">
+          <ul className="list-disc list-inside space-y-1 text-(--text-secundary) text-sm">
             {currentPhaseData.helps.map((helpItem) => (
               <li key={helpItem}>{helpItem}</li>
             ))}
           </ul>
         </div>
 
-        <div className="text-sm">
+        <div className="">
           <p className="mb-2 text-(--color-primary) font-medium">{labels.deliverablesTitle}</p>
-          <div className="flex flex-wrap max-w-60 md:max-w-90 gap-3 text-[10px] text-(--text-secundary)">
+          <div className="flex flex-wrap justify-center max-w-70 md:max-w-90 gap-3 text-[12px] text-(--text-secundary)">
             {currentPhaseData.deliverables.map((deliverable) => (
               <span
                 key={deliverable}

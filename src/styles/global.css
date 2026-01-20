@@ -32,10 +32,13 @@ html {
   --surface-input: #e7eaff;
 }
 
+.container-custom {
+  @apply mx-auto max-w-[90rem];
+}
+
 body {
   color: var(--text-primary);
   background-color: var(--surface-primary);
-  padding-top: 72px;
   overflow-x: hidden;
 }
 
@@ -53,9 +56,9 @@ section.no-section-spacing {
   padding-block: 0;
 }
 
-section:not(.no-section-margin) + section:not(.no-section-margin) {
+/* section:not(.no-section-margin)+section:not(.no-section-margin) {
   margin-top: 96px;
-}
+} */
 
 button {
   transition: transform 150ms ease-in-out;

@@ -1,8 +1,9 @@
 ---
-import { Sparkles, Mail, Phone } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 import robotShappe from '../assets/img/robotShappe.svg'
-import ContactForm from './ContactForm'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+import Badge from './Badge.astro'
+import ContactForm from './ContactForm'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -10,24 +11,25 @@ const contact = t('contact')
 const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT // endpoint que se obtiene del servicio "formspree"
 ---
 
-<section id="hablemos" class="relative w-full overflow-hidden">
-  <main class="relative z-10 mx-auto max-w-7xl px-6 md:px-0 pb-6 md:pb-12">
+<section
+  id="hablemos"
+  class="relative w-full min-h-[80vh] flex items-center overflow-hidden"
+  tabindex="-1"
+>
+  <main class="relative z-10 w-full mx-auto max-w-7xl px-6 md:px-0 py-12 md:py-24">
     <div class="text-center">
-      <span
-        class="inline-flex items-center gap-2 text-xs uppercase text-(--color-primary) tracking-wider"
-      >
-        <Sparkles className="w-4 h-4" />
+      <Badge className="text-xs tracking-wider">
         {contact.badge}
-      </span>
-      <h2 class="mt-3 text-3xl md:text-5xl font-semibold text-(--text-primary)">
+      </Badge>
+      <h2 class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
         {contact.title}
       </h2>
-      <p class="mt-3 text-(--text-secundary) max-w-2xl mx-auto">
+      <p class="mt-4 text-(--text-secundary) max-w-2xl mx-auto">
         {contact.description}
       </p>
     </div>
 
-    <div class="mt-10 grid gap-20 lg:grid-cols-[1fr_1.1fr] items-center">
+    <div class="mt-10 md:mt-20 grid gap-20 lg:grid-cols-[1fr_1.1fr] items-center">
       <div class="relative flex items-center justify-center">
         <img src={robotShappe.src} alt="Robot EKOU" class="w-full max-w-md md:max-w-lg" />
 

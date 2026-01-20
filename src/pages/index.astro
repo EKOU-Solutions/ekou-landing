@@ -1,28 +1,24 @@
 ---
-import Navbar from '../components/Navbar.astro'
-import Welcome from '../components/Welcome.astro'
-import WelcomeDecoration from '../components/WelcomeDecoration.astro'
-import WhoWeAre from '../components/WhoWeAre.astro'
-import HelpYou from '../components/HelpYou.astro'
-import Services from '../components/Services.astro'
-import Successes from '../components/Successes.astro'
-import Blog from '../components/Blog.astro'
 import Contact from '../components/Contact.astro'
 import Footer from '../components/Footer.astro'
+import HelpYou from '../components/HelpYou.astro'
+import Navbar from '../components/Navbar.astro'
+import Services from '../components/Services.astro'
+import Successes from '../components/Successes.astro'
+import Team from '../components/Team.astro'
+import Welcome from '../components/Welcome.astro'
+import WhoWeAre from '../components/WhoWeAre.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <div class="box">
-    <Navbar />
-    <Welcome />
-    <WelcomeDecoration />
-    <WhoWeAre />
-    <HelpYou />
-    <Services />
-    <Successes />
-    <Blog />
-    <Contact />
-  </div>
+  <Navbar />
+  <Welcome />
+  <WhoWeAre />
+  <HelpYou />
+  <Services />
+  <Successes />
+  <Team />
+  <Contact />
   <Footer />
 </Layout>
