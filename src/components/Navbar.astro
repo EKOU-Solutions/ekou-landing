@@ -26,55 +26,60 @@ const navLinks = [
   { href: '#como-te-ayudamos', label: navbar.help, icon: Handshake },
   { href: '#servicios', label: navbar.services, icon: Briefcase },
   { href: '#casos-de-exito', label: navbar.success, icon: CircleCheck },
+  { href: '#equipo', label: navbar.team, icon: CircleCheck },
   { href: '#blog', label: navbar.blog, icon: BookOpen },
   { href: '#hablemos', label: navbar.contact, icon: MessageCircle },
 ]
 ---
 
-<nav
-  data-site-header
-  class="w-[94%] h-14 m-auto bg-(--surface-secundary)/80 backdrop-blur-md text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed z-50 top-2 left-[3%] border border-(--color-border)"
->
-  <EkouLogo />
-  <ul class="hidden lg:flex flex-1 justify-center items-center gap-8">
-    {
-      navLinks.map(({ href, label }) => (
-        <li>
-          <a
-            href={href}
-            data-section-link={href}
-            class="cursor-pointer text-sm transition-transform duration-100 ease-in-out hover:text-(--color-primary)"
-          >
-            {label}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <div class="relative flex items-center gap-5 text-(--color-primary)">
-    <div class="hidden lg:flex items-center">
-      <ThemeController />
+<header class="flex w-full justify-center">
+  <nav
+    data-site-header
+    class="w-[95%] md:w-[90%] min-w-[unset] lg:max-w-[85rem] h-14 m-auto bg-(--surface-secundary)/80 backdrop-blur-md text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed z-50 top-6 border border-(--color-border)"
+  >
+    <EkouLogo />
+    <div class="w-full flex justify-center">
+      <ul class="hidden lg:flex flex-1 items-center justify-around w-full max-w-2xl">
+        {
+          navLinks.map(({ href, label }) => (
+            <li>
+              <a
+                href={href}
+                data-section-link={href}
+                class="cursor-pointer text-sm transition-transform duration-100 ease-in-out hover:text-(--color-primary)"
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
-    <button id="language-btn" class="flex justify-center items-center cursor-pointer">
-      <Languages />
-      <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
-    </button>
-    <!--menu hamburguesa -->
-    <button
-      id="mobile-menu-btn"
-      class="lg:hidden cursor-pointer"
-      aria-label="Open menu"
-      aria-controls="mobile-menu"
-      aria-expanded="false"
-    >
-      <Menu />
-    </button>
+    <div class="relative flex items-center gap-5 text-(--color-primary)">
+      <div class="hidden lg:flex items-center">
+        <ThemeController />
+      </div>
+      <button id="language-btn" class="flex justify-center items-center cursor-pointer">
+        <Languages />
+        <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
+      </button>
+      <!--menu hamburguesa -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden cursor-pointer"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <Menu />
+      </button>
 
-    <section id="language-modal" class="lang-modal fixed right-2 top-16 z-50">
-      <ModalLanguage />
-    </section>
-  </div>
-</nav>
+      <section id="language-modal" class="lang-modal fixed right-2 top-16 z-50">
+        <ModalLanguage />
+      </section>
+    </div>
+  </nav>
+</header>
 
 <MobileMenu navLinks={navLinks} />
 

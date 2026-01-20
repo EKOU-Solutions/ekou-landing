@@ -1,0 +1,90 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  color?: 'primary' | 'secondary' | 'purple' | 'cyan' | 'white' | 'gradient'
+  intensity?: 'low' | 'medium' | 'high'
+  className?: string
+}
+
+const { size = 'md', color = 'cyan', intensity = 'medium', className = '' } = Astro.props
+
+const sizeClasses = {
+  sm: 'w-40 h-40 md:w-60 md:h-60',
+  md: 'w-60 h-60 md:w-80 md:h-80',
+  lg: 'w-80 h-80 md:w-120 md:h-120',
+  xl: 'w-120 h-120 md:w-160 md:h-160',
+}
+
+const colorClasses = {
+  primary: 'space-glow--primary',
+  secondary: 'space-glow--secondary',
+  purple: 'space-glow--purple',
+  cyan: 'space-glow--cyan',
+  white: 'space-glow--white',
+  gradient: 'space-glow--gradient',
+}
+
+const intensityClasses = {
+  low: 'opacity-[0.03]',
+  medium: 'opacity-[0.06]',
+  high: 'opacity-[0.12]',
+}
+---
+
+<div
+  class:list={[
+    'space-glow absolute rounded-full blur-3xl pointer-events-none',
+    sizeClasses[size],
+    colorClasses[color],
+    intensityClasses[intensity],
+    className,
+  ]}
+  aria-hidden="true"
+>
+</div>
+
+<style>
+  .space-glow {
+    background: radial-gradient(circle, var(--glow-color) 0%, transparent 85%);
+    animation: pulse-glow 6s ease-in-out infinite;
+  }
+
+  .space-glow--primary {
+    --glow-color: var(--color-primary);
+  }
+
+  .space-glow--secondary {
+    --glow-color: var(--color-secundary);
+  }
+
+  .space-glow--purple {
+    --glow-color: #8b5cf6;
+  }
+
+  .space-glow--cyan {
+    --glow-color: #2dcbd3;
+  }
+  .space-glow--white {
+    --glow-color: #ffffff;
+  }
+
+  .space-glow--gradient {
+    background: radial-gradient(
+      circle,
+      var(--color-primary) 0%,
+      var(--color-secundary) 50%,
+      transparent 85%
+    );
+  }
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.2;
+    }
+  }
+</style>
