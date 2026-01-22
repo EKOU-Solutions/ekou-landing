@@ -1,187 +1,129 @@
 ---
-import { Sparkles } from 'lucide-react'
-import start from '../assets/icons/start.svg'
-import ekouLogo from '../assets/icons/ekou.svg'
 import decoration2 from '../assets/img/decoration2.svg'
-import InnovationIcon from './icons/InnovationIcon.jsx'
-import ServiceIcon from './icons/ServiceIcon.jsx'
-import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+import Badge from './Badge.astro'
+import InnovationIcon from './icons/InnovationIcon.jsx'
+import ProfessionalismIcon from './icons/ProfessionalismIcon.jsx'
+import ServiceIcon from './icons/ServiceIcon.jsx'
+import SpaceGlow from './SpaceGlow.astro'
+import StarDecoration from './StarDecoration.astro'
+import WhoWeAreCard from './WhoWeAreCard.astro'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const whoweare = t('whoweare')
 ---
 
-<section id="quienes-somos" class="-mt-20 md:-mt-60 w-full relative">
+<section
+  id="quienes-somos"
+  class="w-full relative min-h-[85vh] flex flex-col items-center justify-center overflow-x-clip scroll-mt-0"
+  tabindex="-1"
+>
+  <SpaceGlow
+    size="xl"
+    color="cyan"
+    intensity="low"
+    className="-left-28 md:-left-44 top-1 md:top-0"
+  />
   <div
     class="absolute -left-28 md:-left-44 top-1 md:top-4 h-60 w-72 md:h-96 md:w-120 rounded-full bg-[#1930592c] blur-3xl pointer-events-none z-0"
     aria-hidden="true"
   >
   </div>
-  <main class="relative z-10 flex flex-col items-center justify-center">
-    <p class="text-sm md:text-md text-(--color-primary) flex items-center gap-2 mt-4">
-      <Sparkles className="w-4 h-4" />
+  <main
+    class="w-full relative z-10 flex flex-col items-center justify-center py-16 container-custom mx-auto px-3 md:px-12"
+  >
+    <Badge className="mt-4">
       {whoweare.badge}
-    </p>
-    <h2 class="mt-3 text-center text-4xl md:text-7xl font-semibold text-(--text-primary)">
+    </Badge>
+    <h2
+      class="mt-4 px-3 md:px-0 text-center text-4xl xl:text-6xl font-semibold text-(--text-primary)"
+    >
       {whoweare.title}
     </h2>
-    <p class="mt-6 mb-4 text-center text-(--text-secundary) max-w-2xl">
+    <p class="mt-4 mb-4 text-center text-(--text-secundary) max-w-2xl mx-auto">
       {whoweare.description}
     </p>
-    <div class="relative mt-8 w-full max-w-350">
+    <div class="relative mt-8 md:mt-24 w-full max-w-350">
       <img
         src={decoration2.src}
         alt="decoration2"
         class="absolute left-0 top-0 w-full h-[80%] object-contain opacity-40 pointer-events-none z-0"
         aria-hidden="true"
       />
-      <img
-        src={start.src}
-        alt="icon-star"
-        class="star-twinkle w-3 h-3 absolute -left-5 top-20 md:-left-10 md:top-28 z-10 pointer-events-none"
-        style="animation-delay: 0s;"
-        aria-hidden="true"
+      <StarDecoration
+        size="md"
+        delay="1s"
+        className="left-[22%] -bottom-2 md:left-[18%] md:-bottom-14 z-10"
       />
-      <img
-        src={start.src}
-        alt="icon-star"
-        class="star-twinkle w-6 h-6 absolute right-[12%] -top-3 md:right-[18%] md:-top-6 z-10 pointer-events-none"
-        style="animation-delay: 0.6s;"
-        aria-hidden="true"
+      <StarDecoration size="sm" delay="0s" className="-left top-20 md:left-[33%] md:-top-12 z-10" />
+      <StarDecoration
+        size="lg"
+        delay="0.6s"
+        className="left-[10%] bottom-[50%] md:left-[66%] md:bottom-20 z-10"
       />
-      <img
-        src={start.src}
-        alt="icon-star"
-        class="star-twinkle w-4 h-4 absolute left-[22%] -bottom-2 md:left-[15%] md:-bottom-4 z-10 pointer-events-none"
-        style="animation-delay: 1s;"
-        aria-hidden="true"
+      <StarDecoration
+        size="md"
+        delay="1.4s"
+        className="-right-3 top-36 md:right-2 md:-bottom-20 md:top-[unset] z-10"
       />
-      <img
-        src={start.src}
-        alt="icon-star"
-        class="star-twinkle w-4 h-4 absolute -right-3 top-36 md:right-2 md:top-44 z-10 pointer-events-none"
-        style="animation-delay: 1.4s;"
-        aria-hidden="true"
-      />
-      <div class="relative z-0 grid w-full gap-1 md:grid-cols-3 md:gap-32 lg:gap-36">
+      <div class="relative z-0 grid w-full gap-1 md:grid-cols-3 md:gap-12 justify-around">
         <!-- card 1 -->
-        <div
-          class="whoweare-card relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-2 border-(--color-border) bg-(--surface-secundary) px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
-        >
-          <img
-            src={ekouLogo.src}
-            alt=""
-            class="absolute right-0 bottom-0 h-32 w-auto translate-y-2 opacity-[0.02] md:-right-4 md:bottom-0 md:h-44 md:translate-y-3 object-contain pointer-events-none select-none z-0"
-            aria-hidden="true"
-          />
-          <div class="relative z-10">
-            <InnovationIcon
-              className="mx-auto mb-2 mt-2 h-24 rotate-4 w-24 text-(--text-primary)"
-            />
-            <h3 class="text-xl font-semibold text-(--text-primary)">{whoweare.cards[0].title}</h3>
-            <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-              {whoweare.cards[0].description}
-            </p>
-          </div>
-        </div>
+        <WhoWeAreCard
+          variant="left"
+          title={whoweare.cards[0].title}
+          description={whoweare.cards[0].description}
+          icon={InnovationIcon}
+        />
         <!-- card 2 -->
-        <div
-          class="whoweare-card whoweare-card--service relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-2 border-(--color-border) px-4 pt-2 pb-4 text-center transition-transform duration-500 rotate-3 translate-x-12 scale-85 md:translate-x-0 md:scale-100"
-        >
-          <img
-            src={ekouLogo.src}
-            alt=""
-            class="absolute right-0 bottom-0 h-32 w-auto translate-y-2 opacity-[0.02] md:-right-4 md:bottom-0 md:h-44 md:translate-y-3 object-contain pointer-events-none select-none z-0"
-            aria-hidden="true"
-          />
-          <div class="relative z-10">
-            <ServiceIcon className="mx-auto mt-2 mb-4 h-18 w-18 fill-(--text-primary)" />
-            <h3 class="text-xl font-semibold text-(--text-primary)">{whoweare.cards[1].title}</h3>
-            <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-              {whoweare.cards[1].description}
-            </p>
-          </div>
-        </div>
+        <WhoWeAreCard
+          variant="right"
+          title={whoweare.cards[1].title}
+          description={whoweare.cards[1].description}
+          icon={ServiceIcon}
+          glowVariant="service"
+        />
         <!-- card 3 -->
-        <div
-          class="whoweare-card whoweare-card--pro relative mx-auto w-[88%] max-w-[320px] sm:max-w-[340px] md:w-full md:max-w-full overflow-hidden rounded-[30px] border-2 border-(--color-border) px-4 pt-2 pb-4 text-center transition-transform duration-500 -rotate-6 -translate-x-12 scale-85 md:translate-x-0 md:scale-100"
-        >
-          <img
-            src={ekouLogo.src}
-            alt=""
-            class="absolute right-0 bottom-0 h-32 w-auto translate-y-2 opacity-[0.02] md:-right-4 md:bottom-0 md:h-44 md:translate-y-3 object-contain pointer-events-none select-none z-0"
-            aria-hidden="true"
-          />
-          <div class="relative z-10">
-            <ProfessionalismIcon
-              className="mx-auto rotate-6 mt-2 h-24 w-24 fill-(--text-primary)"
-            />
-            <h3 class="text-xl font-semibold text-(--text-primary)">{whoweare.cards[2].title}</h3>
-            <p class="mt-2 text-xs md:text-sm text-(--text-secundary)">
-              {whoweare.cards[2].description}
-            </p>
-          </div>
-        </div>
+        <WhoWeAreCard
+          variant="left"
+          title={whoweare.cards[2].title}
+          description={whoweare.cards[2].description}
+          icon={ProfessionalismIcon}
+          glowVariant="pro"
+        />
       </div>
     </div>
   </main>
+
+  <!-- Wave Separator -->
+  <div class="absolute -bottom-20 left-0 w-full pointer-events-none z-0" aria-hidden="true">
+    <svg
+      width="100%"
+      height="auto"
+      viewBox="0 0 1440 173"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      class="w-full h-auto"
+    >
+      <path
+        d="M379.096 83.0667C449.856 65.0833 518.371 32.85 588.936 13.3C689.452 -14.5667 794.128 -16.25 894.485 12.65C992.012 40.6667 1093.14 109 1189.51 143.717C1274.97 174.517 1368.27 187.2 1451 148.717V-11H-13V34.5833C112.008 99.3403 247.608 116.107 379.096 83.0667Z"
+        fill="url(#paint0_linear_618_171)"
+        fill-opacity="0.08"></path>
+      <defs>
+        <linearGradient
+          id="paint0_linear_618_171"
+          x1="719"
+          y1="-27.5"
+          x2="688"
+          y2="406.5"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.0817308" stop-color="#020617"></stop>
+          <stop offset="0.673077" stop-color="#2DCBD3"></stop>
+          <stop offset="1" stop-color="#61107C"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
 </section>
-
-<style>
-  @keyframes starTwinkle {
-    0%,
-    100% {
-      transform: scale(0.7);
-      filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
-      opacity: 0.75;
-    }
-    50% {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
-      opacity: 1;
-    }
-  }
-
-  .star-twinkle {
-    animation: starTwinkle 2.6s ease-in-out infinite;
-    transform-origin: center;
-  }
-
-  .icon svg {
-    color: aqua;
-  }
-
-  .whoweare-card {
-    --card-glow: rgba(34, 185, 245, 0.068);
-    --card-glow-transparent: var(--surface-secundary);
-    --card-glow-pos: 80% 15%;
-    box-shadow: -18px 18px 50px var(--card-glow);
-    z-index: 0;
-  }
-
-  .whoweare-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-      140% 120% at var(--card-glow-pos),
-      var(--card-glow),
-      var(--card-glow-transparent) 60%
-    );
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .whoweare-card--service {
-    --card-glow: rgba(136, 25, 174, 0.1);
-    --card-glow-transparent: var(--surface-secundary);
-    --card-glow-pos: 80% 0%;
-  }
-
-  .whoweare-card--pro {
-    --card-glow-pos: 90% 20%;
-  }
-</style>

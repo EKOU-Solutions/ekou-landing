@@ -5,6 +5,7 @@
     "help": "Como te ayudamos",
     "services": "Servicios",
     "success": "Casos de exito",
+    "team": "Equipo",
     "blog": "Blog",
     "contact": "Hablemos",
     "translate": {
@@ -14,20 +15,16 @@
   },
   "welcome": {
     "badge": "Bienvenido a EKOU",
-    "title": "Consultoria tecnologica y estrategica\npara empresas",
-    "titleHighlight": "que buscan evolucionar\ncon resultados reales",
-    "description": "Acompanamos empresas y emprendedores integrando estrategia, tecnologia e innovacion practica para construir soluciones sostenibles.",
+    "title": "Tecnologia e\n innovacion que impulsan el",
+    "titleHighlight": "crecimiento y generan\nimpacto real.",
+    "description": "Acompanamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
     "cta": "Conversemos sobre tu proyecto",
-    "features": [
-      "Estrategia consultiva",
-      "Tecnologia aplicada",
-      "Resultados reales"
-    ]
+    "features": ["Estrategia con proposito", "Ejecucion integral", "Acompanamiento continuo"]
   },
   "helpyou": {
     "badge": "Como te ayudamos",
     "title": "No solo desarrollamos productos",
-    "description": "Ofrecemos acompanamiento consultivo integral: estrategia, innovacion y optimizacion para generar valor real.",
+    "description": "Ofrecemos acompañamiento consultivo integral: estrategia, innovación y optimización enfocadas a generar valor real para tu negocio.",
     "items": [
       {
         "title": "Entendemos tu negocio",
@@ -45,20 +42,20 @@
   },
   "whoweare": {
     "badge": "Quienes somos",
-    "title": "Estrategia, tecnología e innovación aplicadas al crecimiento empresarial",
-    "description": "EKOU Solutions es un socio estrategico en consultoria y desarrollo tecnologico para empresas y emprendedores que buscan evolucionar con resultados reales. No somos una agencia tradicional: trabajamos con un enfoque consultivo, cercano y basado en estrategia, tecnologia e innovacion practica.",
+    "title": "Conectamos ideas con ejecución",
+    "description": "Acompañamos a organizaciones en el diseño y desarrollo de soluciones innovadoras, adaptadas a sus necesidades reales. Integramos estrategia, tecnología e innovación para impulsar el crecimiento, construir alianzas sólidas y optimizar procesos con una visión global.",
     "cards": [
       {
-        "title": "¿Que es EKOU Solutions?",
-        "description": "Un socio estrategico que integra consultoria, estrategia y tecnologia para transformar objetivos de negocio en soluciones sostenibles."
+        "title": "Innovación",
+        "description": "Convertimos retos en soluciones prácticas y escalables, diseñadas para generar impacto real desde la primera iteración."
       },
       {
-        "title": "¿A quien acompanamos?",
-        "description": "Empresas y emprendedores que necesitan digitalizarse, escalar u optimizar con claridad y resultados medibles."
+        "title": "Servicio",
+        "description": "Te acompañamos de cerca con equipos dedicados, ejecución ágil y entregas claras en cada etapa del proceso."
       },
       {
-        "title": "Diferencia consultiva",
-        "description": "No entregamos solo proyectos: guiamos decisiones, ejecución y mejora continua con transparencia y cercania."
+        "title": "Profesionalismo",
+        "description": "Trabajamos con procesos claros y estándares de calidad que generan confianza y resultados sostenibles."
       }
     ]
   },
@@ -91,11 +88,7 @@
           "Validamos ideas antes de invertir",
           "Definimos un plan claro y medible"
         ],
-        "deliverables": [
-          "Roadmap estrategico",
-          "Priorizacion",
-          "OKRs y metricas"
-        ]
+        "deliverables": ["Roadmap estrategico", "Priorizacion", "OKRs y metricas"]
       },
       {
         "id": "2",
@@ -107,11 +100,7 @@
           "Probamos ideas con prototipos rapidos",
           "Alineamos el producto con usuarios"
         ],
-        "deliverables": [
-          "Wireframes",
-          "UI Kit",
-          "Prototipo navegable"
-        ]
+        "deliverables": ["Wireframes", "UI Kit", "Prototipo navegable"]
       },
       {
         "id": "3",
@@ -123,11 +112,37 @@
           "Iteramos con feedback real",
           "Preparamos el lanzamiento y escalado"
         ],
-        "deliverables": [
-          "MVP funcional",
-          "QA y optimizacion",
-          "Soporte de lanzamiento"
-        ]
+        "deliverables": ["MVP funcional", "QA y optimizacion", "Soporte de lanzamiento"]
+      }
+    ]
+  },
+  "team": {
+    "badge": "Equipo",
+    "title": "Liderazgo y visión fundadora",
+    "members": [
+      {
+        "name": "Esteban Jimenez",
+        "position": "CEO",
+        "role": "Liderazgo y Visión",
+        "description": "La mente estratégica. Convierte ideas en caminos claros y guía el rumbo con determinación y perspectiva global.",
+        "image": "/team/esteban.webp",
+        "linkedin": "https://linkedin.com/in/"
+      },
+      {
+        "name": "Jouler Talaigua",
+        "position": "CEO",
+        "role": "Innovación y Creatividad",
+        "description": "El motor creativo. Transforma visiones en soluciones tangibles, rompiendo moldes con ingenio y originalidad.",
+        "image": "/team/jouler.webp",
+        "linkedin": "https://linkedin.com/in/"
+      },
+      {
+        "name": "Kevin Useche",
+        "position": "CEO",
+        "role": "Ejecución y Tecnología",
+        "description": "El arquitecto de la acción. Lidera con precisión técnica y convierte estrategias en realidades operativas.",
+        "image": "/team/kevin.webp",
+        "linkedin": "https://linkedin.com/in/"
       }
     ]
   },

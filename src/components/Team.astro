@@ -1,0 +1,84 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+import Badge from './Badge.astro'
+import SpaceGlow from './SpaceGlow.astro'
+import TeamMemberCard from './TeamMemberCard.astro'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const team = t('team')
+---
+
+<section id="equipo" class="relative w-full overflow-x-clip min-h-[80vh] flex items-center">
+  <SpaceGlow size="xl" color="cyan" intensity="low" className="-right-20 top-0" />
+
+  <main class="relative z-10 container-custom mx-auto px-3 md:px-12">
+    <div class="text-center">
+      <Badge>
+        {team.badge}
+      </Badge>
+
+      <h2 class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
+        {team.title}
+      </h2>
+    </div>
+
+    <div
+      class="mt-12 grid justify-items-center gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-sm md:max-w-none mx-auto"
+    >
+      {
+        team.members.map(
+          (member: {
+            name: string
+            role: string
+            position: string
+            description: string
+            image: string
+            linkedin?: string
+          }) => (
+            <TeamMemberCard
+              name={member.name}
+              role={member.role}
+              position={member.position}
+              description={member.description}
+              image={member.image}
+              linkedinUrl={member.linkedin}
+            />
+          )
+        )
+      }
+    </div>
+  </main>
+
+  <!-- Wave Separator -->
+  <div class="absolute -bottom-20 left-0 w-full pointer-events-none z-0" aria-hidden="true">
+    <svg
+      width="100%"
+      height="auto"
+      viewBox="0 0 1440 150"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      class="w-full h-auto"
+    >
+      <path
+        d="M372.096 76.458C442.856 61.841 511.371 35.6416 581.936 19.7512C682.452 -2.89901 787.128 -4.26724 887.485 19.2229C985.012 41.995 1086.14 97.5368 1182.51 125.755C1267.97 150.789 1361.27 161.098 1444 129.819V0H-20V37.0504C105.008 89.6853 240.608 103.314 372.096 76.458Z"
+        fill="url(#paint0_linear_team)"
+        fill-opacity="0.08"></path>
+      <defs>
+        <linearGradient
+          id="paint0_linear_team"
+          x1="712"
+          y1="-13.4113"
+          x2="691.484"
+          y2="339.955"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.0817308" stop-color="#020617"></stop>
+          <stop offset="0.673077" stop-color="#2DCBD3"></stop>
+          <stop offset="1" stop-color="#61107C"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</section>
