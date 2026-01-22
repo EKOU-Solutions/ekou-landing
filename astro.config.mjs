@@ -10,6 +10,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: process.env.PUBLIC_SITE_URL,
   i18n: {
     locales: ["es", "en"],
     defaultLocale: "es",

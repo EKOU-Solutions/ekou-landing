@@ -2,20 +2,28 @@
 import '../styles/global.css'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
+const normalizePathname = (pathname) => {
+  if (pathname.endsWith('/index.html')) {
+    return pathname.replace(/\/index\.html$/, '/')
+  }
+  return pathname
+}
+
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const welcome = t('welcome')
 const siteTitle = 'EKOU Solutions'
 const description = welcome.description
-const canonicalUrl = new URL(Astro.url.pathname, Astro.url.origin).href
-const currentPath = Astro.url.pathname
+const canonicalBase = Astro.site ?? Astro.url
+const currentPath = normalizePathname(Astro.url.pathname)
+const canonicalUrl = new URL(currentPath, canonicalBase).href
 const esPath = currentPath.replace(/^\/en(?=\/|$)/, '') || '/'
 const enPath = currentPath.startsWith('/en')
   ? currentPath
   : `/en${currentPath === '/' ? '' : currentPath}`
-const esUrl = new URL(esPath, Astro.url.origin).href
-const enUrl = new URL(enPath, Astro.url.origin).href
-const ogImage = new URL('/og-image.svg', Astro.url.origin).href
+const esUrl = new URL(esPath, canonicalBase).href
+const enUrl = new URL(enPath, canonicalBase).href
+const ogImage = new URL('/og-image.svg', canonicalBase).href
 const ogLocale = lang === 'es' ? 'es_ES' : 'en_US'
 const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_ES'
 ---
