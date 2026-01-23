@@ -14,7 +14,7 @@ const { name, role, position, description, image, linkedinUrl } = Astro.props
 ---
 
 <article
-  class="team-card group relative w-full max-w-[340px] overflow-hidden rounded-2xl border border-[#272a39] bg-[#0a0f1a]"
+  class="team-card group relative w-full max-w-[340px] overflow-hidden rounded-2xl border border-(--color-border) bg-(--surface-primary)"
 >
   <div class="relative aspect-[4/3] w-full overflow-hidden">
     <figure class="overflow-hidden max-h-63">
@@ -25,7 +25,10 @@ const { name, role, position, description, image, linkedinUrl } = Astro.props
         loading="lazy"
       />
     </figure>
-    <div class="absolute h-full inset-0 bg-linear-to-b from-30% to-[#0a0f1a]" aria-hidden="true">
+    <div
+      class="absolute h-full inset-0 bg-linear-to-b from-60% to-(--surface-primary)"
+      aria-hidden="true"
+    >
     </div>
 
     <span
@@ -51,7 +54,7 @@ const { name, role, position, description, image, linkedinUrl } = Astro.props
   </div>
 
   <div class="relative z-10 -mt-8 px-4 pb-5">
-    <h3 class="text-xl font-semibold text-white">{name}</h3>
+    <h3 class="text-xl font-semibold text-(--text-primary)">{name}</h3>
     <p class="mt-1 text-sm font-medium text-(--color-primary)">{role}</p>
     <p class="mt-2 text-sm leading-relaxed text-(--text-secundary)">{description}</p>
   </div>
@@ -62,6 +65,7 @@ const { name, role, position, description, image, linkedinUrl } = Astro.props
     transition:
       transform 300ms ease,
       box-shadow 300ms ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     position: relative;
   }
 

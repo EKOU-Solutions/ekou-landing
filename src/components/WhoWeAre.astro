@@ -96,7 +96,11 @@ const whoweare = t('whoweare')
   </main>
 
   <!-- Wave Separator -->
-  <div class="absolute -bottom-20 left-0 w-full pointer-events-none z-0" aria-hidden="true">
+  <div
+    class="absolute -bottom-20 left-0 w-full pointer-events-none z-0"
+    aria-hidden="true"
+    id="wave"
+  >
     <svg
       width="100%"
       height="auto"
@@ -119,7 +123,7 @@ const whoweare = t('whoweare')
           y2="406.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.0817308" stop-color="#020617"></stop>
+          <stop offset="0.0817308" stop-color="var(--surface-primary)"></stop>
           <stop offset="0.673077" stop-color="#2DCBD3"></stop>
           <stop offset="1" stop-color="#61107C"></stop>
         </linearGradient>
