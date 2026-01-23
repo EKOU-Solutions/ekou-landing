@@ -25,12 +25,12 @@ const {
 // Define las clases específicas de cada ícono según la variante
 const getIconClasses = () => {
   if (glowVariant === 'service') {
-    return 'mx-auto mt-2 mb-4 h-18 w-18 fill-(--text-primary)'
+    return 'mx-auto mt-2 mb-4 h-18 w-18 text-white'
   }
   if (glowVariant === 'pro') {
-    return 'mx-auto rotate-6 mt-2 h-24 w-24 fill-(--text-primary)'
+    return 'mx-auto rotate-6 mt-2 h-24 w-24 text-white'
   }
-  return 'mx-auto mb-2 mt-2 h-24 rotate-4 w-24 text-(--text-primary)'
+  return 'mx-auto mb-2 mt-2 h-24 rotate-4 w-24 text-white'
 }
 ---
 
@@ -54,8 +54,8 @@ const getIconClasses = () => {
   />
   <div class="relative z-10">
     <Icon className={clsx(getIconClasses(), iconClassName)} />
-    <h3 class="text-xl font-semibold text-(--text-primary)">{title}</h3>
-    <p class="mt-2 text-md text-(--text-secundary)">
+    <h3 class="text-xl font-semibold text-white">{title}</h3>
+    <p class="mt-2 text-md text-[#949ec5]">
       {description}
     </p>
   </div>
