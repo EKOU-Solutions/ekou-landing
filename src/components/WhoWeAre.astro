@@ -18,6 +18,7 @@ const whoweare = t('whoweare')
   id="quienes-somos"
   class="w-full relative min-h-[85vh] flex flex-col items-center justify-center overflow-x-clip scroll-mt-0"
   tabindex="-1"
+  aria-labelledby="whoweare-badge whoweare-subtitle whoweare-description whoweare-cards-summary"
 >
   <SpaceGlow
     size="xl"
@@ -30,24 +31,39 @@ const whoweare = t('whoweare')
     aria-hidden="true"
   >
   </div>
-  <main
+  <div
     class="w-full relative z-10 flex flex-col items-center justify-center py-16 container-custom mx-auto px-3 md:px-12"
   >
-    <Badge className="mt-4">
+    <Badge id="whoweare-badge" className="mt-4">
       {whoweare.badge}
     </Badge>
     <h2
+      id="whoweare-subtitle"
       class="mt-4 px-3 md:px-0 text-center text-4xl xl:text-6xl font-semibold text-(--text-primary)"
     >
       {whoweare.title}
     </h2>
-    <p class="mt-4 mb-4 text-center text-(--text-secundary) max-w-2xl mx-auto">
+    <p
+      id="whoweare-description"
+      class="mt-4 mb-4 text-center text-(--text-secundary) max-w-2xl mx-auto"
+    >
       {whoweare.description}
+    </p>
+    <!-- solo para lectores de pantalla -->
+    <p id="whoweare-cards-summary" class="sr-only">
+      {
+        whoweare.cards.map((card, index) => (
+          <>
+            {card.title}. {card.description}
+            {index < whoweare.cards.length - 1 && ' '}
+          </>
+        ))
+      }
     </p>
     <div class="relative mt-8 md:mt-24 w-full max-w-350">
       <img
         src={decoration2.src}
-        alt="decoration2"
+        alt=""
         class="absolute left-0 top-0 w-full h-[80%] object-contain opacity-40 pointer-events-none z-0"
         aria-hidden="true"
       />
@@ -67,33 +83,39 @@ const whoweare = t('whoweare')
         delay="1.4s"
         className="-right-3 top-36 md:right-2 md:-bottom-20 md:top-[unset] z-10"
       />
-      <div class="relative z-0 grid w-full gap-1 md:grid-cols-3 md:gap-12 justify-around">
-        <!-- card 1 -->
-        <WhoWeAreCard
-          variant="left"
-          title={whoweare.cards[0].title}
-          description={whoweare.cards[0].description}
-          icon={InnovationIcon}
-        />
-        <!-- card 2 -->
-        <WhoWeAreCard
-          variant="right"
-          title={whoweare.cards[1].title}
-          description={whoweare.cards[1].description}
-          icon={ServiceIcon}
-          glowVariant="service"
-        />
-        <!-- card 3 -->
-        <WhoWeAreCard
-          variant="left"
-          title={whoweare.cards[2].title}
-          description={whoweare.cards[2].description}
-          icon={ProfessionalismIcon}
-          glowVariant="pro"
-        />
-      </div>
+      <ul
+        class="relative z-0 grid w-full gap-1 md:grid-cols-3 md:gap-12 justify-around"
+        role="list"
+      >
+        <li>
+          <WhoWeAreCard
+            variant="left"
+            title={whoweare.cards[0].title}
+            description={whoweare.cards[0].description}
+            icon={InnovationIcon}
+          />
+        </li>
+        <li>
+          <WhoWeAreCard
+            variant="right"
+            title={whoweare.cards[1].title}
+            description={whoweare.cards[1].description}
+            icon={ServiceIcon}
+            glowVariant="service"
+          />
+        </li>
+        <li>
+          <WhoWeAreCard
+            variant="left"
+            title={whoweare.cards[2].title}
+            description={whoweare.cards[2].description}
+            icon={ProfessionalismIcon}
+            glowVariant="pro"
+          />
+        </li>
+      </ul>
     </div>
-  </main>
+  </div>
 
   <!-- Wave Separator -->
   <div

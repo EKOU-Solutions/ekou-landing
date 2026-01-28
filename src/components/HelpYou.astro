@@ -16,20 +16,38 @@ const icons = [Rocket, Cpu, Atom]
   id="como-te-ayudamos"
   class="relative w-full min-h-[80vh] flex flex-col items-center justify-center overflow-x-clip"
   tabindex="-1"
+  aria-labelledby="helpyou-badge helpyou-subtitle helpyou-description helpyou-items-summary"
 >
-  <main class="mx-auto px-10 md:px-0 md:max-w-6xl py-16 px-4 md:px-8 lg:px-16">
+  <div class="mx-auto px-10 md:px-0 md:max-w-6xl py-16 px-4 md:px-8 lg:px-16">
     <!-- Header -->
     <div class="text-center mb-8 md:mb-16">
-      <Badge>
+      <Badge id="helpyou-badge">
         {helpyou.badge}
       </Badge>
 
-      <h2 class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
+      <h2
+        id="helpyou-subtitle"
+        class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)"
+      >
         {helpyou.title}
       </h2>
 
-      <p class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">{helpyou.description}</p>
+      <p id="helpyou-description" class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
+        {helpyou.description}
+      </p>
     </div>
+
+    <!-- solo para lectores de pantalla -->
+    <p id="helpyou-items-summary" class="sr-only">
+      {
+        helpyou.items.map((card, index) => (
+          <>
+            {card.title}. {card.description}
+            {index < helpyou.items.length - 1 && ' '}
+          </>
+        ))
+      }
+    </p>
 
     <!-- Content -->
     <ul class="mt-8 grid gap-10 md:gap-10 md:grid-cols-3" role="list">
@@ -60,7 +78,7 @@ const icons = [Rocket, Cpu, Atom]
         })
       }
     </ul>
-  </main>
+  </div>
 
   <SpaceGlow
     size="xl"

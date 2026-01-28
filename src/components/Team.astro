@@ -9,19 +9,38 @@ const t = useTranslations(lang)
 const team = t('team')
 ---
 
-<section id="equipo" class="relative w-full overflow-x-clip min-h-[80vh] flex items-center">
+<section
+  id="equipo"
+  class="relative w-full overflow-x-clip min-h-[80vh] flex items-center"
+  aria-labelledby="team-badge team-subtitle team-description team-members-summary"
+>
   <SpaceGlow size="xl" color="cyan" intensity="low" className="-right-20 top-0" />
 
-  <main class="relative z-10 container-custom mx-auto px-3 md:px-12">
+  <div class="relative z-10 container-custom mx-auto px-3 md:px-12">
     <div class="text-center">
-      <Badge>
+      <Badge id="team-badge">
         {team.badge}
       </Badge>
 
-      <h2 class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
+      <h2 id="team-subtitle" class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
         {team.title}
       </h2>
+      <p id="team-description" class="mt-4 text-(--text-secundary) max-w-2xl mx-auto">
+        {team.description}
+      </p>
     </div>
+
+    <!-- solo para lectores de pantalla -->
+    <p id="team-members-summary" class="sr-only">
+      {
+        team.members.map((member, index) => (
+          <>
+            {member.name}. {member.role}. {member.description}
+            {index < team.members.length - 1 && ' '}
+          </>
+        ))
+      }
+    </p>
 
     <div
       class="mt-12 grid justify-items-center gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-sm md:max-w-none mx-auto"
@@ -48,7 +67,7 @@ const team = t('team')
         )
       }
     </div>
-  </main>
+  </div>
 
   <!-- Wave Separator -->
   <div class="absolute -bottom-20 left-0 w-full pointer-events-none z-0" aria-hidden="true">
