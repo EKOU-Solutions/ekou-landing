@@ -17,7 +17,7 @@
     "badge": "Bienvenido a EKOU",
     "title": "Tecnologia e\n innovacion que impulsan el",
     "titleHighlight": "crecimiento y generan\nimpacto real.",
-    "description": "Acompanamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
+    "description": "Acompañamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
     "cta": "Conversemos sobre tu proyecto",
     "features": ["Estrategia con proposito", "Ejecucion integral", "Acompanamiento continuo"]
   },
@@ -119,6 +119,7 @@
   "team": {
     "badge": "Equipo",
     "title": "Liderazgo y visión fundadora",
+    "description": "Conoce al equipo de EKOU.",
     "members": [
       {
         "name": "Esteban Jimenez",
