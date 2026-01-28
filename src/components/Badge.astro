@@ -3,12 +3,14 @@ import { Sparkles } from 'lucide-react'
 
 interface Props {
   className?: string
+  id?: string
 }
 
-const { className = '' } = Astro.props
+const { className = '', id } = Astro.props
 ---
 
 <span
+  id={id}
   class:list={[
     'inline-flex items-center gap-2 text-sm uppercase text-(--color-primary)',
     className,
