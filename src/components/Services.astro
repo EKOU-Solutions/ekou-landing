@@ -15,6 +15,7 @@ const servicePhases = t('servicePhases')
   id="servicios"
   class="relative w-full bg-(--surface-primary) min-h-[80vh] flex items-center overflow-x-clip"
   tabindex="-1"
+  aria-labelledby="services-badge services-subtitle services-description"
 >
   <!-- Space Glow Effect -->
   <SpaceGlow
@@ -38,23 +39,26 @@ const servicePhases = t('servicePhases')
   <StarDecoration size="sm" delay="0.6s" className="right-0 md:right-20 top-50" />
   <StarDecoration size="sm" delay="1.1s" className="left-1/2 -translate-x-1/2 top-80" />
 
-  <main class="w-full py-16 container-custom mx-auto px-3 md:px-12">
+  <div class="w-full py-16 container-custom mx-auto px-3 md:px-12">
     <!-- Header -->
     <div class="text-center md:mb-16">
-      <Badge>
+      <Badge id="services-badge">
         {services.badge}
       </Badge>
 
-      <h2 class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
+      <h2
+        id="services-subtitle"
+        class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)"
+      >
         {services.title}
       </h2>
 
-      <p class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
+      <p id="services-description" class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
         {services.description}
       </p>
     </div>
 
     <!-- Content -->
     <ServicePhases client:load phasesData={servicePhases.phases} labels={servicePhases.labels} />
-  </main>
+  </div>
 </section>
