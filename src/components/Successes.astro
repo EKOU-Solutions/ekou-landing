@@ -14,10 +14,11 @@ const successes = t('successes')
   id="casos-de-exito"
   class="overflow-x-clip relative min-h-[80vh] flex items-center"
   tabindex="-1"
+  aria-labelledby="successes-badge successes-subtitle successes-description"
 >
   <img
     src={barsInclined.src}
-    alt="overlay"
+    alt=""
     class="w-full object-cover h-full absolute -left-6 bottom-40 opacity-80 pointer-events-none"
     aria-hidden="true"
   />
@@ -27,17 +28,20 @@ const successes = t('successes')
   >
   </div>
 
-  <main class="relative z-10 w-full container-custom mx-auto px-3 md:px-12">
+  <div class="relative z-10 w-full container-custom mx-auto px-3 md:px-12">
     <div class="text-center mb-10">
-      <Badge>
+      <Badge id="successes-badge">
         {successes.badge}
       </Badge>
 
-      <h2 class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)">
+      <h2
+        id="successes-subtitle"
+        class="mt-4 text-4xl xl:text-6xl font-semibold text-(--text-primary)"
+      >
         {successes.title}
       </h2>
 
-      <p class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
+      <p id="successes-description" class="mt-4 max-w-2xl mx-auto text-(--text-secundary)">
         {successes.description}
       </p>
     </div>
@@ -48,5 +52,5 @@ const successes = t('successes')
     >
     </div>
     <CasesSlider items={cases} client:load />
-  </main>
+  </div>
 </section>

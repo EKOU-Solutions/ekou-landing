@@ -59,7 +59,11 @@ const navLinks = [
       <div class="hidden lg:flex items-center">
         <ThemeController />
       </div>
-      <button id="language-btn" class="flex justify-center items-center cursor-pointer">
+      <button
+        id="language-btn"
+        aria-label="controlador modal lenguaje"
+        class="flex justify-center items-center cursor-pointer"
+      >
         <Languages />
         <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
       </button>
@@ -74,7 +78,12 @@ const navLinks = [
         <Menu />
       </button>
 
-      <section id="language-modal" class="lang-modal fixed right-2 top-16 z-50">
+      <section
+        id="language-modal"
+        class="lang-modal fixed right-2 top-16 z-50"
+        aria-hidden="true"
+        hidden
+      >
         <ModalLanguage />
       </section>
     </div>
@@ -93,6 +102,10 @@ const navLinks = [
   const closeLanguage = () => {
     modal?.classList.remove('open')
     arrow?.classList.remove('rotate-180')
+    if (modal) {
+      modal.setAttribute('aria-hidden', 'true')
+      modal.setAttribute('hidden', '')
+    }
   }
 
   const isMobileMenuOpen = () => mobileMenu?.classList.contains('open')
@@ -148,6 +161,12 @@ const navLinks = [
       event.stopPropagation()
       const isOpen = modal.classList.toggle('open')
       arrow?.classList.toggle('rotate-180', isOpen)
+      modal.setAttribute('aria-hidden', String(!isOpen))
+      if (isOpen) {
+        modal.removeAttribute('hidden')
+      } else {
+        modal.setAttribute('hidden', '')
+      }
     })
 
     modal.addEventListener('click', (event) => event.stopPropagation())

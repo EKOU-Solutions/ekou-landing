@@ -11,14 +11,31 @@ const ServicePhases = ({ phasesData, labels }) => {
   const phases = phasesData.map((phase) => phase.id)
   const currentIndex = phases.indexOf(currentPhase ?? '1')
   const currentPhaseData = phasesData[currentIndex] ?? phasesData[0]
+  const currentPhaseId = currentPhase ?? currentPhaseData?.id ?? '1'
+  const currentPhaseSummary = `${labels.phaseLabel} ${currentPhaseId}. ${currentPhaseData.title}. ${currentPhaseData.subtitle}. ${currentPhaseData.tagline}. ${labels.helpsTitle}: ${currentPhaseData.helps.join(', ')}. ${labels.deliverablesTitle}: ${currentPhaseData.deliverables.join(', ')}.`
 
   const setPhaseByIndex = (nextIndex) => {
     const safeIndex = (nextIndex + phases.length) % phases.length
     setCurrentPhase(phases[safeIndex])
   }
 
+  const handleArrowKey = (event) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault()
+      setPhaseByIndex(currentIndex - 1)
+    }
+    if (event.key === 'ArrowRight') {
+      event.preventDefault()
+      setPhaseByIndex(currentIndex + 1)
+    }
+  }
+
   return (
-    <section className="flex flex-col-reverse md:grid md:grid-cols-2 gap-24 md:gap-16 items-center">
+    <section
+      className="flex flex-col-reverse md:grid md:grid-cols-2 gap-24 md:gap-16 items-center"
+      aria-labelledby="service-phases-title"
+      aria-describedby="service-phases-tagline"
+    >
       {/* contenedor de fases flotantes */}
       <div className="relative flex items-center justify-center md:h-100">
         <div className="absolute z-10 left-0 bottom-0 hidden md:flex flex-col items-center justify-center">
@@ -44,10 +61,15 @@ const ServicePhases = ({ phasesData, labels }) => {
             label={labels.phaseLabel}
           />
         </div>
-        <div className="absolute bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6">
+        <div
+          className="absolute bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6"
+          role="group"
+          aria-label="Phase navigation"
+        >
           <button
             className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-(--text-secundary) hover:text-(--color-primary) transition-all duration-300 bg-white/1 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6),0_4px_0px_rgba(0,0,0,0.05)]  border border-(--color-border) hover:bg-white/8"
             onClick={() => setPhaseByIndex(currentIndex - 1)}
+            onKeyDown={handleArrowKey}
             aria-label={labels.prevAria}
             type="button"
           >
@@ -61,6 +83,7 @@ const ServicePhases = ({ phasesData, labels }) => {
           <button
             className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-(--text-secundary) hover:text-(--color-primary) transition-all duration-300 bg-white/1 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6),0_4px_0px_rgba(0,0,0,0.05)] border border-(--color-border) hover:bg-white/8"
             onClick={() => setPhaseByIndex(currentIndex + 1)}
+            onKeyDown={handleArrowKey}
             aria-label={labels.nextAria}
             type="button"
           >
@@ -71,18 +94,27 @@ const ServicePhases = ({ phasesData, labels }) => {
 
       {/* seccion de descripcion de fase */}
       <div className="h-105 w-full relative flex flex-col justify-center items-center gap-4 md:gap-6 pb-8">
+        {/* solo para lectores de pantalla */}
+        <p className="sr-only" aria-live="polite" aria-atomic="true">
+          {currentPhaseSummary}
+        </p>
         <img
           src="/gfx.svg"
-          alt="s"
+          alt=""
           className="gfx-sway w-full h-full absolute left-0 top-0"
           aria-hidden="true"
         />
-        <h3 className="text-lg md:text-xl font-semibold text-(--color-primary) text-center flex flex-col gap-1">
+        <h3
+          id="service-phases-title"
+          className="text-lg md:text-xl font-semibold text-(--color-primary) text-center flex flex-col gap-1"
+        >
           {currentPhaseData.title}{' '}
           <span className="text-base md:text-lg">{currentPhaseData.subtitle}</span>
         </h3>
 
-        <p className="text-(--text-secundary) text-sm md:text-lg">{currentPhaseData.tagline}</p>
+        <p id="service-phases-tagline" className="text-(--text-secundary) text-sm md:text-lg">
+          {currentPhaseData.tagline}
+        </p>
 
         <div className="max-w-70 md:max-w-90 w-full">
           <p className="mb-2 text-(--color-primary) font-medium">{labels.helpsTitle}</p>

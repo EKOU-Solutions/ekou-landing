@@ -53,7 +53,7 @@ const getIconClasses = () => {
     aria-hidden="true"
   />
   <div class="relative z-10">
-    <Icon className={clsx(getIconClasses(), iconClassName)} />
+    <Icon className={clsx(getIconClasses(), iconClassName)} aria-hidden="true" focusable="false" />
     <h3 class="text-xl font-semibold text-white">{title}</h3>
     <p class="mt-2 text-md text-[#949ec5]">
       {description}
