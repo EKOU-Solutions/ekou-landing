@@ -75,7 +75,8 @@
       "helpsTitle": "Como te ayudamos",
       "deliverablesTitle": "Entregables",
       "prevAria": "Fase anterior",
-      "nextAria": "Siguiente fase"
+      "nextAria": "Siguiente fase",
+      "navigationAria": "Navegacion de fases"
     },
     "phases": [
       {

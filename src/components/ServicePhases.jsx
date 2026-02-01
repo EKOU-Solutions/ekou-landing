@@ -64,7 +64,7 @@ const ServicePhases = ({ phasesData, labels }) => {
         <div
           className="absolute bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6"
           role="group"
-          aria-label="Phase navigation"
+          aria-label={labels.navigationAria}
         >
           <button
             className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-(--text-secundary) hover:text-(--color-primary) transition-all duration-300 bg-white/1 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6),0_4px_0px_rgba(0,0,0,0.05)]  border border-(--color-border) hover:bg-white/8"
