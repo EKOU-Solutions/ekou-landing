@@ -8,10 +8,10 @@
     "team": "Equipo",
     "blog": "Blog",
     "contact": "Hablemos",
-    "mobileMenuLabel": "Navegacion principal",
+    "mobileMenuLabel": "Navegación principal",
     "translate": {
-      "es": "Espanol",
-      "en": "Ingles"
+      "es": "Español",
+      "en": "Inglés"
     }
   },
   "welcome": {
