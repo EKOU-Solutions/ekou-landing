@@ -9,6 +9,7 @@
     "blog": "Blog",
     "contact": "Hablemos",
     "mobileMenuLabel": "Navegación principal",
+    "openLanguageModal": "abrir modal de idioma",
     "translate": {
       "es": "Español",
       "en": "Inglés"
@@ -76,7 +77,8 @@
       "helpsTitle": "Como te ayudamos",
       "deliverablesTitle": "Entregables",
       "prevAria": "Fase anterior",
-      "nextAria": "Siguiente fase"
+      "nextAria": "Siguiente fase",
+      "navigationAria": "Navegación de fases"
     },
     "phases": [
       {
