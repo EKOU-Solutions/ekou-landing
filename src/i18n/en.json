@@ -75,7 +75,8 @@
       "helpsTitle": "How we help",
       "deliverablesTitle": "Deliverables",
       "prevAria": "Previous phase",
-      "nextAria": "Next phase"
+      "nextAria": "Next phase",
+      "navigationAria": "Phase navigation"
     },
     "phases": [
       {
