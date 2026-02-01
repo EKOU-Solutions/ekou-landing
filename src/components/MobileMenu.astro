@@ -1,7 +1,7 @@
 ---
 import ThemeController from './ThemeController.astro'
 
-const { navLinks = [] } = Astro.props
+const { navLinks = [], themeToggleLabel } = Astro.props
 const lastNavIndex = navLinks.length - 1
 ---
 
@@ -30,7 +30,7 @@ const lastNavIndex = navLinks.length - 1
           </a>
           {index === lastNavIndex && (
             <div class="flex items-center justify-center scale-130">
-              <ThemeController />
+              <ThemeController ariaLabel={themeToggleLabel} />
             </div>
           )}
         </li>

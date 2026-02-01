@@ -10,7 +10,8 @@
     "translate": {
       "es": "Spanish",
       "en": "English"
-    }
+    },
+    "themeToggle": "Toggle theme"
   },
   "welcome": {
     "badge": "Welcome to EKOU",

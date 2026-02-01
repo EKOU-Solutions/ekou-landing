@@ -57,7 +57,7 @@ const navLinks = [
     </div>
     <div class="relative flex items-center gap-5 text-(--color-primary)">
       <div class="hidden lg:flex items-center">
-        <ThemeController />
+        <ThemeController ariaLabel={navbar.themeToggle} />
       </div>
       <button
         id="language-btn"
@@ -90,7 +90,7 @@ const navLinks = [
   </nav>
 </header>
 
-<MobileMenu navLinks={navLinks} />
+<MobileMenu navLinks={navLinks} themeToggleLabel={navbar.themeToggle} />
 
 <script>
   const btn = document.getElementById('language-btn')

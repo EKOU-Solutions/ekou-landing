@@ -11,7 +11,8 @@
     "translate": {
       "es": "Espanol",
       "en": "Ingles"
-    }
+    },
+    "themeToggle": "Cambiar tema"
   },
   "welcome": {
     "badge": "Bienvenido a EKOU",
