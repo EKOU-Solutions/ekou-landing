@@ -115,6 +115,11 @@ const navLinks = [
     mobileMenu.classList.toggle('open', isOpen)
     mobileMenu.setAttribute('aria-hidden', String(!isOpen))
     if (menuBtn) menuBtn.setAttribute('aria-expanded', String(isOpen))
+    if (isOpen) {
+      mobileMenu.removeAttribute('hidden')
+    } else {
+      mobileMenu.setAttribute('hidden', '')
+    }
   }
 
   const focusFirstMenuLink = () => {
