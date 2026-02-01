@@ -1,7 +1,7 @@
 ---
 import { Moon, Sun } from 'lucide-react'
 
-const { ariaLabel } = Astro.props
+const { ariaLabel = 'Toggle theme' } = Astro.props
 ---
 
 <button class="cursor-pointer theme-toggle is-dark" aria-label={ariaLabel} data-theme-toggle>
