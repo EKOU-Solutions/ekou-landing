@@ -8,6 +8,10 @@
     "team": "Equipo",
     "blog": "Blog",
     "contact": "Hablemos",
+    "openLanguageModal": "abrir modal de idioma",
+    "openMenu": "Abrir menu",
+    "mainNavigation": "Navegacion principal",
+    "toggleTheme": "Cambiar tema",
     "translate": {
       "es": "Espanol",
       "en": "Ingles"
@@ -17,7 +21,7 @@
     "badge": "Bienvenido a EKOU",
     "title": "Tecnologia e\n innovacion que impulsan el",
     "titleHighlight": "crecimiento y generan\nimpacto real.",
-    "description": "Acompanamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
+    "description": "Acompañamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
     "cta": "Conversemos sobre tu proyecto",
     "features": ["Estrategia con proposito", "Ejecucion integral", "Acompanamiento continuo"]
   },
@@ -67,7 +71,10 @@
   "successes": {
     "badge": "Casos de exito",
     "title": "Impacto real",
-    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompanamos a las organizaciones."
+    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompanamos a las organizaciones.",
+    "viewMoreLabel": "Ver mas",
+    "viewMoreAriaPrefix": "Ver mas sobre",
+    "slideAria": "Diapositiva"
   },
   "servicePhases": {
     "labels": {
@@ -75,7 +82,9 @@
       "helpsTitle": "Como te ayudamos",
       "deliverablesTitle": "Entregables",
       "prevAria": "Fase anterior",
-      "nextAria": "Siguiente fase"
+      "nextAria": "Siguiente fase",
+      "navigationAria": "Navegación de fases",
+      "selectPhaseAria": "Seleccionar fase"
     },
     "phases": [
       {
@@ -119,6 +128,8 @@
   "team": {
     "badge": "Equipo",
     "title": "Liderazgo y visión fundadora",
+    "description": "Conoce al equipo de EKOU.",
+    "linkedinAriaPrefix": "LinkedIn de",
     "members": [
       {
         "name": "Esteban Jimenez",
@@ -172,6 +183,16 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 EKOU. Todos los derechos reservados."
+    "copyright": "© 2026 EKOU. Todos los derechos reservados.",
+    "aria": {
+      "home": "Inicio de EKOU",
+      "socialLinks": "Enlaces sociales",
+      "social": {
+        "gamepad": "Gamepad",
+        "dribbble": "Dribbble",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn"
+      }
+    }
   }
 }

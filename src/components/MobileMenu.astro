@@ -1,14 +1,18 @@
 ---
 import ThemeController from './ThemeController.astro'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 
 const { navLinks = [] } = Astro.props
 const lastNavIndex = navLinks.length - 1
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const navbar = t('navbar')
 ---
 
 <section
   id="mobile-menu"
   class="mobile-menu fixed left-[3%] top-[4.4rem] w-[94%] lg:hidden text-(--text-primary) z-40 rounded-3xl bg-(--surface-secundary)/80 backdrop-blur-md border border-(--color-border) shadow-lg px-6 py-6"
-  aria-label="Main navigation"
+  aria-label={navbar.mainNavigation}
   aria-hidden="true"
 >
   <ul class="flex flex-col items-stretch gap-4 text-left">
