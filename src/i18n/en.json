@@ -5,9 +5,13 @@
     "help": "How we help",
     "services": "Services",
     "success": "Case studies",
+    "team": "Team",
     "blog": "Blog",
     "contact": "Let's talk",
     "openLanguageModal": "open language modal",
+    "openMenu": "Open menu",
+    "mainNavigation": "Main navigation",
+    "toggleTheme": "Toggle theme",
     "translate": {
       "es": "Spanish",
       "en": "English"
@@ -67,7 +71,10 @@
   "successes": {
     "badge": "Case studies",
     "title": "Real impact",
-    "description": "Measurable outcomes that show the value of our solutions and how we support organizations."
+    "description": "Measurable outcomes that show the value of our solutions and how we support organizations.",
+    "viewMoreLabel": "View more",
+    "viewMoreAriaPrefix": "View more about",
+    "slideAria": "Slide"
   },
   "servicePhases": {
     "labels": {
@@ -76,7 +83,8 @@
       "deliverablesTitle": "Deliverables",
       "prevAria": "Previous phase",
       "nextAria": "Next phase",
-      "navigationAria": "Phase navigation"
+      "navigationAria": "Phase navigation",
+      "selectPhaseAria": "Select phase"
     },
     "phases": [
       {
@@ -121,6 +129,7 @@
     "badge": "Team",
     "title": "Founding leadership and vision",
     "description": "Meet the EKOU team behind the vision.",
+    "linkedinAriaPrefix": "LinkedIn profile of",
     "members": [
       {
         "name": "Esteban Jimenez",
@@ -174,6 +183,16 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 EKOU. All rights reserved."
+    "copyright": "© 2026 EKOU. All rights reserved.",
+    "aria": {
+      "home": "EKOU home",
+      "socialLinks": "Social links",
+      "social": {
+        "gamepad": "Gamepad",
+        "dribbble": "Dribbble",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn"
+      }
+    }
   }
 }

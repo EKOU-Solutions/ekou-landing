@@ -9,6 +9,9 @@
     "blog": "Blog",
     "contact": "Hablemos",
     "openLanguageModal": "abrir modal de idioma",
+    "openMenu": "Abrir menu",
+    "mainNavigation": "Navegacion principal",
+    "toggleTheme": "Cambiar tema",
     "translate": {
       "es": "Espanol",
       "en": "Ingles"
@@ -68,7 +71,10 @@
   "successes": {
     "badge": "Casos de exito",
     "title": "Impacto real",
-    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompanamos a las organizaciones."
+    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompanamos a las organizaciones.",
+    "viewMoreLabel": "Ver mas",
+    "viewMoreAriaPrefix": "Ver mas sobre",
+    "slideAria": "Diapositiva"
   },
   "servicePhases": {
     "labels": {
@@ -77,7 +83,8 @@
       "deliverablesTitle": "Entregables",
       "prevAria": "Fase anterior",
       "nextAria": "Siguiente fase",
-      "navigationAria": "Navegación de fases"
+      "navigationAria": "Navegación de fases",
+      "selectPhaseAria": "Seleccionar fase"
     },
     "phases": [
       {
@@ -122,6 +129,7 @@
     "badge": "Equipo",
     "title": "Liderazgo y visión fundadora",
     "description": "Conoce al equipo de EKOU.",
+    "linkedinAriaPrefix": "LinkedIn de",
     "members": [
       {
         "name": "Esteban Jimenez",
@@ -175,6 +183,16 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 EKOU. Todos los derechos reservados."
+    "copyright": "© 2026 EKOU. Todos los derechos reservados.",
+    "aria": {
+      "home": "Inicio de EKOU",
+      "socialLinks": "Enlaces sociales",
+      "social": {
+        "gamepad": "Gamepad",
+        "dribbble": "Dribbble",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn"
+      }
+    }
   }
 }
