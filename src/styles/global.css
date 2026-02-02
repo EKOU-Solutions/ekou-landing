@@ -19,6 +19,10 @@ html {
   --text-primary: #ffffff;
   --text-secundary: #b3bdd2;
   --surface-input: #191c2d;
+  --opacity-img: 0.02;
+  --surface-card: #121524;
+  --card-glow-1: #291535cc;
+  --card-glow-2: #071f35cc;
 }
 
 :root[data-theme='light'] {
@@ -30,6 +34,10 @@ html {
   --text-primary: #000000;
   --text-secundary: #292a30;
   --surface-input: #e7eaff;
+  --opacity-img: 0.2;
+  --surface-card: #d5e6eedf;
+  --card-glow-1: #e1acffcc;
+  --card-glow-2: #9ed2ffcc;
 }
 
 .container-custom {
