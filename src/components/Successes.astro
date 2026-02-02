@@ -8,6 +8,11 @@ import CasesSlider from './CasesSlider'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const successes = t('successes')
+const casesLabels = {
+  viewMoreLabel: successes.viewMoreLabel,
+  viewMoreAriaPrefix: successes.viewMoreAriaPrefix,
+  slideAria: successes.slideAria,
+}
 ---
 
 <section
@@ -51,6 +56,6 @@ const successes = t('successes')
       class="absolute z-10 -left-20 -top-10 w-15 h-screen bg-(--surface-primary) blur-lg pointer-events-none"
     >
     </div>
-    <CasesSlider items={cases} client:load />
+    <CasesSlider items={cases} labels={casesLabels} client:load />
   </div>
 </section>

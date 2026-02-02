@@ -2,7 +2,12 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { ArrowUpRight } from 'lucide-react'
 import '@splidejs/react-splide/css'
 
-const CasesSlider = ({ items }) => {
+const CasesSlider = ({ items, labels = {} }) => {
+  const {
+    viewMoreLabel = 'View more',
+    viewMoreAriaPrefix = 'View more about',
+    slideAria = 'slide',
+  } = labels
   const options = {
     type: 'loop',
     autoWidth: true,
@@ -35,7 +40,7 @@ const CasesSlider = ({ items }) => {
               className="relative isolate rounded-3xl ml-6 border border-(--color-border) overflow-hidden shadow-[-2px_6px_10px_rgba(0,0,0,0.08)] will-change-transform backdrop-blur-md before:content-[''] before:absolute before:z-15 before:inset-0 before:rounded-[inherit] before:bg-transparent before:shadow-[inset_0_0_10px_rgba(255,255,255,0.30)] before:pointer-events-none"
               aria-labelledby={titleId}
               aria-describedby={descriptionId}
-              aria-roledescription="slide"
+              aria-roledescription={slideAria}
               role="group"
               tabIndex={0}
             >
@@ -67,9 +72,9 @@ const CasesSlider = ({ items }) => {
 
                 <button
                   className="mt-2 w-fit text-xs text-(--text-primary) font-medium px-3 py-1.5 rounded-xl inline-flex items-center gap-2 bg-white/5 border border-(--color-border) backdrop-blur-md hover:bg-white/10 transition-all duration-300 cursor-pointer relative z-30"
-                  aria-label={`Ver mas sobre ${item.title}`}
+                  aria-label={`${viewMoreAriaPrefix} ${item.title}`}
                 >
-                  Ver mas
+                  {viewMoreLabel}
                   <ArrowUpRight className="w-3.5 h-3.5 text-(--color-primary)" />
                 </button>
               </div>

@@ -1,8 +1,17 @@
 ---
 import { Moon, Sun } from 'lucide-react'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const navbar = t('navbar')
 ---
 
-<button class="cursor-pointer theme-toggle is-dark" aria-label="Cambiar tema  " data-theme-toggle>
+<button
+  class="cursor-pointer theme-toggle is-dark"
+  aria-label={navbar.toggleTheme}
+  data-theme-toggle
+>
   <span class="theme-icon theme-icon--moon">
     <Sun />
   </span>

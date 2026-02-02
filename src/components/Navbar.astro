@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import ModalLanguage from './ModalLanguage.astro'
 import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const navbar = t('navbar')
@@ -71,7 +72,7 @@ const navLinks = [
       <button
         id="mobile-menu-btn"
         class="lg:hidden cursor-pointer"
-        aria-label="Open menu"
+        aria-label={navbar.openMenu}
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
