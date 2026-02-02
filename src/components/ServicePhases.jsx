@@ -42,7 +42,7 @@ const ServicePhases = ({ phasesData, labels }) => {
           <PhaseCircle
             icon={<CodeIcon className="w-8 h-8 text-(--surface-secundary)" />}
             phase="1"
-            className="relative before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-(--text-primary) before:h-51 md:before:h-53 before:-top-47 before:left-32 md:before:left-38 before:w-px before:rotate-28 md:before:rotate-34"
+            className="relative before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-(--text-primary) before:h-51 md:before:h-56 before:-top-50 before:left-32 md:before:left-38 before:w-px before:rotate-28 md:before:rotate-34"
             label={labels.phaseLabel}
             ariaLabelPrefix={labels.selectPhaseAria}
           />
