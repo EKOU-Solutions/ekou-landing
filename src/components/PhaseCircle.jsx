@@ -1,11 +1,13 @@
 import { usePhasesStore } from '../store/phasesStore'
 
-const PhaseCircle = ({ icon, phase, className, label }) => {
+const PhaseCircle = ({ icon, phase, className, label, ariaLabelPrefix }) => {
   const currentPhase = usePhasesStore((state) => state.currentPhase)
   const setCurrentPhase = usePhasesStore((state) => state.setCurrentPhase)
 
   const isActive = currentPhase === phase
   const handleClick = () => setCurrentPhase(phase)
+  const ariaLabelBase = ariaLabelPrefix || label || ''
+  const ariaLabel = ariaLabelBase ? `${ariaLabelBase} ${phase}` : String(phase)
 
   return (
     <>
@@ -14,7 +16,7 @@ const PhaseCircle = ({ icon, phase, className, label }) => {
         className={`group w-30 md:w-32 h-30 md:h-32 relative rounded-full border border-(--text-primary) bg-(--surface-primary) flex items-center justify-center hover:scale-105 transition ${isActive ? 'scale-107' : ''} ${className}`}
         onClick={handleClick}
         aria-pressed={isActive}
-        aria-label={`Seleccionar fase ${phase}`}
+        aria-label={ariaLabel}
       >
         <div
           className={`w-20 md:w-24 h-20 md:h-24 rounded-full bg-(--text-secundary) flex items-center justify-center text-(--text-secundary) shadow-[0_0_10px_var(--text-secundary)] group-hover:shadow-[0_0_15px_var(--text-secundary)] transition-transform group-hover:scale-105 
