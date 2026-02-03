@@ -7,38 +7,58 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const navbar = t('navbar')
+const aria = t('aria')
 ---
 
 <nav
+  aria-label={aria.languageMenuLabel}
   class="w-40 rounded-2xl bg-(--surface-secundary)/90 backdrop-blur-md px-4 py-4 border border-(--color-border) shadow-lg flex flex-col gap-2"
 >
   <!-- Español -->
   <a
     href={getRelativeLocaleUrl('es')}
+    aria-label={aria.languageOptionEs}
     class={`flex items-center gap-2 px-4 py-2 rounded-xl transition
       ${lang === 'es' ? 'bg-white/5' : 'opacity-70 hover:opacity-100'}`}
   >
-    <img
-      src={iconES.src}
-      alt="icon español"
-      class={`w-8 h-8 rounded-full transition
-        ${lang === 'es' ? '' : 'grayscale'}`}
-    />
+    <figure
+      class={`language-icon w-8 h-8 m-0 shrink-0 rounded-full transition
+        ${lang === 'es' ? '' : 'is-muted'}`}
+      style={`background-image: url(${iconES.src});`}
+      role="img"
+      aria-label={aria.languageIconEs}
+    >
+    </figure>
     <span class="text-(--text-primary) text-sm">{navbar.translate.es}</span>
   </a>
 
   <!-- Inglés -->
   <a
     href={getRelativeLocaleUrl('en')}
+    aria-label={aria.languageOptionEn}
     class={`flex items-center gap-2 px-4 py-2 rounded-xl transition
       ${lang === 'en' ? 'bg-white/5' : 'opacity-70 hover:opacity-100'}`}
   >
-    <img
-      src={iconEN.src}
-      alt="icon inglés"
-      class={`w-8 h-8 rounded-full transition
-        ${lang === 'en' ? '' : 'grayscale'}`}
-    />
+    <figure
+      class={`language-icon w-8 h-8 m-0 shrink-0 rounded-full transition
+        ${lang === 'en' ? '' : 'is-muted'}`}
+      style={`background-image: url(${iconEN.src});`}
+      role="img"
+      aria-label={aria.languageIconEn}
+    >
+    </figure>
     <span class="text-(--text-primary) text-sm">{navbar.translate.en}</span>
   </a>
 </nav>
+
+<style>
+  .language-icon {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .language-icon.is-muted {
+    filter: grayscale(100%);
+  }
+</style>

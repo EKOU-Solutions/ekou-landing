@@ -27,6 +27,7 @@ const ServicePhases = ({ phasesData, labels }) => {
             phase="1"
             className="relative before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-(--text-primary) before:h-51 md:before:h-53 before:-top-47 before:left-32 md:before:left-38 before:w-px before:rotate-28 md:before:rotate-34"
             label={labels.phaseLabel}
+            ariaLabelPrefix={labels.selectPhaseAria}
           />
         </div>
         <div className="absolute z-20 left-[34%] top-0 hidden md:flex flex-col items-center justify-center">
@@ -34,14 +35,16 @@ const ServicePhases = ({ phasesData, labels }) => {
             icon={<ArtIcon className="w-8 h-8 text-(--surface-secundary)" />}
             phase="2"
             label={labels.phaseLabel}
+            ariaLabelPrefix={labels.selectPhaseAria}
           />
         </div>
         <div className="absolute z-10 right-0 md:right-10 bottom-34 hidden md:flex flex-col items-center justify-center">
           <PhaseCircle
             icon={<SearchIcon className="w-8 h-8 text-(--surface-secundary)" />}
             phase="3"
-            className="relative z-10 before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-(--text-primary) before:h-24 md:before:h-38 before:-top-16 md:before:-top-20 before:-left-4 md:before:-left-15 before:w-px before:-rotate-48 md:before:-rotate-58"
+            className="relative z-10 before:content-[''] before:absolute before:z-0 before:inset-0 before:bg-(--text-primary) before:h-24 md:before:h-39 before:-top-16 md:before:-top-19 before:-left-4 md:before:-left-16 before:w-px before:-rotate-48 md:before:-rotate-58"
             label={labels.phaseLabel}
+            ariaLabelPrefix={labels.selectPhaseAria}
           />
         </div>
         <div className="absolute bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6">
@@ -55,7 +58,7 @@ const ServicePhases = ({ phasesData, labels }) => {
           </button>
 
           <div className="px-4 w-20 py-2 rounded-xl text-(--color-primary) border border-(--color-border) bg-(--surface-secundary)/40 backdrop-blur-md shadow-[inset_0_0_4px_rgba(255,255,255,0.6)] text-xs text-center">
-            {labels.phaseLabel} {currentPhase ?? '1'}
+            {`${labels.phaseLabel} ${currentPhaseData.id}`}
           </div>
 
           <button

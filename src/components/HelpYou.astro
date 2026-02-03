@@ -12,10 +12,9 @@ const helpyou = t('helpyou')
 const icons = [Rocket, Cpu, Atom]
 ---
 
-<section
+<div
   id="como-te-ayudamos"
   class="relative w-full min-h-[80vh] flex flex-col items-center justify-center overflow-x-clip"
-  tabindex="-1"
 >
   <main class="mx-auto px-10 md:px-0 md:max-w-6xl py-16 px-4 md:px-8 lg:px-16">
     <!-- Header -->
@@ -32,12 +31,13 @@ const icons = [Rocket, Cpu, Atom]
     </div>
 
     <!-- Content -->
-    <ul class="mt-8 grid gap-10 md:gap-10 md:grid-cols-3" role="list">
+    <ul class="mt-8 grid gap-10 md:gap-10 md:grid-cols-3">
       {
         helpyou.items.map((item, index) => {
           const Icon = icons[index]
           return (
             <li
+              aria-label={`Elemento de lista ${index + 1}`}
               class:list={[
                 'relative text-center',
                 index === 0 && 'helpyou-arrow-a',
@@ -47,14 +47,20 @@ const icons = [Rocket, Cpu, Atom]
               <div
                 class="mx-auto w-28 h-28 rounded-[20px_20px_20px_0] bg-[linear-gradient(40deg,#19315940_0%,var(--surface-primary)_80%)] border border-(--color-border)
                  backdrop-blur-md flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+                role="img"
+                aria-label={item.iconAria}
               >
                 <Icon
                   className="w-14 h-14 stroke-[1.5px] text-(--text-primary)"
                   aria-hidden="true"
                 />
               </div>
-              <h3 class="mt-4 text-(--color-primary) font-semibold text-lg">{item.title}</h3>
-              <p class="text-(--text-secundary) text-sm leading-relaxed">{item.description}</p>
+              <span class="mt-4 text-(--color-primary) font-semibold text-lg z-10" tabindex="0">
+                {item.title}
+              </span>
+              <p class="text-(--text-secundary) text-sm leading-relaxed" tabindex="0">
+                {item.description}
+              </p>
             </li>
           )
         })
@@ -121,7 +127,7 @@ const icons = [Rocket, Cpu, Atom]
       </defs>
     </svg>
   </div>
-</section>
+</div>
 
 <style define:vars={{ arrowA: `url(${arrowA.src})`, arrowB: `url(${arrowB.src})` }}>
   .helpyou-arrow-a::before,

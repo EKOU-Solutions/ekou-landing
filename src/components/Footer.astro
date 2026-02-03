@@ -2,12 +2,17 @@
 import { Gamepad2, Dribbble, Instagram, Linkedin } from 'lucide-react'
 import EkouLogo from './icons/EkouLogo.jsx'
 import bgContact from '../assets/img/bgContact.svg'
+import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const aria = t('aria')
 ---
 
 <footer
   id="footer"
   class="relative w-full border-t border-(--color-border) bg-(--surface-secundary) px-6 md:px-10 py-6"
-  role="contentinfo"
+  role="contentfooter"
 >
   <!-- glow -->
   <div
@@ -23,40 +28,38 @@ import bgContact from '../assets/img/bgContact.svg'
   />
 
   <div class="relative z-10 flex items-center gap-4 md:gap-6 justify-between">
-    <a href="#main" class="flex items-center gap-3" aria-label="EKOU home" itemprop="url">
-      <EkouLogo showText={false} className="w-full h-10" alt="Logo EKOU" itemProp="logo" />
-    </a>
+    <EkouLogo alt={aria.logoAlt} btnAria={aria.homeLink} />
 
     <p class="text-xs text-(--text-secundary) text-center hidden md:block">
-      (c) 2025 EKOU. Todos los derechos reservados.
+      {t('footer').copyright}
     </p>
 
-    <nav class="flex items-center gap-3" aria-label="Social links">
+    <nav class="flex items-center gap-3" aria-label={aria.socialLinks}>
       <a
         href="#"
         class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
-        aria-label="Gamepad"
+        aria-label={aria.social.gamepad}
       >
         <Gamepad2 className="w-4 h-4" />
       </a>
       <a
         href="#"
         class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
-        aria-label="Dribbble"
+        aria-label={aria.social.dribbble}
       >
         <Dribbble className="w-4 h-4" />
       </a>
       <a
         href="#"
         class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
-        aria-label="Instagram"
+        aria-label={aria.social.instagram}
       >
         <Instagram className="w-4 h-4" />
       </a>
       <a
         href="#"
         class="w-10 h-10 rounded-full border border-(--color-border) bg-(--surface-primary)/20 text-(--text-primary) flex items-center justify-center hover:text-(--color-primary) transition"
-        aria-label="LinkedIn"
+        aria-label={aria.social.linkedin}
       >
         <Linkedin className="w-4 h-4" />
       </a>

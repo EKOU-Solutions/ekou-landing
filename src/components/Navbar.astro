@@ -19,6 +19,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils/config'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const navbar = t('navbar')
+const aria = t('aria')
 
 const navLinks = [
   { href: '#main', label: navbar.home, icon: House },
@@ -37,7 +38,7 @@ const navLinks = [
     data-site-header
     class="w-[95%] md:w-[90%] min-w-[unset] lg:max-w-[85rem] h-14 m-auto bg-(--surface-secundary)/80 backdrop-blur-md text-(--text-primary) flex justify-between items-center px-6 rounded-3xl fixed z-50 top-6 border border-(--color-border)"
   >
-    <EkouLogo />
+    <EkouLogo alt={aria.logoAlt} btnAria={aria.homeLink} />
     <div class="w-full flex justify-center">
       <ul class="hidden lg:flex flex-1 items-center justify-around w-full max-w-2xl">
         {
@@ -57,9 +58,15 @@ const navLinks = [
     </div>
     <div class="relative flex items-center gap-5 text-(--color-primary)">
       <div class="hidden lg:flex items-center">
-        <ThemeController />
+        <ThemeController ariaLabel={aria.themeToggle} />
       </div>
-      <button id="language-btn" class="flex justify-center items-center cursor-pointer">
+      <button
+        id="language-btn"
+        aria-label={aria.openLanguageMenu}
+        data-label-open={aria.openLanguageMenu}
+        data-label-close={aria.closeLanguageMenu}
+        class="flex justify-center items-center cursor-pointer"
+      >
         <Languages />
         <ChevronDown id="arrow" className="w-5 h-5 transition-transform duration-200" />
       </button>
@@ -67,21 +74,28 @@ const navLinks = [
       <button
         id="mobile-menu-btn"
         class="lg:hidden cursor-pointer"
-        aria-label="Open menu"
+        aria-label={aria.openMobileMenu}
+        data-label-open={aria.openMobileMenu}
+        data-label-close={aria.closeMobileMenu}
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
         <Menu />
       </button>
 
-      <section id="language-modal" class="lang-modal fixed right-2 top-16 z-50">
+      <section
+        id="language-modal"
+        class="lang-modal fixed right-2 top-16 z-50"
+        aria-hidden="true"
+        hidden
+      >
         <ModalLanguage />
       </section>
     </div>
   </nav>
 </header>
 
-<MobileMenu navLinks={navLinks} />
+<MobileMenu navLinks={navLinks} ariaLabel={aria.mainNavigation} themeAriaLabel={aria.themeToggle} />
 
 <script>
   const btn = document.getElementById('language-btn')
@@ -93,6 +107,13 @@ const navLinks = [
   const closeLanguage = () => {
     modal?.classList.remove('open')
     arrow?.classList.remove('rotate-180')
+    if (modal) {
+      modal.setAttribute('aria-hidden', 'true')
+      modal.setAttribute('hidden', '')
+    }
+    if (btn?.dataset?.labelOpen) {
+      btn.setAttribute('aria-label', btn.dataset.labelOpen)
+    }
   }
 
   const isMobileMenuOpen = () => mobileMenu?.classList.contains('open')
@@ -101,7 +122,13 @@ const navLinks = [
     if (!mobileMenu) return
     mobileMenu.classList.toggle('open', isOpen)
     mobileMenu.setAttribute('aria-hidden', String(!isOpen))
-    if (menuBtn) menuBtn.setAttribute('aria-expanded', String(isOpen))
+    if (menuBtn) {
+      menuBtn.setAttribute('aria-expanded', String(isOpen))
+      const label = isOpen ? menuBtn.dataset.labelClose : menuBtn.dataset.labelOpen
+      if (label) {
+        menuBtn.setAttribute('aria-label', label)
+      }
+    }
   }
 
   const focusFirstMenuLink = () => {
@@ -148,6 +175,18 @@ const navLinks = [
       event.stopPropagation()
       const isOpen = modal.classList.toggle('open')
       arrow?.classList.toggle('rotate-180', isOpen)
+      modal.setAttribute('aria-hidden', String(!isOpen))
+      if (isOpen) {
+        modal.removeAttribute('hidden')
+        if (btn?.dataset?.labelClose) {
+          btn.setAttribute('aria-label', btn.dataset.labelClose)
+        }
+      } else {
+        modal.setAttribute('hidden', '')
+        if (btn?.dataset?.labelOpen) {
+          btn.setAttribute('aria-label', btn.dataset.labelOpen)
+        }
+      }
     })
 
     modal.addEventListener('click', (event) => event.stopPropagation())
