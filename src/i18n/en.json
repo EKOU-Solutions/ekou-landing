@@ -5,6 +5,7 @@
     "help": "How we help",
     "services": "Services",
     "success": "Case studies",
+    "team": "Team",
     "blog": "Blog",
     "contact": "Let's talk",
     "translate": {
@@ -27,15 +28,18 @@
     "items": [
       {
         "title": "Understand your business",
-        "description": "We analyze your needs and align solutions with your strategic goals."
+        "description": "We analyze your needs and align solutions with your strategic goals.",
+        "iconAria": "Rocket icon representing momentum and growth"
       },
       {
         "title": "Innovate with purpose",
-        "description": "We apply cutting-edge technology to solve real, measurable problems."
+        "description": "We apply cutting-edge technology to solve real, measurable problems.",
+        "iconAria": "Processor icon representing technology and innovation"
       },
       {
         "title": "Support your growth",
-        "description": "We guide every stage with transparency, continuous iteration, and focus on results."
+        "description": "We guide every stage with transparency, continuous iteration, and focus on results.",
+        "iconAria": "Atom icon representing science and progress"
       }
     ]
   },
@@ -43,6 +47,11 @@
     "badge": "Who we are?",
     "title": "Strategy, technology, and innovation applied to business growth",
     "description": "EKOU Solutions is a strategic consulting and technology development partner for companies and entrepreneurs seeking to evolve with real results. We are not a traditional agency: we work with a close, consultative approach grounded in strategy, technology, and practical innovation.",
+    "iconAria": {
+      "innovation": "Innovation icon",
+      "service": "Service icon",
+      "professionalism": "Professionalism icon"
+    },
     "cards": [
       {
         "title": "What is EKOU Solutions?",
@@ -66,7 +75,9 @@
   "successes": {
     "badge": "Case studies",
     "title": "Real impact",
-    "description": "Measurable outcomes that show the value of our solutions and how we support organizations."
+    "description": "Measurable outcomes that show the value of our solutions and how we support organizations.",
+    "moreLabel": "View more",
+    "moreAriaPrefix": "View more about"
   },
   "servicePhases": {
     "labels": {
@@ -74,7 +85,8 @@
       "helpsTitle": "How we help",
       "deliverablesTitle": "Deliverables",
       "prevAria": "Previous phase",
-      "nextAria": "Next phase"
+      "nextAria": "Next phase",
+      "selectPhaseAria": "Select phase"
     },
     "phases": [
       {
@@ -164,6 +176,7 @@
       "emailError": "Enter a valid email address.",
       "projectError": "Tell us about your project (min 3 characters).",
       "messageError": "Message should be at least 10 characters.",
+      "formAriaLabel": "Contact form for EKOU Solutions",
       "submit": "Send message",
       "loadingMessage": "Sending...",
       "successMessage": "Thanks, we received your message. We'll reach out soon.",
@@ -172,5 +185,33 @@
   },
   "footer": {
     "copyright": "© 2026 EKOU. All rights reserved."
+  },
+  "aria": {
+    "openLanguageMenu": "Open language selector",
+    "closeLanguageMenu": "Close language selector",
+    "openMobileMenu": "Open menu",
+    "closeMobileMenu": "Close menu",
+    "mainNavigation": "Main navigation",
+    "themeToggle": "Toggle theme",
+    "homeLink": "Go to EKOU home",
+    "socialLinks": "Social links",
+    "social": {
+      "gamepad": "Gamepad profile",
+      "dribbble": "Dribbble profile",
+      "instagram": "Instagram profile",
+      "linkedin": "LinkedIn profile"
+    },
+    "linkedinPrefix": "LinkedIn profile for",
+    "languageMenuLabel": "Language selector",
+    "languageOptionEs": "Spanish language",
+    "languageOptionEn": "English language",
+    "languageIconEs": "Spanish language icon",
+    "languageIconEn": "English language icon",
+    "welcomeTeamImage": "The EKOU team members shown on screen collaborate in a modern workspace, conveying innovation, accessibility, and a strong technological focus.",
+    "logoAlt": "EKOU Solutions logo",
+    "welcomeDecoration": "A flowing decorative ribbon with a purple-to-blue gradient that runs along the bottom edge and ends with the EKOU text.",
+    "contactRobotImage": "Illustration of a friendly assistant robot waving, with communication and technology icons on a modern dark background.",
+    "contactEmailLabel": "EKOU Solutions email",
+    "contactPhoneLabel": "EKOU Solutions phone"
   }
 }
