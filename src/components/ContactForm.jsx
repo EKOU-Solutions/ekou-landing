@@ -141,6 +141,7 @@ const ContactForm = ({ labels, endpoint }) => {
       method="POST"
       onSubmit={handleSubmit}
       aria-label={labels.formAriaLabel}
+      aria-busy={isSubmitting}
       noValidate
     >
       <div

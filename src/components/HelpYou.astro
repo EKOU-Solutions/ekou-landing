@@ -12,7 +12,7 @@ const helpyou = t('helpyou')
 const icons = [Rocket, Cpu, Atom]
 ---
 
-<div
+<section
   id="como-te-ayudamos"
   class="relative w-full min-h-[80vh] flex flex-col items-center justify-center overflow-x-clip"
 >
@@ -31,7 +31,7 @@ const icons = [Rocket, Cpu, Atom]
     </div>
 
     <!-- Content -->
-    <ul class="mt-8 grid gap-10 md:gap-10 md:grid-cols-3">
+    <ul class="mt-8 grid gap-10 md:gap-10 md:grid-cols-3" role="list">
       {
         helpyou.items.map((item, index) => {
           const Icon = icons[index]
@@ -127,7 +127,7 @@ const icons = [Rocket, Cpu, Atom]
       </defs>
     </svg>
   </div>
-</div>
+</section>
 
 <style define:vars={{ arrowA: `url(${arrowA.src})`, arrowB: `url(${arrowB.src})` }}>
   .helpyou-arrow-a::before,

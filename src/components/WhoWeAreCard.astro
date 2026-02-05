@@ -55,7 +55,9 @@ const getIconClasses = () => {
     aria-hidden="true"
   />
   <div class="relative z-10">
-    <Icon className={clsx(getIconClasses(), iconClassName)} aria-label={iconAriaLabel} role="img" />
+    <figure aria-label={iconAriaLabel} role="img">
+      <Icon className={clsx(getIconClasses(), iconClassName)} />
+    </figure>
 
     <h3 class="text-xl font-semibold text-(--text-primary)">{title}</h3>
     <p class="mt-2 text-md text-(--text-secundary)">

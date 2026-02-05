@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import '@splidejs/react-splide/css'
 
 const CasesSlider = ({ items, labels = {} }) => {
-  const { moreLabel = 'Ver mas', moreAriaPrefix = 'Ver mas sobre' } = labels
+  const { moreLabel = 'Ver más', moreAriaPrefix = 'Ver más sobre' } = labels
   const options = {
     type: 'loop',
     autoWidth: true,
