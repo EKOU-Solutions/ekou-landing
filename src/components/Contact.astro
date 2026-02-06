@@ -8,6 +8,7 @@ import ContactForm from './ContactForm'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const contact = t('contact')
+const aria = t('aria')
 const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT // endpoint que se obtiene del servicio "formspree"
 ---
 
@@ -31,21 +32,29 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT // endpoint 
 
     <div class="mt-10 md:mt-20 grid gap-20 lg:grid-cols-[1fr_1.1fr] items-center">
       <div class="relative flex items-center justify-center">
-        <img src={robotShappe.src} alt="Robot EKOU" class="w-full max-w-md md:max-w-lg" />
+        <figure
+          class="w-full max-w-md md:max-w-lg bg-contain bg-no-repeat bg-center"
+          style={`background-image: url(${robotShappe.src}); aspect-ratio: 557 / 425;`}
+          role="img"
+          aria-label={aria.contactRobotImage}
+        >
+        </figure>
 
         <div
           class="absolute left-15 md:left-40 -bottom-4 flex flex-wrap items-center gap-3 text-xs text-(--text-secundary)"
         >
           <span
+            aria-label={aria.contactEmailLabel}
             class="inline-flex items-center gap-2 rounded-full border border-(--color-border) bg-(--surface-primary)/30 px-3 py-1 backdrop-blur-lg"
           >
-            <Mail className="w-3.5 h-3.5 text-(--color-primary)" />
+            <Mail className="w-3.5 h-3.5 text-(--color-primary)" aria-hidden="true" />
             {contact.email}
           </span>
           <span
+            aria-label={aria.contactPhoneLabel}
             class="inline-flex items-center gap-2 rounded-full border border-(--color-border) bg-(--surface-primary)/30 px-3 py-1 backdrop-blur-lg"
           >
-            <Phone className="w-3.5 h-3.5 text-(--color-primary)" />
+            <Phone className="w-3.5 h-3.5 text-(--color-primary)" aria-hidden="true" />
             {contact.phone}
           </span>
         </div>

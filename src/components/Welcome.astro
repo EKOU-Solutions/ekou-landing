@@ -8,6 +8,7 @@ import WelcomeDecoration from './WelcomeDecoration.astro'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const welcome = t('welcome')
+const aria = t('aria')
 const titleLines = welcome.title.split('\n')
 const titleHighlightLines = welcome.titleHighlight.split('\n')
 ---
@@ -54,11 +55,12 @@ const titleHighlightLines = welcome.titleHighlight.split('\n')
         {welcome.description}
       </p>
 
-      <button
+      <a
+        href="#hablemos"
         class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-black font-semibold hover:opacity-70 border border-(--color-border) cursor-pointer"
       >
         {welcome.cta}
-      </button>
+      </a>
 
       <!-- FEATURES -->
       <div class="flex flex-wrap gap-4 mt-2 text-(--text-secundary) text-[12px] md:text-sm">
@@ -78,7 +80,7 @@ const titleHighlightLines = welcome.titleHighlight.split('\n')
     <!-- IMAGEN -->
     <div class="relative flex justify-center">
       <div
-        class="rounded-[3rem] bg-cover bg-no-repeat p-4 overflow-hidden w-full"
+        class="rounded-[3rem] bg-cover bg-no-repeat p-4 overflow-hidden w-full min-h-72 md:h-100"
         style={`background-image: url(${grupoEkou.src});`}
       >
         <!-- Opacity -->
@@ -93,14 +95,18 @@ const titleHighlightLines = welcome.titleHighlight.split('\n')
            blur-[70px] opacity-25 pointer-events-none"
         >
         </div>
-        <img
-          src={grupoEkou.src}
-          alt="Equipo EKOU"
-          class="w-full h-full object-cover relative z-10"
-        />
+        <figure
+          class="w-full h-full object-cover relative z-10 bg-cover bg-center"
+          style={`background-image: url(${grupoEkou.src});`}
+          role="img"
+          aria-label={aria.welcomeTeamImage}
+        >
+        </figure>
       </div>
     </div>
   </div>
 
-  <WelcomeDecoration />
+  <figure class="m-0" role="img" aria-label={aria.welcomeDecoration}>
+    <WelcomeDecoration />
+  </figure>
 </section>

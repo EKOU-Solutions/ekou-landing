@@ -17,7 +17,6 @@ const whoweare = t('whoweare')
 <section
   id="quienes-somos"
   class="w-full relative min-h-[85vh] flex flex-col items-center justify-center overflow-x-clip scroll-mt-0"
-  tabindex="-1"
 >
   <SpaceGlow
     size="xl"
@@ -74,6 +73,7 @@ const whoweare = t('whoweare')
           title={whoweare.cards[0].title}
           description={whoweare.cards[0].description}
           icon={InnovationIcon}
+          iconAriaLabel={whoweare.iconAria.innovation}
         />
         <!-- card 2 -->
         <WhoWeAreCard
@@ -82,6 +82,7 @@ const whoweare = t('whoweare')
           description={whoweare.cards[1].description}
           icon={ServiceIcon}
           glowVariant="service"
+          iconAriaLabel={whoweare.iconAria.service}
         />
         <!-- card 3 -->
         <WhoWeAreCard
@@ -90,6 +91,7 @@ const whoweare = t('whoweare')
           description={whoweare.cards[2].description}
           icon={ProfessionalismIcon}
           glowVariant="pro"
+          iconAriaLabel={whoweare.iconAria.professionalism}
         />
       </div>
     </div>

@@ -7,6 +7,7 @@ import TeamMemberCard from './TeamMemberCard.astro'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const team = t('team')
+const aria = t('aria')
 ---
 
 <section id="equipo" class="relative w-full overflow-x-clip min-h-[80vh] flex items-center">
@@ -43,6 +44,7 @@ const team = t('team')
               description={member.description}
               image={member.image}
               linkedinUrl={member.linkedin}
+              linkedinLabel={aria.linkedinPrefix}
             />
           )
         )

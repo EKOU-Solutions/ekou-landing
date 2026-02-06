@@ -2,7 +2,8 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { ArrowUpRight } from 'lucide-react'
 import '@splidejs/react-splide/css'
 
-const CasesSlider = ({ items }) => {
+const CasesSlider = ({ items, labels = {} }) => {
+  const { moreLabel = 'Ver más', moreAriaPrefix = 'Ver más sobre' } = labels
   const options = {
     type: 'loop',
     autoWidth: true,
@@ -53,9 +54,9 @@ const CasesSlider = ({ items }) => {
 
               <button
                 className="mt-2 w-fit text-xs text-(--text-primary) font-medium px-3 py-1.5 rounded-xl inline-flex items-center gap-2 bg-white/5 border border-(--color-border) backdrop-blur-md hover:bg-white/10 transition-all duration-300 cursor-pointer relative z-30"
-                aria-label={`Ver más sobre ${item.title}`}
+                aria-label={`${moreAriaPrefix} ${item.title}`}
               >
-                Ver mas
+                {moreLabel}
                 <ArrowUpRight className="w-3.5 h-3.5 text-(--color-primary)" />
               </button>
             </div>
@@ -72,7 +73,7 @@ const CasesSlider = ({ items }) => {
           height: 100%;
           background: linear-gradient(to right, transparent 0%, var(--surface-primary) 50%);
           pointer-events: none;
-          z-index: 15;
+          z-index: 10;
         }
 
         .cases-slider .splide__pagination {

@@ -1,49 +1,57 @@
 {
   "navbar": {
     "home": "Inicio",
-    "about": "Quienes somos",
-    "help": "Como te ayudamos",
+    "about": "Quiénes somos",
+    "help": "Cómo te ayudamos",
     "services": "Servicios",
-    "success": "Casos de exito",
+    "success": "Casos de éxito",
     "team": "Equipo",
     "blog": "Blog",
     "contact": "Hablemos",
     "translate": {
-      "es": "Espanol",
-      "en": "Ingles"
+      "es": "Español",
+      "en": "Inglés"
     }
   },
   "welcome": {
     "badge": "Bienvenido a EKOU",
-    "title": "Tecnologia e\n innovacion que impulsan el",
+    "title": "Tecnología e\n innovación que impulsan el",
     "titleHighlight": "crecimiento y generan\nimpacto real.",
-    "description": "Acompanamos a empresas y emprendedores en su evolucion digital, integrando estrategia, tecnologia e innovacion para construir soluciones alineadas con sus objetivos de negocio.",
+    "description": "Acompañamos a empresas y emprendedores en su evolución digital, integrando estrategia, tecnología e innovación para construir soluciones alineadas con sus objetivos de negocio.",
     "cta": "Conversemos sobre tu proyecto",
-    "features": ["Estrategia con proposito", "Ejecucion integral", "Acompanamiento continuo"]
+    "features": ["Estrategia con propósito", "Ejecución integral", "Acompañamiento continuo"]
   },
   "helpyou": {
-    "badge": "Como te ayudamos",
+    "badge": "Cómo te ayudamos",
     "title": "No solo desarrollamos productos",
     "description": "Ofrecemos acompañamiento consultivo integral: estrategia, innovación y optimización enfocadas a generar valor real para tu negocio.",
     "items": [
       {
         "title": "Entendemos tu negocio",
-        "description": "Analizamos tus necesidades y alineamos soluciones con tus objetivos estrategicos."
+        "description": "Analizamos tus necesidades y alineamos soluciones con tus objetivos estratégicos.",
+        "iconAria": "Icono de cohete que representa impulso y crecimiento"
       },
       {
         "title": "Innovamos con sentido",
-        "description": "Aplicamos tecnologia de vanguardia para resolver problemas reales y medibles."
+        "description": "Aplicamos tecnología de vanguardia para resolver problemas reales y medibles.",
+        "iconAria": "Icono de procesador que representa tecnología e innovación"
       },
       {
-        "title": "Acompanamos tu crecimiento",
-        "description": "Guiamos cada etapa con transparencia, iteracion continua y foco en resultados."
+        "title": "Acompañamos tu crecimiento",
+        "description": "Guiamos cada etapa con transparencia, iteración continua y foco en resultados.",
+        "iconAria": "Icono atómico que representa ciencia y evolución"
       }
     ]
   },
   "whoweare": {
-    "badge": "Quienes somos",
+    "badge": "Quiénes somos",
     "title": "Conectamos ideas con ejecución",
     "description": "Acompañamos a organizaciones en el diseño y desarrollo de soluciones innovadoras, adaptadas a sus necesidades reales. Integramos estrategia, tecnología e innovación para impulsar el crecimiento, construir alianzas sólidas y optimizar procesos con una visión global.",
+    "iconAria": {
+      "innovation": "Icono de innovación",
+      "service": "Icono de servicio",
+      "professionalism": "Icono de profesionalismo"
+    },
     "cards": [
       {
         "title": "Innovación",
@@ -61,43 +69,46 @@
   },
   "services": {
     "badge": "Servicios",
-    "title": "¿Como te acompañamos?",
-    "description": "Un proceso estrategico, iterativo y enfocado en resultados reales."
+    "title": "¿Cómo te acompañamos?",
+    "description": "Un proceso estratégico, iterativo y enfocado en resultados reales."
   },
   "successes": {
-    "badge": "Casos de exito",
+    "badge": "Casos de éxito",
     "title": "Impacto real",
-    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompanamos a las organizaciones."
+    "description": "Resultados medibles que reflejan el valor de nuestras soluciones y la forma en que acompañamos a las organizaciones.",
+    "moreLabel": "Ver más",
+    "moreAriaPrefix": "Ver más sobre"
   },
   "servicePhases": {
     "labels": {
       "phaseLabel": "FASE",
-      "helpsTitle": "Como te ayudamos",
+      "helpsTitle": "Cómo te ayudamos",
       "deliverablesTitle": "Entregables",
       "prevAria": "Fase anterior",
-      "nextAria": "Siguiente fase"
+      "nextAria": "Siguiente fase",
+      "selectPhaseAria": "Seleccionar fase"
     },
     "phases": [
       {
         "id": "1",
         "title": "Fase 1",
-        "subtitle": "Estrategia y Planeacion",
+        "subtitle": "Estrategia y Planeación",
         "tagline": "Evitar improvisar y avanzar con seguridad.",
         "helps": [
           "Entendemos tu contexto y objetivos",
           "Validamos ideas antes de invertir",
           "Definimos un plan claro y medible"
         ],
-        "deliverables": ["Roadmap estrategico", "Priorizacion", "OKRs y metricas"]
+        "deliverables": ["Roadmap estratégico", "Priorización", "OKRs y métricas"]
       },
       {
         "id": "2",
         "title": "Fase 2",
-        "subtitle": "Diseno y Prototipado",
+        "subtitle": "Diseño y Prototipado",
         "tagline": "Convertir la estrategia en una experiencia clara.",
         "helps": [
           "Definimos el flujo y la arquitectura",
-          "Probamos ideas con prototipos rapidos",
+          "Probamos ideas con prototipos rápidos",
           "Alineamos el producto con usuarios"
         ],
         "deliverables": ["Wireframes", "UI Kit", "Prototipo navegable"]
@@ -112,7 +123,7 @@
           "Iteramos con feedback real",
           "Preparamos el lanzamiento y escalado"
         ],
-        "deliverables": ["MVP funcional", "QA y optimizacion", "Soporte de lanzamiento"]
+        "deliverables": ["MVP funcional", "QA y optimización", "Soporte de lanzamiento"]
       }
     ]
   },
@@ -148,8 +159,8 @@
   },
   "contact": {
     "badge": "Contacto",
-    "title": "Consulta tecnica gratuita",
-    "description": "Cuentanos tu idea. Nosotros te ayudamos a convertirla en una solucion real.",
+    "title": "Consulta técnica gratuita",
+    "description": "Cuéntanos tu idea. Nosotros te ayudamos a convertirla en una solución real.",
     "email": "contacto@ekou.com",
     "phone": "+57 3243263523",
     "form": {
@@ -159,12 +170,13 @@
       "messageLabel": "Mensaje",
       "namePlaceholder": "Tu nombre",
       "emailPlaceholder": "example@gmail.com",
-      "projectPlaceholder": "Website, app movil, SaaS...",
-      "messagePlaceholder": "Cuentanos brevemente tu necesidad",
-      "nameError": "Ingresa tu nombre (minimo 3 caracteres).",
-      "emailError": "Ingresa un email valido.",
-      "projectError": "Cuentanos sobre tu proyecto (minimo 3 caracteres).",
+      "projectPlaceholder": "Website, app móvil, SaaS...",
+      "messagePlaceholder": "Cuéntanos brevemente tu necesidad",
+      "nameError": "Ingresa tu nombre (mínimo 3 caracteres).",
+      "emailError": "Ingresa un email válido.",
+      "projectError": "Cuéntanos sobre tu proyecto (mínimo 3 caracteres).",
       "messageError": "El mensaje debe tener al menos 10 caracteres.",
+      "formAriaLabel": "Formulario para contactar con EKOU Solutions",
       "submit": "Enviar mensaje",
       "loadingMessage": "Enviando...",
       "successMessage": "Gracias, recibimos tu mensaje. Te contactaremos pronto.",
@@ -173,5 +185,33 @@
   },
   "footer": {
     "copyright": "© 2026 EKOU. Todos los derechos reservados."
+  },
+  "aria": {
+    "openLanguageMenu": "Abrir selector de idioma",
+    "closeLanguageMenu": "Cerrar selector de idioma",
+    "openMobileMenu": "Abrir menú",
+    "closeMobileMenu": "Cerrar menú",
+    "mainNavigation": "Navegación principal",
+    "themeToggle": "Cambiar tema",
+    "homeLink": "Ir al inicio de EKOU",
+    "socialLinks": "Enlaces sociales",
+    "social": {
+      "gamepad": "Perfil en Gamepad",
+      "dribbble": "Perfil en Dribbble",
+      "instagram": "Perfil en Instagram",
+      "linkedin": "Perfil en LinkedIn"
+    },
+    "linkedinPrefix": "Perfil de LinkedIn de",
+    "languageMenuLabel": "Selector de idioma",
+    "languageOptionEs": "Idioma español",
+    "languageOptionEn": "Idioma inglés",
+    "languageIconEs": "Icono del idioma español",
+    "languageIconEn": "Icono del idioma inglés",
+    "welcomeTeamImage": "Los miembros del equipo de EKOU que aparecen en pantalla colaboran en un espacio de trabajo moderno, transmitiendo innovación, cercanía y un fuerte enfoque tecnológico.",
+    "logoAlt": "Logo de EKOU Solutions",
+    "welcomeDecoration": "Cinta decorativa ondulada con degradado morado y azul que recorre el borde inferior y termina con el texto EKOU.",
+    "contactRobotImage": "Ilustración de un robot asistente que saluda, con iconos de comunicación y tecnología sobre un fondo oscuro moderno.",
+    "contactEmailLabel": "Correo de EKOU Solutions",
+    "contactPhoneLabel": "Teléfono de EKOU Solutions"
   }
 }

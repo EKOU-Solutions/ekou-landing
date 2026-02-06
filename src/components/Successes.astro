@@ -27,7 +27,7 @@ const successes = t('successes')
   >
   </div>
 
-  <main class="relative z-10 w-full container-custom mx-auto px-3 md:px-12">
+  <main class="relative w-full container-custom mx-auto px-3 md:px-12">
     <div class="text-center mb-10">
       <Badge>
         {successes.badge}
@@ -47,6 +47,10 @@ const successes = t('successes')
       class="absolute z-10 -left-20 -top-10 w-15 h-screen bg-(--surface-primary) blur-lg pointer-events-none"
     >
     </div>
-    <CasesSlider items={cases} client:load />
+    <CasesSlider
+      items={cases}
+      labels={{ moreLabel: successes.moreLabel, moreAriaPrefix: successes.moreAriaPrefix }}
+      client:load
+    />
   </main>
 </section>
