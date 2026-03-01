@@ -58,7 +58,7 @@ const aria = t('aria')
           <h3 class="text-2xl xl:text-3xl font-semibold text-(--text-primary)">
             {team.collaboratorsTitle}
           </h3>
-          <div class="mt-8 flex flex-wrap justify-center gap-6">
+          <div class="mt-8 grid grid-cols-2 justify-items-center gap-6 sm:grid-cols-3 lg:grid-cols-4 px-6 sm:px-0">
             {team.collaborators.map(
               (collab: {
                 name: string
