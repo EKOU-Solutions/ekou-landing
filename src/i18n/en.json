@@ -137,23 +137,42 @@
         "role": "Leadership & Vision",
         "description": "The strategic mind. Transforms ideas into clear paths and guides the course with determination and global perspective.",
         "image": "/team/esteban.webp",
-        "linkedin": "https://linkedin.com/in/"
+        "linkedin": "https://www.linkedin.com/in/estebanjimenezruiz/"
       },
       {
         "name": "Jouler Talaigua",
-        "position": "CEO",
+        "position": "COO",
         "role": "Innovation & Creativity",
         "description": "The creative engine. Transforms visions into tangible solutions, breaking molds with ingenuity and originality.",
         "image": "/team/jouler.webp",
-        "linkedin": "https://linkedin.com/in/"
+        "linkedin": "https://www.linkedin.com/in/jouler-talaigua/"
       },
       {
         "name": "Kevin Useche",
-        "position": "CEO",
+        "position": "CTO",
         "role": "Execution & Technology",
         "description": "The architect of action. Leads with technical precision and turns strategies into operational realities.",
         "image": "/team/kevin.webp",
-        "linkedin": "https://linkedin.com/in/"
+        "linkedin": "https://www.linkedin.com/in/iitzcopkevinii/"
+      }
+    ],
+    "collaboratorsTitle": "Collaborators",
+    "collaborators": [
+      {
+        "name": "Estiven Tapasco",
+        "role": "Frontend Developer",
+        "image": "/team/estiven.png",
+        "github": "https://github.com/stivcode21",
+        "linkedin": "https://www.linkedin.com/in/stivcode21/",
+        "website": "https://estiven-tapasco.dev"
+      },
+      {
+        "name": "Alejandro Martínez",
+        "role": "Frontend Developer",
+        "image": "/team/alejandro.png",
+        "github": "https://github.com/Firebytex",
+        "linkedin": "https://www.linkedin.com/in/alejandro-mart%C3%ADnez-a315b03aa/",
+        "website": "https://alejandromartinez.pro/"
       }
     ]
   },
@@ -202,6 +221,8 @@
       "linkedin": "LinkedIn profile"
     },
     "linkedinPrefix": "LinkedIn profile for",
+    "githubPrefix": "GitHub profile for",
+    "websitePrefix": "Website of",
     "languageMenuLabel": "Language selector",
     "languageOptionEs": "Spanish language",
     "languageOptionEn": "English language",

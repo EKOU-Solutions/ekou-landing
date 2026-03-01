@@ -1,0 +1,104 @@
+---
+import { Github, Linkedin, Globe, UserRound } from 'lucide-react'
+
+interface Props {
+  name: string
+  role: string
+  image?: string
+  github?: string
+  linkedin?: string
+  website?: string
+  githubLabel?: string
+  linkedinLabel?: string
+  websiteLabel?: string
+}
+
+const {
+  name,
+  role,
+  image,
+  github,
+  linkedin,
+  website,
+  githubLabel = 'GitHub',
+  linkedinLabel = 'LinkedIn',
+  websiteLabel = 'Web',
+} = Astro.props
+---
+
+<article
+  class="collaborator-card group w-full max-w-[200px] overflow-hidden rounded-xl border border-(--color-border) bg-(--surface-primary) p-4 text-center"
+>
+  <div class="mx-auto mb-3 h-20 w-20 overflow-hidden rounded-full border-2 border-(--color-border)">
+    {
+      image ? (
+        <img src={image} alt={name} class="h-full w-full object-cover" loading="lazy" />
+      ) : (
+        <div class="flex h-full w-full items-center justify-center bg-(--color-border)">
+          <UserRound className="h-8 w-8 text-(--text-secundary)" />
+        </div>
+      )
+    }
+  </div>
+
+  <h4 class="text-sm font-semibold text-(--text-primary)">{name}</h4>
+  <p class="mt-0.5 text-xs font-medium text-(--color-primary)">{role}</p>
+
+  <div class="mt-2 flex items-center justify-center gap-2">
+    {
+      github && (
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex h-7 w-7 items-center justify-center rounded-md text-(--text-secundary) transition-colors hover:text-(--color-primary)"
+          aria-label={`${githubLabel} ${name}`}
+        >
+          <Github className="h-4 w-4" />
+        </a>
+      )
+    }
+    {
+      linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex h-7 w-7 items-center justify-center rounded-md text-(--text-secundary) transition-colors hover:text-(--color-primary)"
+          aria-label={`${linkedinLabel} ${name}`}
+        >
+          <Linkedin className="h-4 w-4" />
+        </a>
+      )
+    }
+    {
+      website && (
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex h-7 w-7 items-center justify-center rounded-md text-(--text-secundary) transition-colors hover:text-(--color-primary)"
+          aria-label={`${websiteLabel} ${name}`}
+        >
+          <Globe className="h-4 w-4" />
+        </a>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .collaborator-card {
+    transition:
+      transform 300ms ease,
+      box-shadow 300ms ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .collaborator-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 24px rgba(83, 234, 253, 0.08),
+      0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+</style>
